@@ -1,0 +1,14 @@
+<div class="col-span-3 p-4 params-cell" id="{{ class.name | capitalize }}.{{ property.name }}">
+  {{ property.name | escape }}
+  {% if property.readonly %}
+    <br/><span class="font-normal"> (read only)</span>
+  {% endif %}
+</div>
+<div class="col-span-3 p-4 params-cell">
+  {% for type in property.type.names %}
+    {{ type | escape }}{% if forloop.last == false %}<br/>{% endif %}
+  {% endfor %}
+</div>
+<div class="col-span-6 p-4 params-cell">
+  {{ property.description }}
+</div>

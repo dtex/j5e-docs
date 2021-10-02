@@ -1,0 +1,1305 @@
+<!doctype html>
+<html>
+  <head>
+  <title></title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+  <body class="bg-white">
+    <header class="py-2 bg-gradient-to-r from-xiketic to-seaweed overflow-hidden">
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative flex justify-center items-center">
+      <div class="text-white"> module.name J5e: Embedded JavaScript for IoT Devices and Robots</div>
+      <span aria-hidden="true" class="hidden sm:block mx-6 h-6 w-px bg-white bg-opacity-20"></span>
+      <div class="ml-6 sm:ml-0">
+        <a class="whitespace-nowrap inline-flex rounded-md bg-white py-2 px-3 text-xs font-semibold uppercase text-xiketic hover:bg-opacity-90" href="/docs/whats-new">What&rsquo;s New? →</a>
+      </div>
+    </div>
+  </div>
+</header>
+    <!-- <div class="sticky top-0 z-40 lg:z-50 w-full max-w-7xl mx-auto my-4 bg-white grid grid-cols-12 p-4">
+  <div class="invisible md:visible md:col-span-2">
+    <a class="overflow-hidden" href="/">
+      <span class="sr-only">J5e: Embedded JavaScript for IoT Devices and Robots</span>
+      <svg class="fill-current text-seaweed-dark w-24 lg:w-3/5"  viewBox="0 0 526.1 178.8" >
+        <path d="M203.4,115.7h30.7v7.9c0,20.2,11,26.9,22.6,26.9c11.5,0,21.8-7,21.8-25.4V32.2h-43.9V5.5h74.9v120
+c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
+        <path d="M363.4,64.3c-10.3,0-18.2,3.8-18.2,3.8l-3.3,2.4c0,0,0.1-5.5,0-10.3l-0.4-28.1h69.9V5.5h-96.5L314,91.9l17,6.2 c0,0,11.3-7.2,26.4-7.2c19.4,0,34.3,11.8,34.3,29.5c0,18-15.6,29.4-32.2,29c-23.6-0.5-40.3-18.2-45.7-24.8v5.5 c0,10.6-2.2,17.2-6,24.5c9.2,8,28.6,24,54,24c35.5,0,61.4-25,61.4-58.6C423.4,89.5,401.1,64.3,363.4,64.3z"/>
+        <g>
+          <path d="M455.2,131.7c0,5,0.3,9.1,0.8,12.3c0.6,3.2,1.7,5.7,3.4,7.5c1.7,1.8,4.1,3.1,7.2,3.8c3.1,0.7,7.1,1,12.1,1 c4.9,0,10.5,0,16.7,0s14-0.1,23.2-0.4l-4.2,20.9c-3.9,0.1-7.4,0.2-10.5,0.3c-3.1,0.1-6,0.1-8.9,0.1c-2.9,0-5.7,0-8.5,0 c-2.8,0-5.9,0-9.2,0c-9.9,0-18-1.1-24.5-3.3c-6.4-2.2-11.5-5.4-15.2-9.6c-3.7-4.2-6.3-9.3-7.7-15.4c-1.5-6.1-2.2-13-2.2-20.8v-11.7 c0-8.4,0.8-15.7,2.3-22.2c1.5-6.4,4.2-11.8,8-16.2c3.8-4.4,9-7.7,15.5-9.9c6.5-2.2,14.7-3.3,24.6-3.3c9.2,0,16.8,1,22.9,3 c6.1,2,10.9,4.8,14.6,8.5c3.7,3.6,6.3,7.9,7.8,12.9c1.5,4.9,2.3,10.3,2.3,16.2v3.6c0,4.7-0.3,8.6-0.8,11.6c-0.6,3-1.5,5.3-2.8,7 c-1.3,1.7-3,2.8-5.1,3.3c-2.1,0.6-4.7,0.8-7.7,0.8H455.2z M477.8,85.3c-4.7,0-8.6,0.4-11.5,1.1c-2.9,0.8-5.2,2.2-6.9,4.2 c-1.7,2-2.8,4.7-3.3,8.2c-0.6,3.4-0.8,7.8-0.8,13.1h44.9V107c0-4-0.3-7.5-1-10.2c-0.7-2.8-1.9-5-3.6-6.7c-1.7-1.7-4-2.9-6.9-3.7 C485.7,85.6,482.1,85.3,477.8,85.3z"/>
+        </g>
+        <g>
+          <path d="M50,40c-12.9,0-23.3,10.4-23.3,23.3S37.1,86.7,50,86.7s23.3-10.4,23.3-23.3S62.9,40,50,40z M50,80 c-9.2,0-16.7-7.5-16.7-16.7S40.8,46.7,50,46.7s16.7,7.5,16.7,16.7S59.2,80,50,80z"/>
+          <path d="M150,86.7c12.9,0,23.3-10.4,23.3-23.3S162.9,40,150,40s-23.3,10.4-23.3,23.3S137.1,86.7,150,86.7z M150,46.7 c9.2,0,16.7,7.5,16.7,16.7S159.2,80,150,80c-9.2,0-16.7-7.5-16.7-16.7S140.8,46.7,150,46.7z"/>
+          <path d="M1.1,34.5c1,3.6,4.3,6.2,8.1,6.2c0.7,0,1.4-0.1,2.1-0.3l2-0.5V110c0,3.7,3,6.7,6.7,6.7h21.4l6,10.4 c-2.7,3.2-3.2,7.8-1.1,11.5l18.3,31.7c1.2,2.1,3.1,3.7,5.3,4.5c1.8,0.6,3.7,0.7,5.5,0.2c1.2,1.1,2.8,1.7,4.5,1.7h40 c1.6,0,3.2-0.6,4.4-1.7c0.7,0.2,1.5,0.3,2.3,0.3c1.1,0,2.1-0.2,3.1-0.5c2.4-0.7,4.3-2.3,5.6-4.5l18.3-31.8 c2.1-3.7,1.7-8.3-1.1-11.5l6-10.4H180c3.7,0,6.7-3,6.7-6.7V39.8l2,0.5c4.4,1.2,9-1.5,10.2-5.9l0.9-3.3l0,0c1.1-4.4-1.5-9-5.9-10.2 L116.7,0.3c-4.5-1.2-9.1,1.4-10.3,5.8c0,0,0,0.1,0,0.1l-0.9,3.3c-1.2,4.4,1.5,9,5.9,10.2l26.4,7H62.2l26.4-7.1 c4.4-1.2,7.1-5.8,5.9-10.2l-0.9-3.3c-1.2-4.4-5.8-7-10.3-5.8c0,0,0,0,0,0L6.1,21c-4.4,1.2-7,5.8-5.9,10.2L1.1,34.5z M20,42.3V38 l4.8-1.3l-0.3,0.4c-0.5,0.5-0.9,0.9-1.4,1.4L22,39.7c-0.4,0.5-0.8,1-1.2,1.6S20.2,42,20,42.3z M150,33.4c16.6,0,30,13.4,30,30 s-13.4,30-30,30s-30-13.4-30-30S133.4,33.4,150,33.4z M146.7,123.8c-1.4-0.3-2.9-0.3-4.3,0c-2.6,0.6-4.8,2.3-6.1,4.6L123.3,151 c-1-0.6-2.2-0.9-3.3-1h-6.7v-6.7c0-5.5-4.5-10-10-10V110h23.3c3.7,0,6.7-3,6.7-6.7V96c4.1,2.2,8.7,3.6,13.3,4v10 c0,2.8,1.8,5.3,4.5,6.3L146.7,123.8z M93.3,150v-6.7c0-1.8,1.5-3.3,3.3-3.3h6.7c1.8,0,3.3,1.5,3.3,3.3v6.7H93.3z M80,150 c-1.2,0-2.3,0.4-3.3,1l-13-22.4c-1.3-2.3-3.5-3.9-6-4.6c-1.4-0.4-2.9-0.4-4.3-0.2l-4.3-7.5c2.6-1,4.3-3.5,4.3-6.3v-10 c4.7-0.4,9.2-1.7,13.3-3.9v7.2c0,3.7,3,6.7,6.7,6.7h23.3v23.3c-5.5,0-10,4.5-10,10v6.7H80z M73.3,103.4v-6.7h53.3v6.7H73.3z M116,49.7c-0.2,0.4-0.3,0.9-0.5,1.3s-0.6,1.7-0.8,2.6c-0.3,0.9-0.3,0.9-0.4,1.4c-0.1,0.5-0.4,1.9-0.5,2.8c0,0.4,0,0.9-0.2,1.3 c-0.2,1.4-0.3,2.8-0.3,4.2c0,1.4,0.1,2.7,0.2,4.1c0,0.4,0,0.9,0.2,1.3c0.2,0.4,0.3,1.8,0.5,2.7c0.2,0.9,0.3,1,0.4,1.5 c0.1,0.5,0.4,1.6,0.7,2.3s0.4,1,0.6,1.5c0.2,0.5,0.6,1.5,0.9,2.2l0.7,1.5c0.4,0.7,0.8,1.4,1.2,2.1l0.9,1.3c0.5,0.7,1,1.4,1.5,2 L122,87c0.7,0.8,1.4,1.5,2.1,2.2l0.7,0.7l0,0H75.1l0,0l0.6-0.6c0.7-0.7,1.5-1.5,2.1-2.3l0.9-1.1c0.5-0.7,1-1.4,1.5-2.1l0.8-1.3 c0.4-0.7,0.8-1.4,1.2-2.1l0.7-1.4c0.3-0.7,0.7-1.5,0.9-2.2c0.3-0.7,0.4-1,0.6-1.5c0.2-0.5,0.5-1.6,0.7-2.4c0.2-0.8,0.3-1,0.4-1.5 c0.1-0.5,0.3-1.8,0.5-2.7c0.1-0.9,0-0.9,0.2-1.3c0.2-1.3,0.3-2.7,0.3-4.1c0-1.4-0.1-2.8-0.3-4.2c0-0.4,0-0.9-0.2-1.3 c0-0.9-0.3-1.9-0.5-2.8c-0.2-0.9-0.2-1-0.4-1.4c-0.1-0.5-0.5-1.7-0.8-2.6c-0.3-0.8-0.3-0.9-0.5-1.3L83.7,49l16.3-5.5l16.3,5.4 L116,49.7z M80,63.4c0,1.2-0.1,2.4-0.2,3.5c-1.9,16.5-16.9,28.2-33.3,26.3c-6.8-0.8-13.1-3.9-17.9-8.8C17,72.5,17.2,53.6,29,42 s30.8-11.4,42.4,0.4C76.9,48,80,55.5,80,63.4z M20,84.5c0.3,0.4,0.6,0.8,1,1.2l0.7,0.8c0.7,0.9,1.4,1.7,2.2,2.5s1.7,1.6,2.6,2.4 l0.9,0.7c0.6,0.5,1.2,0.9,1.8,1.4l1.1,0.7l1.8,1.1l1.3,0.7l1.8,0.9l1.3,0.6l1.9,0.7l1.3,0.4l2.1,0.5l1.3,0.3l2.4,0.4h1h0.2v10H20 V84.5z M70.5,167l-18.3-31.8c-0.9-1.6-0.3-3.6,1.3-4.5c0.5-0.3,1-0.4,1.6-0.4c0.3,0,0.7,0,1,0c0.8,0.2,1.5,0.8,1.9,1.5l15.3,26.7 v10.3c-0.4,0-0.7-0.1-1.1-0.2C71.4,168.2,70.8,167.7,70.5,167z M80,170v-13.3h40V170H80z M147.9,135.2L147.9,135.2L129.5,167 c-0.4,0.7-1.1,1.2-1.9,1.5c-0.3,0.1-0.7,0.2-1,0.2v-10l15.5-26.7c0.4-0.8,1.2-1.3,2-1.5c0.8-0.2,1.7-0.1,2.5,0.3 C148.3,131.7,148.8,133.7,147.9,135.2L147.9,135.2z M180,84.5V110h-26.7v-10h0.2h1l2.4-0.4l1.3-0.3l2.1-0.5l1.3-0.4l1.9-0.7 l1.3-0.6l1.8-0.9l1.3-0.7l1.8-1.1l1.1-0.7c0.6-0.4,1.2-0.9,1.8-1.4l0.9-0.7c0.9-0.7,1.7-1.5,2.6-2.4c0.8-0.8,1.5-1.6,2.2-2.5 l0.6-0.8C179.4,85.3,179.7,84.9,180,84.5z M180,42.3c-0.2-0.3-0.5-0.7-0.8-1c-0.3-0.3-0.8-1.1-1.2-1.6l-1.1-1.2 c-0.4-0.5-0.9-1-1.4-1.4l-0.3-0.3L180,38V42.3z M112.1,12.3c-0.2-0.4-0.3-0.8-0.2-1.3l0.9-3.3c0.3-0.6,0.9-1,1.6-1h0.4l77.2,20.7 c0.9,0.2,1.4,1.2,1.2,2.1l-0.9,3.3c-0.3,0.9-1.2,1.4-2,1.2l-6.1-1.6l0,0l-16.7-4.4l-54.5-14.7c-0.4-0.1-0.8-0.4-1-0.7L112.1,12.3z M128.9,33.4l-0.7,0.6c-0.7,0.6-1.5,1.1-2.2,1.7l-1,1c-0.6,0.6-1.3,1.2-1.8,1.9l-1,1c-0.6,0.7-1.2,1.5-1.8,2.3l-0.6,0.8l-0.2,0.3 l-18.5-6.2c-0.7-0.2-1.4-0.2-2.1,0L80.5,43l-0.2-0.3l-0.6-0.8c-0.6-0.8-1.2-1.6-1.8-2.3l-1-1c-0.6-0.6-1.2-1.3-1.8-1.9l-1.1-1 c-0.7-0.6-1.4-1.2-2.2-1.7l-0.7-0.6H128.9z M7.9,27.5L85.1,6.7h0.4c0.8,0,1.4,0.5,1.6,1.2l0.9,3.3c0.1,0.4,0.1,0.9-0.2,1.3 c-0.2,0.4-0.6,0.7-1,0.8l0,0L32,27.9l-16.1,4.3l0,0l-6.1,1.6c-0.9,0.2-1.8-0.3-2.1-1.2l-0.9-3.3C6.6,28.6,7.1,27.8,7.9,27.5z"/>
+          <path d="M50,60L50,60c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3s3.3-1.5,3.3-3.3C53.3,61.5,51.8,60,50,60z"/>
+          <path d="M150,66.7c1.8,0,3.3-1.5,3.3-3.3c0-1.8-1.5-3.3-3.3-3.3l0,0c-1.8,0-3.3,1.5-3.3,3.3C146.7,65.2,148.2,66.7,150,66.7z"/>
+        </g>
+      </svg>
+    </a>
+  </div>
+  <div class="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 border-b border-gray-200 h-18 justify-between px-4 sm:px-6 lg:mx-6 lg:px-0 xl:mx-8">
+    <button type="button" class="group leading-6 font-medium flex items-center space-x-3 sm:space-x-4 hover:text-gray-600 transition-colors duration-200 w-full py-2">
+      <svg width="24" height="24" fill="none" class="text-gray-400 group-hover:text-gray-500 transition-colors duration-200"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      <span>Quick search</span>
+      <span style="opacity: 1;" class="hidden sm:block text-gray-400 text-sm leading-5 py-0.5 px-1.5 border border-gray-300 rounded-md">
+        <span class="sr-only">Press </span>
+        <kbd class="font-sans">/</kbd>
+        <span class="sr-only"> to search</span>
+      </span>
+    </button>
+  </div>
+</div> -->
+    <main class="max-w-screen-xl m-auto grid grid-cols-12">
+      <nav class="hidden lg:block col-span-2 leading-8 p-4">
+  <ul class="sticky overflow-y-auto scrolling-touch top-4">
+    <li  class="mb-4">
+      <a class="overflow-hidden" href="/">
+        <span class="sr-only">J5e: Embedded JavaScript for IoT Devices and Robots</span>
+        <svg class="fill-current text-seaweed-dark w-24 lg:w-3/5"  viewBox="0 0 526.1 178.8" >
+          <path d="M203.4,115.7h30.7v7.9c0,20.2,11,26.9,22.6,26.9c11.5,0,21.8-7,21.8-25.4V32.2h-43.9V5.5h74.9v120
+    c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
+          <path d="M363.4,64.3c-10.3,0-18.2,3.8-18.2,3.8l-3.3,2.4c0,0,0.1-5.5,0-10.3l-0.4-28.1h69.9V5.5h-96.5L314,91.9l17,6.2 c0,0,11.3-7.2,26.4-7.2c19.4,0,34.3,11.8,34.3,29.5c0,18-15.6,29.4-32.2,29c-23.6-0.5-40.3-18.2-45.7-24.8v5.5 c0,10.6-2.2,17.2-6,24.5c9.2,8,28.6,24,54,24c35.5,0,61.4-25,61.4-58.6C423.4,89.5,401.1,64.3,363.4,64.3z"/>
+          <g>
+            <path d="M455.2,131.7c0,5,0.3,9.1,0.8,12.3c0.6,3.2,1.7,5.7,3.4,7.5c1.7,1.8,4.1,3.1,7.2,3.8c3.1,0.7,7.1,1,12.1,1 c4.9,0,10.5,0,16.7,0s14-0.1,23.2-0.4l-4.2,20.9c-3.9,0.1-7.4,0.2-10.5,0.3c-3.1,0.1-6,0.1-8.9,0.1c-2.9,0-5.7,0-8.5,0 c-2.8,0-5.9,0-9.2,0c-9.9,0-18-1.1-24.5-3.3c-6.4-2.2-11.5-5.4-15.2-9.6c-3.7-4.2-6.3-9.3-7.7-15.4c-1.5-6.1-2.2-13-2.2-20.8v-11.7 c0-8.4,0.8-15.7,2.3-22.2c1.5-6.4,4.2-11.8,8-16.2c3.8-4.4,9-7.7,15.5-9.9c6.5-2.2,14.7-3.3,24.6-3.3c9.2,0,16.8,1,22.9,3 c6.1,2,10.9,4.8,14.6,8.5c3.7,3.6,6.3,7.9,7.8,12.9c1.5,4.9,2.3,10.3,2.3,16.2v3.6c0,4.7-0.3,8.6-0.8,11.6c-0.6,3-1.5,5.3-2.8,7 c-1.3,1.7-3,2.8-5.1,3.3c-2.1,0.6-4.7,0.8-7.7,0.8H455.2z M477.8,85.3c-4.7,0-8.6,0.4-11.5,1.1c-2.9,0.8-5.2,2.2-6.9,4.2 c-1.7,2-2.8,4.7-3.3,8.2c-0.6,3.4-0.8,7.8-0.8,13.1h44.9V107c0-4-0.3-7.5-1-10.2c-0.7-2.8-1.9-5-3.6-6.7c-1.7-1.7-4-2.9-6.9-3.7 C485.7,85.6,482.1,85.3,477.8,85.3z"/>
+          </g>
+          <g>
+            <path d="M50,40c-12.9,0-23.3,10.4-23.3,23.3S37.1,86.7,50,86.7s23.3-10.4,23.3-23.3S62.9,40,50,40z M50,80 c-9.2,0-16.7-7.5-16.7-16.7S40.8,46.7,50,46.7s16.7,7.5,16.7,16.7S59.2,80,50,80z"/>
+            <path d="M150,86.7c12.9,0,23.3-10.4,23.3-23.3S162.9,40,150,40s-23.3,10.4-23.3,23.3S137.1,86.7,150,86.7z M150,46.7 c9.2,0,16.7,7.5,16.7,16.7S159.2,80,150,80c-9.2,0-16.7-7.5-16.7-16.7S140.8,46.7,150,46.7z"/>
+            <path d="M1.1,34.5c1,3.6,4.3,6.2,8.1,6.2c0.7,0,1.4-0.1,2.1-0.3l2-0.5V110c0,3.7,3,6.7,6.7,6.7h21.4l6,10.4 c-2.7,3.2-3.2,7.8-1.1,11.5l18.3,31.7c1.2,2.1,3.1,3.7,5.3,4.5c1.8,0.6,3.7,0.7,5.5,0.2c1.2,1.1,2.8,1.7,4.5,1.7h40 c1.6,0,3.2-0.6,4.4-1.7c0.7,0.2,1.5,0.3,2.3,0.3c1.1,0,2.1-0.2,3.1-0.5c2.4-0.7,4.3-2.3,5.6-4.5l18.3-31.8 c2.1-3.7,1.7-8.3-1.1-11.5l6-10.4H180c3.7,0,6.7-3,6.7-6.7V39.8l2,0.5c4.4,1.2,9-1.5,10.2-5.9l0.9-3.3l0,0c1.1-4.4-1.5-9-5.9-10.2 L116.7,0.3c-4.5-1.2-9.1,1.4-10.3,5.8c0,0,0,0.1,0,0.1l-0.9,3.3c-1.2,4.4,1.5,9,5.9,10.2l26.4,7H62.2l26.4-7.1 c4.4-1.2,7.1-5.8,5.9-10.2l-0.9-3.3c-1.2-4.4-5.8-7-10.3-5.8c0,0,0,0,0,0L6.1,21c-4.4,1.2-7,5.8-5.9,10.2L1.1,34.5z M20,42.3V38 l4.8-1.3l-0.3,0.4c-0.5,0.5-0.9,0.9-1.4,1.4L22,39.7c-0.4,0.5-0.8,1-1.2,1.6S20.2,42,20,42.3z M150,33.4c16.6,0,30,13.4,30,30 s-13.4,30-30,30s-30-13.4-30-30S133.4,33.4,150,33.4z M146.7,123.8c-1.4-0.3-2.9-0.3-4.3,0c-2.6,0.6-4.8,2.3-6.1,4.6L123.3,151 c-1-0.6-2.2-0.9-3.3-1h-6.7v-6.7c0-5.5-4.5-10-10-10V110h23.3c3.7,0,6.7-3,6.7-6.7V96c4.1,2.2,8.7,3.6,13.3,4v10 c0,2.8,1.8,5.3,4.5,6.3L146.7,123.8z M93.3,150v-6.7c0-1.8,1.5-3.3,3.3-3.3h6.7c1.8,0,3.3,1.5,3.3,3.3v6.7H93.3z M80,150 c-1.2,0-2.3,0.4-3.3,1l-13-22.4c-1.3-2.3-3.5-3.9-6-4.6c-1.4-0.4-2.9-0.4-4.3-0.2l-4.3-7.5c2.6-1,4.3-3.5,4.3-6.3v-10 c4.7-0.4,9.2-1.7,13.3-3.9v7.2c0,3.7,3,6.7,6.7,6.7h23.3v23.3c-5.5,0-10,4.5-10,10v6.7H80z M73.3,103.4v-6.7h53.3v6.7H73.3z M116,49.7c-0.2,0.4-0.3,0.9-0.5,1.3s-0.6,1.7-0.8,2.6c-0.3,0.9-0.3,0.9-0.4,1.4c-0.1,0.5-0.4,1.9-0.5,2.8c0,0.4,0,0.9-0.2,1.3 c-0.2,1.4-0.3,2.8-0.3,4.2c0,1.4,0.1,2.7,0.2,4.1c0,0.4,0,0.9,0.2,1.3c0.2,0.4,0.3,1.8,0.5,2.7c0.2,0.9,0.3,1,0.4,1.5 c0.1,0.5,0.4,1.6,0.7,2.3s0.4,1,0.6,1.5c0.2,0.5,0.6,1.5,0.9,2.2l0.7,1.5c0.4,0.7,0.8,1.4,1.2,2.1l0.9,1.3c0.5,0.7,1,1.4,1.5,2 L122,87c0.7,0.8,1.4,1.5,2.1,2.2l0.7,0.7l0,0H75.1l0,0l0.6-0.6c0.7-0.7,1.5-1.5,2.1-2.3l0.9-1.1c0.5-0.7,1-1.4,1.5-2.1l0.8-1.3 c0.4-0.7,0.8-1.4,1.2-2.1l0.7-1.4c0.3-0.7,0.7-1.5,0.9-2.2c0.3-0.7,0.4-1,0.6-1.5c0.2-0.5,0.5-1.6,0.7-2.4c0.2-0.8,0.3-1,0.4-1.5 c0.1-0.5,0.3-1.8,0.5-2.7c0.1-0.9,0-0.9,0.2-1.3c0.2-1.3,0.3-2.7,0.3-4.1c0-1.4-0.1-2.8-0.3-4.2c0-0.4,0-0.9-0.2-1.3 c0-0.9-0.3-1.9-0.5-2.8c-0.2-0.9-0.2-1-0.4-1.4c-0.1-0.5-0.5-1.7-0.8-2.6c-0.3-0.8-0.3-0.9-0.5-1.3L83.7,49l16.3-5.5l16.3,5.4 L116,49.7z M80,63.4c0,1.2-0.1,2.4-0.2,3.5c-1.9,16.5-16.9,28.2-33.3,26.3c-6.8-0.8-13.1-3.9-17.9-8.8C17,72.5,17.2,53.6,29,42 s30.8-11.4,42.4,0.4C76.9,48,80,55.5,80,63.4z M20,84.5c0.3,0.4,0.6,0.8,1,1.2l0.7,0.8c0.7,0.9,1.4,1.7,2.2,2.5s1.7,1.6,2.6,2.4 l0.9,0.7c0.6,0.5,1.2,0.9,1.8,1.4l1.1,0.7l1.8,1.1l1.3,0.7l1.8,0.9l1.3,0.6l1.9,0.7l1.3,0.4l2.1,0.5l1.3,0.3l2.4,0.4h1h0.2v10H20 V84.5z M70.5,167l-18.3-31.8c-0.9-1.6-0.3-3.6,1.3-4.5c0.5-0.3,1-0.4,1.6-0.4c0.3,0,0.7,0,1,0c0.8,0.2,1.5,0.8,1.9,1.5l15.3,26.7 v10.3c-0.4,0-0.7-0.1-1.1-0.2C71.4,168.2,70.8,167.7,70.5,167z M80,170v-13.3h40V170H80z M147.9,135.2L147.9,135.2L129.5,167 c-0.4,0.7-1.1,1.2-1.9,1.5c-0.3,0.1-0.7,0.2-1,0.2v-10l15.5-26.7c0.4-0.8,1.2-1.3,2-1.5c0.8-0.2,1.7-0.1,2.5,0.3 C148.3,131.7,148.8,133.7,147.9,135.2L147.9,135.2z M180,84.5V110h-26.7v-10h0.2h1l2.4-0.4l1.3-0.3l2.1-0.5l1.3-0.4l1.9-0.7 l1.3-0.6l1.8-0.9l1.3-0.7l1.8-1.1l1.1-0.7c0.6-0.4,1.2-0.9,1.8-1.4l0.9-0.7c0.9-0.7,1.7-1.5,2.6-2.4c0.8-0.8,1.5-1.6,2.2-2.5 l0.6-0.8C179.4,85.3,179.7,84.9,180,84.5z M180,42.3c-0.2-0.3-0.5-0.7-0.8-1c-0.3-0.3-0.8-1.1-1.2-1.6l-1.1-1.2 c-0.4-0.5-0.9-1-1.4-1.4l-0.3-0.3L180,38V42.3z M112.1,12.3c-0.2-0.4-0.3-0.8-0.2-1.3l0.9-3.3c0.3-0.6,0.9-1,1.6-1h0.4l77.2,20.7 c0.9,0.2,1.4,1.2,1.2,2.1l-0.9,3.3c-0.3,0.9-1.2,1.4-2,1.2l-6.1-1.6l0,0l-16.7-4.4l-54.5-14.7c-0.4-0.1-0.8-0.4-1-0.7L112.1,12.3z M128.9,33.4l-0.7,0.6c-0.7,0.6-1.5,1.1-2.2,1.7l-1,1c-0.6,0.6-1.3,1.2-1.8,1.9l-1,1c-0.6,0.7-1.2,1.5-1.8,2.3l-0.6,0.8l-0.2,0.3 l-18.5-6.2c-0.7-0.2-1.4-0.2-2.1,0L80.5,43l-0.2-0.3l-0.6-0.8c-0.6-0.8-1.2-1.6-1.8-2.3l-1-1c-0.6-0.6-1.2-1.3-1.8-1.9l-1.1-1 c-0.7-0.6-1.4-1.2-2.2-1.7l-0.7-0.6H128.9z M7.9,27.5L85.1,6.7h0.4c0.8,0,1.4,0.5,1.6,1.2l0.9,3.3c0.1,0.4,0.1,0.9-0.2,1.3 c-0.2,0.4-0.6,0.7-1,0.8l0,0L32,27.9l-16.1,4.3l0,0l-6.1,1.6c-0.9,0.2-1.8-0.3-2.1-1.2l-0.9-3.3C6.6,28.6,7.1,27.8,7.9,27.5z"/>
+            <path d="M50,60L50,60c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3s3.3-1.5,3.3-3.3C53.3,61.5,51.8,60,50,60z"/>
+            <path d="M150,66.7c1.8,0,3.3-1.5,3.3-3.3c0-1.8-1.5-3.3-3.3-3.3l0,0c-1.8,0-3.3,1.5-3.3,3.3C146.7,65.2,148.2,66.7,150,66.7z"/>
+          </g>
+        </svg>
+      </a>
+    </li>
+    <li class="font-bold text-xiketic mb-4 text-lg">Getting Started
+      <ul class="font-normal text-base">
+        <li><a href="/getting-started/installation/">Installing J5e</a></li>
+      </ul>
+    </li>
+    <li class="font-bold text-xiketic mb-4 text-lg">Core Concepts
+      <ul class="font-normal text-base">
+        <li><a href="/core-concepts/animation/">Animation</a></li>
+        <li><a href="/core-concepts/instantiation/">Device Instantiation</a></li>
+      </ul>
+    </li>
+    <li class="font-bold text-xiketic mb-4 text-lg">Modules
+      <ul class="font-normal text-base">
+        
+          <li class="pt-1"><a href="/modules/animation">animation</a></li>
+        
+          <li class="pt-1"><a href="/modules/button">button</a></li>
+        
+          <li class="pt-1"><a href="/modules/easing">easing</a></li>
+        
+          <li class="pt-1"><a href="/modules/event">event</a></li>
+        
+          <li class="pt-1"><a href="/modules/fn">fn</a></li>
+        
+          <li class="pt-1"><a href="/modules/gps">gps</a></li>
+        
+          <li class="pt-1"><a href="/modules/led">led</a></li>
+        
+          <li class="pt-1"><a href="/modules/light">light</a></li>
+        
+          <li class="pt-1"><a href="/modules/motor">motor</a></li>
+        
+          <li class="pt-1"><a href="/modules/relay">relay</a></li>
+        
+          <li class="pt-1"><a href="/modules/rgb">rgb</a></li>
+        
+          <li class="pt-1"><a href="/modules/sensor">sensor</a></li>
+        
+          <li class="pt-1"><a href="/modules/servo">servo</a></li>
+        
+          <li class="pt-1"><a href="/modules/switch">switch</a></li>
+        
+          <li class="pt-1"><a href="/modules/thermometer">thermometer</a></li>
+        
+          <li class="pt-1"><a href="/modules/withinable">withinable</a></li>
+        
+      </ul>
+    </li>
+  </ul>
+</nav>
+      <section class="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 p-8 py-4">
+        
+        <header>
+          <h1 id="j5e/servo.module">Module: <span class="font-normal">j5e/servo</span></h1>
+        </header>
+        <h2>Description</h2>
+        <p>
+          For controlling hobby servos, continuous rotation servos
+        </p>
+        
+          <h2>Requires</h2>
+          <ul>
+            
+              <li><a href="/modules/animation" class="underline">module:j5e/animation</a></li>
+            
+              <li><a href="/modules/easing" class="underline">module:j5e/easing</a></li>
+            
+              <li><a href="/modules/event" class="underline">module:j5e/event</a></li>
+            
+              <li><a href="/modules/fn" class="underline">module:j5e/fn</a></li>
+            
+          </ul>
+        
+        
+        
+        
+  <hr class="my-8"/>
+  <h2 id="Servo.class">Class: <span class="font-normal">Servo</span></h2>
+  <p>The Servo class allows for control of hobby servos</p>
+  <h3 id="Servo.constructor">Constructor</h3>
+  <pre class="my-8"><code class="language-javascript">new <span class="font-normal">Servo()</code></pre>
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="col-span-3 params-table-header">Name</div>
+    <div class="col-span-3 params-table-header">Type</div>
+    <div class="col-span-6 params-table-header">Description</div>
+    
+        <div class="col-span-3 p-4 params-cell">
+  io
+  
+    <br/><span class="font-normal"> (required)</span>
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    number<br/>
+  
+    string<br/>
+  
+    object
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  Pin identifier or IO Options (See {@tutorial C-INSTANTIATING})
+  
+</div>
+     
+  </div>
+  
+    <h2>Example</h2>
+    
+      <pre><code class="language-javascript"><caption>Sweep a servo back and forth</caption>
+import Servo from "j5e/servo";
+
+const servo = await new Servo(12);
+servo.sweep();</code></pre>
+    
+  
+  
+    <h2 id="Servo.properties">Properties</h2>
+    <div class="params-table">
+      <div class="col-span-3 params-table-header">Name</div>
+      <div class="col-span-3 params-table-header">Type</div>
+      <div class="col-span-6 params-table-header">Description</div>
+      
+        <div class="col-span-3 p-4 params-cell" id="Servo.history">
+  history
+  
+    <br/><span class="font-normal"> (read only)</span>
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  The last five position updates
+</div>
+
+      
+        <div class="col-span-3 p-4 params-cell" id="Servo.last">
+  last
+  
+    <br/><span class="font-normal"> (read only)</span>
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  The most recent position update
+</div>
+
+      
+        <div class="col-span-3 p-4 params-cell" id="Servo.position">
+  position
+  
+    <br/><span class="font-normal"> (read only)</span>
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  The most recent request and corrected position (factors in offset and invert)
+</div>
+
+      
+    </div>
+  
+  
+    <h2 id="Servo.events">Events</h2>
+    <ul>
+      
+        <li>move:complete - Fires when a servo reaches its requested position</li>
+      
+    </ul>
+  
+  
+    <h2 id="Servo.methods">Methods</h2>
+    
+      <h3 id="Servo.configure">configure</h3>
+<p>Configure a Servo</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.configure()</code></pre>
+
+  <p><strong>Returns:</strong> The instance on which the method was called</p>
+
+
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="col-span-3 params-table-header">Name</div>
+    <div class="col-span-3 params-table-header">Type</div>
+    <div class="col-span-6 params-table-header">Description</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  options
+  
+    <br/><span class="font-normal"> (required)</span>
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    object
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  Device configuration options
+  
+</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  options.pin
+  
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    number<br/>
+  
+    string
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  If passing an object, a pin number or pin identifier
+  
+</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  options.io
+  
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    string<br/>
+  
+    constructor
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  If passing an object, a string specifying a path to the IO provider or a constructor
+  
+    <br/>Default: <span class="font-normal">builtin/pwm</span>
+  
+</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  options.type
+  
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    string
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  Type of servo ("standard" or "continuous")
+  
+    <br/>Default: <span class="font-normal">"standard"</span>
+  
+</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  options.pwmRange
+  
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    Array.&lt;number&gt;
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  The pulse width range in microseconds
+  
+    <br/>Default: <span class="font-normal">[600, 2400]</span>
+  
+</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  options.deadband
+  
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    Array.&lt;number&gt;
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  The degree range at which a continuos motion servo will not turn
+  
+    <br/>Default: <span class="font-normal">[90,90]</span>
+  
+</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  options.range
+  
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    Array.&lt;number&gt;
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  The allowed range of motion in degrees
+  
+    <br/>Default: <span class="font-normal">[0, 180]</span>
+  
+</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  options.deviceRange
+  
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    Array.&lt;number&gt;
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  The physical range (throw) of the servo in degrees
+  
+    <br/>Default: <span class="font-normal">[0, 180]</span>
+  
+</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  options.startAt
+  
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    number
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  The desired start position of the servo
+  
+    <br/>Default: <span class="font-normal">"Any value within options.range"</span>
+  
+</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  options.offset
+  
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    number
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  Adjust the position of the servo for trimming
+  
+    <br/>Default: <span class="font-normal">0</span>
+  
+</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  options.invert
+  
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    boolean
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  Reverses the direction of rotation
+  
+</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  options.center
+  
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    boolean
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  Center the servo on instantiation
+  
+</div>
+    
+  </div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Move a continuos rotation servo forward</caption>
+import Servo from "j5e/servo";
+
+const servo = await new Servo({ pin: 12 });
+servo.configure({type: "continuous"});
+servo.cw();</code></pre>
+
+    
+      <h3 id="Servo.initialize">initialize</h3>
+<p>The initialization code for a servo</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.initialize()</code></pre>
+
+
+
+    
+      <h3 id="Servo.update">update</h3>
+<p>Calls the write param on the IO instance for this servo.</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.update()</code></pre>
+
+  <p><strong>Returns:</strong> </p>
+
+
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="col-span-3 params-table-header">Name</div>
+    <div class="col-span-3 params-table-header">Type</div>
+    <div class="col-span-6 params-table-header">Description</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  pulseWidth
+  
+    <br/><span class="font-normal"> (required)</span>
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    number
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  The target pulseWidth
+  
+</div>
+    
+  </div>
+
+
+    
+      <h3 id="Servo.to">to</h3>
+<p>Set the servo's position to given degree over time.</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.to()</code></pre>
+
+  <p><strong>Returns:</strong> instance</p>
+
+
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="col-span-3 params-table-header">Name</div>
+    <div class="col-span-3 params-table-header">Type</div>
+    <div class="col-span-6 params-table-header">Description</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  degrees
+  
+    <br/><span class="font-normal"> (required)</span>
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    Number<br/>
+  
+    Object
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  Degrees to move servo to or an animation object (See {@tutorial D-ANIMATING})
+  
+</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  time
+  
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    Number
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  Time to spend in motion. If degrees is a number and this value is ommitted, the servo will move to the requested degrees as quickly as possible.
+  
+</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  rate
+  
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    Number
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  The target frame rate of the motion transiton
+  
+    <br/>Default: <span class="font-normal">20</span>
+  
+</div>
+    
+  </div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 180° as quickly as possible</caption>
+import Servo from "j5e/servo";
+
+const servo = await new Servo(12);
+servo.to(180);</code></pre>
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 180° over one second</caption>
+import Servo from "j5e/servo";
+
+const servo = await new Servo(12);
+servo.to(180, 1000);</code></pre>
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 180° using an animation segment object</caption>
+import Servo from "j5e/servo";
+import { inOutQuad } from "j5e/easing";
+
+const servo = await new Servo(12);
+servo.to({
+  duration: 1000,
+  cuePoints: [0, 1.0],
+  keyFrames: [ null, 180 ],
+  easing: inOutQuad
+});</code></pre>
+
+    
+      <h3 id="Servo.step">step</h3>
+<p>Update the servo position by specified degrees (over time)</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.step()</code></pre>
+
+  <p><strong>Returns:</strong> </p>
+
+
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="col-span-3 params-table-header">Name</div>
+    <div class="col-span-3 params-table-header">Type</div>
+    <div class="col-span-6 params-table-header">Description</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  degrees
+  
+    <br/><span class="font-normal"> (required)</span>
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    Number
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  Degrees to turn servo to.
+  
+</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  time
+  
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    Number
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  Time to spend in motion.
+  
+</div>
+    
+  </div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 120° as quickly as possible</caption>
+import Servo from "j5e/servo";
+
+const servo = await new Servo(12);
+// The servo's default position is 90 degrees
+servo.step(30);</code></pre>
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 120° over one second</caption>
+import Servo from "j5e/servo";
+
+const servo = await new Servo(12);
+// The servo's default position is 90 degrees
+servo.step(30, 1000);</code></pre>
+
+    
+      <h3 id="Servo.min">min</h3>
+<p>min Set Servo to minimum degrees, defaults to 0deg</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.min()</code></pre>
+
+  <p><strong>Returns:</strong> </p>
+
+
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="col-span-3 params-table-header">Name</div>
+    <div class="col-span-3 params-table-header">Type</div>
+    <div class="col-span-6 params-table-header">Description</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  time
+  
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    Number
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  Time to spend in motion.
+  
+</div>
+    
+  </div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 0° as quickly as possible</caption>
+import Servo from "j5e/servo";
+
+const servo = await new Servo(12);
+servo.min();</code></pre>
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 0° over one second</caption>
+import Servo from "j5e/servo";
+
+const servo = await new Servo(12);
+servo.min(1000);</code></pre>
+
+    
+      <h3 id="Servo.max">max</h3>
+<p>Set Servo to maximum degrees, defaults to 180deg</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.max()</code></pre>
+
+  <p><strong>Returns:</strong> instance</p>
+
+
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="col-span-3 params-table-header">Name</div>
+    <div class="col-span-3 params-table-header">Type</div>
+    <div class="col-span-6 params-table-header">Description</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  time
+  
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    Number
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  Time to spend in motion.
+  
+</div>
+    
+  </div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Move a standard servo to 180° as quickly as possible</caption>
+import Servo from "j5e/servo";
+
+const servo = await new Servo(12);
+servo.max();</code></pre>
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Move a standard servo to 180° over one second</caption>
+import Servo from "j5e/servo";
+
+const servo = await new Servo(12);
+servo.max(1000);</code></pre>
+
+    
+      <h3 id="Servo.center">center</h3>
+<p>Set Servo to centerpoint, defaults to 90deg</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.center()</code></pre>
+
+  <p><strong>Returns:</strong> instance</p>
+
+
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="col-span-3 params-table-header">Name</div>
+    <div class="col-span-3 params-table-header">Type</div>
+    <div class="col-span-6 params-table-header">Description</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  time
+  
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    Number
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  Time to spend in motion.
+  
+</div>
+    
+  </div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 180° and then back to 90° as quickly as possible</caption>
+import Servo from "j5e/servo";
+import { timer } from "j5e/fn";
+
+const servo = await new Servo(12);
+servo.to(180);
+
+timer.setTimeout(function() {
+  servo.center();
+}, 1000);</code></pre>
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 180° and then back to 90° over one second</caption>
+import Servo from "j5e/servo";
+import { timer } from "j5e/fn";
+
+const servo = await new Servo(12);
+servo.to(180);
+
+timer.setTimeout(function() {
+  servo.center(1000);
+}, 1000);</code></pre>
+
+    
+      <h3 id="Servo.home">home</h3>
+<p>Return Servo to its startAt position</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.home()</code></pre>
+
+  <p><strong>Returns:</strong> </p>
+
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 180° and then back to 90° as quickly as possible</caption>
+import Servo from "j5e/servo";
+import { timer } from "j5e/fn";
+
+const servo = await new Servo(12);
+servo.to(180);
+
+timer.setTimeout(function() {
+  servo.home();
+}, 1000);</code></pre>
+
+    
+      <h3 id="Servo.sweep">sweep</h3>
+<p>Sweep the servo between min and max or provided range</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.sweep()</code></pre>
+
+  <p><strong>Returns:</strong> </p>
+
+
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="col-span-3 params-table-header">Name</div>
+    <div class="col-span-3 params-table-header">Type</div>
+    <div class="col-span-6 params-table-header">Description</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  opts
+  
+    <br/><span class="font-normal"> (required)</span>
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    Array<br/>
+  
+    Object
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  An array describing the range of the sweep in degrees or an animation segment options object
+  
+</div>
+    
+  </div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Sweep a servo back and forth between 10° to 170°</caption>
+import Servo from "j5e/servo";
+
+const servo = await new Servo(12);
+servo.sweep([10, 170]));
+
+example
+<caption>Sweep a servo back and forth between 10° to 170° with inOutCirc easing</caption>
+import Servo from "j5e/servo";
+import {inOutCirc} from "j5e/easing";
+
+const servo = await new Servo(12);
+servo.sweep({
+  keyFrames: [10, 170],
+  cuePoints: [0, 1],
+  easing: inOutCirc
+});</code></pre>
+
+    
+      <h3 id="Servo.stop">stop</h3>
+<p>Stop a moving servo
+return {Servo}</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.stop()</code></pre>
+
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Sweep a servo back and forth for two seconds then stop</caption>
+import Servo from "j5e/servo";
+
+const servo = await new Servo(12);
+servo.sweep([10, 170]));
+
+timer.setTimeout(function() {
+  servo.stop();
+}, 2000);</code></pre>
+
+    
+      <h3 id="Servo.cw">cw</h3>
+<p>Move a continuous rotation servo clockwise</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.cw()</code></pre>
+
+  <p><strong>Returns:</strong> </p>
+
+
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="col-span-3 params-table-header">Name</div>
+    <div class="col-span-3 params-table-header">Type</div>
+    <div class="col-span-6 params-table-header">Description</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  speed
+  
+    <br/><span class="font-normal"> (required)</span>
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    number
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  Speed between 0 and 1.
+  
+    <br/>Default: <span class="font-normal">1</span>
+  
+</div>
+    
+  </div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Move a continuos rotation servo clockwise</caption>
+import Servo from "j5e/servo";
+
+const servo = await new Servo({ pin: 12, type: "continuous"});
+servo.cw();</code></pre>
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Move a continuos rotation servo clockwise at half speed</caption>
+import Servo from "j5e/servo";
+
+const servo = await new Servo({ pin: 12, type: "continuous"});
+servo.cw(0.5);</code></pre>
+
+    
+      <h3 id="Servo.ccw">ccw</h3>
+<p>Move a continuous rotation servo counter-clockwise</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.ccw()</code></pre>
+
+  <p><strong>Returns:</strong> </p>
+
+
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="col-span-3 params-table-header">Name</div>
+    <div class="col-span-3 params-table-header">Type</div>
+    <div class="col-span-6 params-table-header">Description</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  speed
+  
+    <br/><span class="font-normal"> (required)</span>
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    number
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  Speed between 0 and 1.
+  
+    <br/>Default: <span class="font-normal">1</span>
+  
+</div>
+    
+  </div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Move a continuos rotation servo counter-clockwise</caption>
+import Servo from "j5e/servo";
+
+const servo = await new Servo({ pin: 12, type: "continuous"});
+servo.ccw();</code></pre>
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Move a continuos rotation servo counter-clockwise at half speed</caption>
+import Servo from "j5e/servo";
+
+const servo = await new Servo({ pin: 12, type: "continuous"});
+servo.ccw(0.5);</code></pre>
+
+    
+      <h3 id="Servo.normalize">normalize</h3>
+<p></p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.normalize()</code></pre>
+
+
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="col-span-3 params-table-header">Name</div>
+    <div class="col-span-3 params-table-header">Type</div>
+    <div class="col-span-6 params-table-header">Description</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  number || object
+  
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  keyFrames An array of step values or a keyFrame objects
+  
+</div>
+    
+  </div>
+
+
+    
+      <h3 id="Servo.render">render</h3>
+<p>render</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.render()</code></pre>
+
+
+
+    
+      <h3 id="Servo.on">on</h3>
+<p>Create an event listener</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.on()</code></pre>
+
+
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="col-span-3 params-table-header">Name</div>
+    <div class="col-span-3 params-table-header">Type</div>
+    <div class="col-span-6 params-table-header">Description</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  event
+  
+    <br/><span class="font-normal"> (required)</span>
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    string
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  The name of the event to listen for
+  
+</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  listener
+  
+    <br/><span class="font-normal"> (required)</span>
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    function
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  A callback to run when the event is fired.
+  
+</div>
+    
+  </div>
+
+
+    
+      <h3 id="Servo.removeListener">removeListener</h3>
+<p>Remove an event listener</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.removeListener()</code></pre>
+
+
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="col-span-3 params-table-header">Name</div>
+    <div class="col-span-3 params-table-header">Type</div>
+    <div class="col-span-6 params-table-header">Description</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  event
+  
+    <br/><span class="font-normal"> (required)</span>
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    string
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  The name of the event that we are removing a listener from
+  
+</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  listener
+  
+    <br/><span class="font-normal"> (required)</span>
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    function
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  The callback that we are removing
+  
+</div>
+    
+  </div>
+
+
+    
+      <h3 id="Servo.emit">emit</h3>
+<p>Emit an event</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.emit()</code></pre>
+
+
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="col-span-3 params-table-header">Name</div>
+    <div class="col-span-3 params-table-header">Type</div>
+    <div class="col-span-6 params-table-header">Description</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  event
+  
+    <br/><span class="font-normal"> (required)</span>
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    string
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  The name of the event to emit
+  
+</div>
+    
+  </div>
+
+
+    
+      <h3 id="Servo.once">once</h3>
+<p>Create an event listener that will only fire one time.</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.once()</code></pre>
+
+
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="col-span-3 params-table-header">Name</div>
+    <div class="col-span-3 params-table-header">Type</div>
+    <div class="col-span-6 params-table-header">Description</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  event
+  
+    <br/><span class="font-normal"> (required)</span>
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    string
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  The name of the event to listen for
+  
+</div>
+    
+      <div class="col-span-3 p-4 params-cell">
+  listener
+  
+    <br/><span class="font-normal"> (required)</span>
+  
+</div>
+<div class="col-span-3 p-4 params-cell">
+  
+    function
+  
+</div>
+<div class="col-span-6 p-4 params-cell">
+  A callback to run when the event is fired.
+  
+</div>
+    
+  </div>
+
+
+    
+  
+  
+
+      </section>
+      <nav class="hidden xl:block xl:col-span-2">
+  <ul class="sticky top-20">
+    
+      <li class="font-bold text-xiketic mb-2 text-xl">
+        <a href="#Servo.class">Servo Class</a>
+        <ul class="text-base">
+          <li class="my-4 text-lg"><a href="#Servo.constructor">Constructor</a></li>
+          
+            <li class="text-lg"><a href="#Servo.properties">Properties</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#Servo.history">history</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#Servo.last">last</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#Servo.position">position</a></li>
+            
+          
+          
+            <li class="text-lg"><a href="#Servo.events">Events</a></li>
+          
+          
+            <li class="mt-4 text-lg"><a href="#Servo.methods">Methods</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Servo.configure">configure</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Servo.initialize">initialize</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Servo.update">update</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Servo.to">to</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Servo.step">step</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Servo.min">min</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Servo.max">max</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Servo.center">center</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Servo.home">home</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Servo.sweep">sweep</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Servo.stop">stop</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Servo.cw">cw</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Servo.ccw">ccw</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Servo.normalize">normalize</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Servo.render">render</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Servo.on">on</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Servo.removeListener">removeListener</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Servo.emit">emit</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Servo.once">once</a></li>
+            
+          
+        </ul>
+      </li>
+    
+  </ul>
+</nav>
+    </main>
+    <footer class="m-4 max-w-screen-xl m-auto">
+  Footer
+</footer>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+---
+pagination:
+    data: module-pages
+    size: 1
+    alias: module
+permalink: "modules/{{ module.name | replace: 'j5e', '' | slug }}/"
+---
+<!doctype html>
+<html>
+  {% include head %}
+  <body class="bg-white">
+    {% include header %}
+    <!-- {% include search-bar %} -->
+    <main class="max-w-screen-xl m-auto grid grid-cols-12">
+      {% include left-nav %}
+      <section class="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 p-8 py-4">
+        {% if module.ignore  %}
+          <p class="bg-orange p-2 text-center mb-4"><span class="font-bold">Note:</span> This module is not part of the public API.</span></p>
+        {% endif %}
+        <header>
+          <h1 id="{{module.name}}.module">Module: <span class="font-normal">{{ module.name }}</span></h1>
+        </header>
+        <h2>Description</h2>
+        <p>
+          {{ module.description}}
+        </p>
+        {% if module.requires %}
+          <h2>Requires</h2>
+          <ul>
+            {% for mod in module.requires %}
+              <li><a href="/modules/{{ mod | remove: "module:j5e/" }}" class="underline">{{ mod }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        {% if module.see %}
+          <h2>References</h2>
+          <ul>
+            {% for see in module.see %}
+              <li>{% include linkable %}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        {% if module.examples %}
+          <h2>Examples</h2>
+          {% for example in module.examples %}
+          <pre><code class="language-javascript"></code>>{{ example }}</code></pre>
+          {% endfor %}
+        {% endif %}
+        {% include classes %}
+      </section>
+      {% include right-nav %}
+    </main>
+    {% include footer %}
+  </body>
+</html>

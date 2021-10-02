@@ -1,0 +1,284 @@
+<!doctype html>
+<html>
+  <head>
+  <title>Animation</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+  <body class="bg-white">
+    <header class="py-2 bg-gradient-to-r from-xiketic to-seaweed overflow-hidden">
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative flex justify-center items-center">
+      <div class="text-white"> module.name J5e: Embedded JavaScript for IoT Devices and Robots</div>
+      <span aria-hidden="true" class="hidden sm:block mx-6 h-6 w-px bg-white bg-opacity-20"></span>
+      <div class="ml-6 sm:ml-0">
+        <a class="whitespace-nowrap inline-flex rounded-md bg-white py-2 px-3 text-xs font-semibold uppercase text-xiketic hover:bg-opacity-90" href="/docs/whats-new">What&rsquo;s New? →</a>
+      </div>
+    </div>
+  </div>
+</header>
+    <!--<div class="sticky top-0 z-40 lg:z-50 w-full max-w-7xl mx-auto my-4 bg-white grid grid-cols-12 p-4">
+  <div class="invisible md:visible md:col-span-2">
+    <a class="overflow-hidden" href="/">
+      <span class="sr-only">J5e: Embedded JavaScript for IoT Devices and Robots</span>
+      <svg class="fill-current text-seaweed-dark w-24 lg:w-3/5"  viewBox="0 0 526.1 178.8" >
+        <path d="M203.4,115.7h30.7v7.9c0,20.2,11,26.9,22.6,26.9c11.5,0,21.8-7,21.8-25.4V32.2h-43.9V5.5h74.9v120
+c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
+        <path d="M363.4,64.3c-10.3,0-18.2,3.8-18.2,3.8l-3.3,2.4c0,0,0.1-5.5,0-10.3l-0.4-28.1h69.9V5.5h-96.5L314,91.9l17,6.2 c0,0,11.3-7.2,26.4-7.2c19.4,0,34.3,11.8,34.3,29.5c0,18-15.6,29.4-32.2,29c-23.6-0.5-40.3-18.2-45.7-24.8v5.5 c0,10.6-2.2,17.2-6,24.5c9.2,8,28.6,24,54,24c35.5,0,61.4-25,61.4-58.6C423.4,89.5,401.1,64.3,363.4,64.3z"/>
+        <g>
+          <path d="M455.2,131.7c0,5,0.3,9.1,0.8,12.3c0.6,3.2,1.7,5.7,3.4,7.5c1.7,1.8,4.1,3.1,7.2,3.8c3.1,0.7,7.1,1,12.1,1 c4.9,0,10.5,0,16.7,0s14-0.1,23.2-0.4l-4.2,20.9c-3.9,0.1-7.4,0.2-10.5,0.3c-3.1,0.1-6,0.1-8.9,0.1c-2.9,0-5.7,0-8.5,0 c-2.8,0-5.9,0-9.2,0c-9.9,0-18-1.1-24.5-3.3c-6.4-2.2-11.5-5.4-15.2-9.6c-3.7-4.2-6.3-9.3-7.7-15.4c-1.5-6.1-2.2-13-2.2-20.8v-11.7 c0-8.4,0.8-15.7,2.3-22.2c1.5-6.4,4.2-11.8,8-16.2c3.8-4.4,9-7.7,15.5-9.9c6.5-2.2,14.7-3.3,24.6-3.3c9.2,0,16.8,1,22.9,3 c6.1,2,10.9,4.8,14.6,8.5c3.7,3.6,6.3,7.9,7.8,12.9c1.5,4.9,2.3,10.3,2.3,16.2v3.6c0,4.7-0.3,8.6-0.8,11.6c-0.6,3-1.5,5.3-2.8,7 c-1.3,1.7-3,2.8-5.1,3.3c-2.1,0.6-4.7,0.8-7.7,0.8H455.2z M477.8,85.3c-4.7,0-8.6,0.4-11.5,1.1c-2.9,0.8-5.2,2.2-6.9,4.2 c-1.7,2-2.8,4.7-3.3,8.2c-0.6,3.4-0.8,7.8-0.8,13.1h44.9V107c0-4-0.3-7.5-1-10.2c-0.7-2.8-1.9-5-3.6-6.7c-1.7-1.7-4-2.9-6.9-3.7 C485.7,85.6,482.1,85.3,477.8,85.3z"/>
+        </g>
+        <g>
+          <path d="M50,40c-12.9,0-23.3,10.4-23.3,23.3S37.1,86.7,50,86.7s23.3-10.4,23.3-23.3S62.9,40,50,40z M50,80 c-9.2,0-16.7-7.5-16.7-16.7S40.8,46.7,50,46.7s16.7,7.5,16.7,16.7S59.2,80,50,80z"/>
+          <path d="M150,86.7c12.9,0,23.3-10.4,23.3-23.3S162.9,40,150,40s-23.3,10.4-23.3,23.3S137.1,86.7,150,86.7z M150,46.7 c9.2,0,16.7,7.5,16.7,16.7S159.2,80,150,80c-9.2,0-16.7-7.5-16.7-16.7S140.8,46.7,150,46.7z"/>
+          <path d="M1.1,34.5c1,3.6,4.3,6.2,8.1,6.2c0.7,0,1.4-0.1,2.1-0.3l2-0.5V110c0,3.7,3,6.7,6.7,6.7h21.4l6,10.4 c-2.7,3.2-3.2,7.8-1.1,11.5l18.3,31.7c1.2,2.1,3.1,3.7,5.3,4.5c1.8,0.6,3.7,0.7,5.5,0.2c1.2,1.1,2.8,1.7,4.5,1.7h40 c1.6,0,3.2-0.6,4.4-1.7c0.7,0.2,1.5,0.3,2.3,0.3c1.1,0,2.1-0.2,3.1-0.5c2.4-0.7,4.3-2.3,5.6-4.5l18.3-31.8 c2.1-3.7,1.7-8.3-1.1-11.5l6-10.4H180c3.7,0,6.7-3,6.7-6.7V39.8l2,0.5c4.4,1.2,9-1.5,10.2-5.9l0.9-3.3l0,0c1.1-4.4-1.5-9-5.9-10.2 L116.7,0.3c-4.5-1.2-9.1,1.4-10.3,5.8c0,0,0,0.1,0,0.1l-0.9,3.3c-1.2,4.4,1.5,9,5.9,10.2l26.4,7H62.2l26.4-7.1 c4.4-1.2,7.1-5.8,5.9-10.2l-0.9-3.3c-1.2-4.4-5.8-7-10.3-5.8c0,0,0,0,0,0L6.1,21c-4.4,1.2-7,5.8-5.9,10.2L1.1,34.5z M20,42.3V38 l4.8-1.3l-0.3,0.4c-0.5,0.5-0.9,0.9-1.4,1.4L22,39.7c-0.4,0.5-0.8,1-1.2,1.6S20.2,42,20,42.3z M150,33.4c16.6,0,30,13.4,30,30 s-13.4,30-30,30s-30-13.4-30-30S133.4,33.4,150,33.4z M146.7,123.8c-1.4-0.3-2.9-0.3-4.3,0c-2.6,0.6-4.8,2.3-6.1,4.6L123.3,151 c-1-0.6-2.2-0.9-3.3-1h-6.7v-6.7c0-5.5-4.5-10-10-10V110h23.3c3.7,0,6.7-3,6.7-6.7V96c4.1,2.2,8.7,3.6,13.3,4v10 c0,2.8,1.8,5.3,4.5,6.3L146.7,123.8z M93.3,150v-6.7c0-1.8,1.5-3.3,3.3-3.3h6.7c1.8,0,3.3,1.5,3.3,3.3v6.7H93.3z M80,150 c-1.2,0-2.3,0.4-3.3,1l-13-22.4c-1.3-2.3-3.5-3.9-6-4.6c-1.4-0.4-2.9-0.4-4.3-0.2l-4.3-7.5c2.6-1,4.3-3.5,4.3-6.3v-10 c4.7-0.4,9.2-1.7,13.3-3.9v7.2c0,3.7,3,6.7,6.7,6.7h23.3v23.3c-5.5,0-10,4.5-10,10v6.7H80z M73.3,103.4v-6.7h53.3v6.7H73.3z M116,49.7c-0.2,0.4-0.3,0.9-0.5,1.3s-0.6,1.7-0.8,2.6c-0.3,0.9-0.3,0.9-0.4,1.4c-0.1,0.5-0.4,1.9-0.5,2.8c0,0.4,0,0.9-0.2,1.3 c-0.2,1.4-0.3,2.8-0.3,4.2c0,1.4,0.1,2.7,0.2,4.1c0,0.4,0,0.9,0.2,1.3c0.2,0.4,0.3,1.8,0.5,2.7c0.2,0.9,0.3,1,0.4,1.5 c0.1,0.5,0.4,1.6,0.7,2.3s0.4,1,0.6,1.5c0.2,0.5,0.6,1.5,0.9,2.2l0.7,1.5c0.4,0.7,0.8,1.4,1.2,2.1l0.9,1.3c0.5,0.7,1,1.4,1.5,2 L122,87c0.7,0.8,1.4,1.5,2.1,2.2l0.7,0.7l0,0H75.1l0,0l0.6-0.6c0.7-0.7,1.5-1.5,2.1-2.3l0.9-1.1c0.5-0.7,1-1.4,1.5-2.1l0.8-1.3 c0.4-0.7,0.8-1.4,1.2-2.1l0.7-1.4c0.3-0.7,0.7-1.5,0.9-2.2c0.3-0.7,0.4-1,0.6-1.5c0.2-0.5,0.5-1.6,0.7-2.4c0.2-0.8,0.3-1,0.4-1.5 c0.1-0.5,0.3-1.8,0.5-2.7c0.1-0.9,0-0.9,0.2-1.3c0.2-1.3,0.3-2.7,0.3-4.1c0-1.4-0.1-2.8-0.3-4.2c0-0.4,0-0.9-0.2-1.3 c0-0.9-0.3-1.9-0.5-2.8c-0.2-0.9-0.2-1-0.4-1.4c-0.1-0.5-0.5-1.7-0.8-2.6c-0.3-0.8-0.3-0.9-0.5-1.3L83.7,49l16.3-5.5l16.3,5.4 L116,49.7z M80,63.4c0,1.2-0.1,2.4-0.2,3.5c-1.9,16.5-16.9,28.2-33.3,26.3c-6.8-0.8-13.1-3.9-17.9-8.8C17,72.5,17.2,53.6,29,42 s30.8-11.4,42.4,0.4C76.9,48,80,55.5,80,63.4z M20,84.5c0.3,0.4,0.6,0.8,1,1.2l0.7,0.8c0.7,0.9,1.4,1.7,2.2,2.5s1.7,1.6,2.6,2.4 l0.9,0.7c0.6,0.5,1.2,0.9,1.8,1.4l1.1,0.7l1.8,1.1l1.3,0.7l1.8,0.9l1.3,0.6l1.9,0.7l1.3,0.4l2.1,0.5l1.3,0.3l2.4,0.4h1h0.2v10H20 V84.5z M70.5,167l-18.3-31.8c-0.9-1.6-0.3-3.6,1.3-4.5c0.5-0.3,1-0.4,1.6-0.4c0.3,0,0.7,0,1,0c0.8,0.2,1.5,0.8,1.9,1.5l15.3,26.7 v10.3c-0.4,0-0.7-0.1-1.1-0.2C71.4,168.2,70.8,167.7,70.5,167z M80,170v-13.3h40V170H80z M147.9,135.2L147.9,135.2L129.5,167 c-0.4,0.7-1.1,1.2-1.9,1.5c-0.3,0.1-0.7,0.2-1,0.2v-10l15.5-26.7c0.4-0.8,1.2-1.3,2-1.5c0.8-0.2,1.7-0.1,2.5,0.3 C148.3,131.7,148.8,133.7,147.9,135.2L147.9,135.2z M180,84.5V110h-26.7v-10h0.2h1l2.4-0.4l1.3-0.3l2.1-0.5l1.3-0.4l1.9-0.7 l1.3-0.6l1.8-0.9l1.3-0.7l1.8-1.1l1.1-0.7c0.6-0.4,1.2-0.9,1.8-1.4l0.9-0.7c0.9-0.7,1.7-1.5,2.6-2.4c0.8-0.8,1.5-1.6,2.2-2.5 l0.6-0.8C179.4,85.3,179.7,84.9,180,84.5z M180,42.3c-0.2-0.3-0.5-0.7-0.8-1c-0.3-0.3-0.8-1.1-1.2-1.6l-1.1-1.2 c-0.4-0.5-0.9-1-1.4-1.4l-0.3-0.3L180,38V42.3z M112.1,12.3c-0.2-0.4-0.3-0.8-0.2-1.3l0.9-3.3c0.3-0.6,0.9-1,1.6-1h0.4l77.2,20.7 c0.9,0.2,1.4,1.2,1.2,2.1l-0.9,3.3c-0.3,0.9-1.2,1.4-2,1.2l-6.1-1.6l0,0l-16.7-4.4l-54.5-14.7c-0.4-0.1-0.8-0.4-1-0.7L112.1,12.3z M128.9,33.4l-0.7,0.6c-0.7,0.6-1.5,1.1-2.2,1.7l-1,1c-0.6,0.6-1.3,1.2-1.8,1.9l-1,1c-0.6,0.7-1.2,1.5-1.8,2.3l-0.6,0.8l-0.2,0.3 l-18.5-6.2c-0.7-0.2-1.4-0.2-2.1,0L80.5,43l-0.2-0.3l-0.6-0.8c-0.6-0.8-1.2-1.6-1.8-2.3l-1-1c-0.6-0.6-1.2-1.3-1.8-1.9l-1.1-1 c-0.7-0.6-1.4-1.2-2.2-1.7l-0.7-0.6H128.9z M7.9,27.5L85.1,6.7h0.4c0.8,0,1.4,0.5,1.6,1.2l0.9,3.3c0.1,0.4,0.1,0.9-0.2,1.3 c-0.2,0.4-0.6,0.7-1,0.8l0,0L32,27.9l-16.1,4.3l0,0l-6.1,1.6c-0.9,0.2-1.8-0.3-2.1-1.2l-0.9-3.3C6.6,28.6,7.1,27.8,7.9,27.5z"/>
+          <path d="M50,60L50,60c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3s3.3-1.5,3.3-3.3C53.3,61.5,51.8,60,50,60z"/>
+          <path d="M150,66.7c1.8,0,3.3-1.5,3.3-3.3c0-1.8-1.5-3.3-3.3-3.3l0,0c-1.8,0-3.3,1.5-3.3,3.3C146.7,65.2,148.2,66.7,150,66.7z"/>
+        </g>
+      </svg>
+    </a>
+  </div>
+  <div class="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 border-b border-gray-200 h-18 justify-between px-4 sm:px-6 lg:mx-6 lg:px-0 xl:mx-8">
+    <button type="button" class="group leading-6 font-medium flex items-center space-x-3 sm:space-x-4 hover:text-gray-600 transition-colors duration-200 w-full py-2">
+      <svg width="24" height="24" fill="none" class="text-gray-400 group-hover:text-gray-500 transition-colors duration-200"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      <span>Quick search</span>
+      <span style="opacity: 1;" class="hidden sm:block text-gray-400 text-sm leading-5 py-0.5 px-1.5 border border-gray-300 rounded-md">
+        <span class="sr-only">Press </span>
+        <kbd class="font-sans">/</kbd>
+        <span class="sr-only"> to search</span>
+      </span>
+    </button>
+  </div>
+</div>-->
+    <main class="max-w-screen-xl m-auto grid grid-cols-12">
+      <nav class="hidden lg:block col-span-2 leading-8 p-4">
+  <ul class="sticky overflow-y-auto scrolling-touch top-4">
+    <li  class="mb-4">
+      <a class="overflow-hidden" href="/">
+        <span class="sr-only">J5e: Embedded JavaScript for IoT Devices and Robots</span>
+        <svg class="fill-current text-seaweed-dark w-24 lg:w-3/5"  viewBox="0 0 526.1 178.8" >
+          <path d="M203.4,115.7h30.7v7.9c0,20.2,11,26.9,22.6,26.9c11.5,0,21.8-7,21.8-25.4V32.2h-43.9V5.5h74.9v120
+    c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
+          <path d="M363.4,64.3c-10.3,0-18.2,3.8-18.2,3.8l-3.3,2.4c0,0,0.1-5.5,0-10.3l-0.4-28.1h69.9V5.5h-96.5L314,91.9l17,6.2 c0,0,11.3-7.2,26.4-7.2c19.4,0,34.3,11.8,34.3,29.5c0,18-15.6,29.4-32.2,29c-23.6-0.5-40.3-18.2-45.7-24.8v5.5 c0,10.6-2.2,17.2-6,24.5c9.2,8,28.6,24,54,24c35.5,0,61.4-25,61.4-58.6C423.4,89.5,401.1,64.3,363.4,64.3z"/>
+          <g>
+            <path d="M455.2,131.7c0,5,0.3,9.1,0.8,12.3c0.6,3.2,1.7,5.7,3.4,7.5c1.7,1.8,4.1,3.1,7.2,3.8c3.1,0.7,7.1,1,12.1,1 c4.9,0,10.5,0,16.7,0s14-0.1,23.2-0.4l-4.2,20.9c-3.9,0.1-7.4,0.2-10.5,0.3c-3.1,0.1-6,0.1-8.9,0.1c-2.9,0-5.7,0-8.5,0 c-2.8,0-5.9,0-9.2,0c-9.9,0-18-1.1-24.5-3.3c-6.4-2.2-11.5-5.4-15.2-9.6c-3.7-4.2-6.3-9.3-7.7-15.4c-1.5-6.1-2.2-13-2.2-20.8v-11.7 c0-8.4,0.8-15.7,2.3-22.2c1.5-6.4,4.2-11.8,8-16.2c3.8-4.4,9-7.7,15.5-9.9c6.5-2.2,14.7-3.3,24.6-3.3c9.2,0,16.8,1,22.9,3 c6.1,2,10.9,4.8,14.6,8.5c3.7,3.6,6.3,7.9,7.8,12.9c1.5,4.9,2.3,10.3,2.3,16.2v3.6c0,4.7-0.3,8.6-0.8,11.6c-0.6,3-1.5,5.3-2.8,7 c-1.3,1.7-3,2.8-5.1,3.3c-2.1,0.6-4.7,0.8-7.7,0.8H455.2z M477.8,85.3c-4.7,0-8.6,0.4-11.5,1.1c-2.9,0.8-5.2,2.2-6.9,4.2 c-1.7,2-2.8,4.7-3.3,8.2c-0.6,3.4-0.8,7.8-0.8,13.1h44.9V107c0-4-0.3-7.5-1-10.2c-0.7-2.8-1.9-5-3.6-6.7c-1.7-1.7-4-2.9-6.9-3.7 C485.7,85.6,482.1,85.3,477.8,85.3z"/>
+          </g>
+          <g>
+            <path d="M50,40c-12.9,0-23.3,10.4-23.3,23.3S37.1,86.7,50,86.7s23.3-10.4,23.3-23.3S62.9,40,50,40z M50,80 c-9.2,0-16.7-7.5-16.7-16.7S40.8,46.7,50,46.7s16.7,7.5,16.7,16.7S59.2,80,50,80z"/>
+            <path d="M150,86.7c12.9,0,23.3-10.4,23.3-23.3S162.9,40,150,40s-23.3,10.4-23.3,23.3S137.1,86.7,150,86.7z M150,46.7 c9.2,0,16.7,7.5,16.7,16.7S159.2,80,150,80c-9.2,0-16.7-7.5-16.7-16.7S140.8,46.7,150,46.7z"/>
+            <path d="M1.1,34.5c1,3.6,4.3,6.2,8.1,6.2c0.7,0,1.4-0.1,2.1-0.3l2-0.5V110c0,3.7,3,6.7,6.7,6.7h21.4l6,10.4 c-2.7,3.2-3.2,7.8-1.1,11.5l18.3,31.7c1.2,2.1,3.1,3.7,5.3,4.5c1.8,0.6,3.7,0.7,5.5,0.2c1.2,1.1,2.8,1.7,4.5,1.7h40 c1.6,0,3.2-0.6,4.4-1.7c0.7,0.2,1.5,0.3,2.3,0.3c1.1,0,2.1-0.2,3.1-0.5c2.4-0.7,4.3-2.3,5.6-4.5l18.3-31.8 c2.1-3.7,1.7-8.3-1.1-11.5l6-10.4H180c3.7,0,6.7-3,6.7-6.7V39.8l2,0.5c4.4,1.2,9-1.5,10.2-5.9l0.9-3.3l0,0c1.1-4.4-1.5-9-5.9-10.2 L116.7,0.3c-4.5-1.2-9.1,1.4-10.3,5.8c0,0,0,0.1,0,0.1l-0.9,3.3c-1.2,4.4,1.5,9,5.9,10.2l26.4,7H62.2l26.4-7.1 c4.4-1.2,7.1-5.8,5.9-10.2l-0.9-3.3c-1.2-4.4-5.8-7-10.3-5.8c0,0,0,0,0,0L6.1,21c-4.4,1.2-7,5.8-5.9,10.2L1.1,34.5z M20,42.3V38 l4.8-1.3l-0.3,0.4c-0.5,0.5-0.9,0.9-1.4,1.4L22,39.7c-0.4,0.5-0.8,1-1.2,1.6S20.2,42,20,42.3z M150,33.4c16.6,0,30,13.4,30,30 s-13.4,30-30,30s-30-13.4-30-30S133.4,33.4,150,33.4z M146.7,123.8c-1.4-0.3-2.9-0.3-4.3,0c-2.6,0.6-4.8,2.3-6.1,4.6L123.3,151 c-1-0.6-2.2-0.9-3.3-1h-6.7v-6.7c0-5.5-4.5-10-10-10V110h23.3c3.7,0,6.7-3,6.7-6.7V96c4.1,2.2,8.7,3.6,13.3,4v10 c0,2.8,1.8,5.3,4.5,6.3L146.7,123.8z M93.3,150v-6.7c0-1.8,1.5-3.3,3.3-3.3h6.7c1.8,0,3.3,1.5,3.3,3.3v6.7H93.3z M80,150 c-1.2,0-2.3,0.4-3.3,1l-13-22.4c-1.3-2.3-3.5-3.9-6-4.6c-1.4-0.4-2.9-0.4-4.3-0.2l-4.3-7.5c2.6-1,4.3-3.5,4.3-6.3v-10 c4.7-0.4,9.2-1.7,13.3-3.9v7.2c0,3.7,3,6.7,6.7,6.7h23.3v23.3c-5.5,0-10,4.5-10,10v6.7H80z M73.3,103.4v-6.7h53.3v6.7H73.3z M116,49.7c-0.2,0.4-0.3,0.9-0.5,1.3s-0.6,1.7-0.8,2.6c-0.3,0.9-0.3,0.9-0.4,1.4c-0.1,0.5-0.4,1.9-0.5,2.8c0,0.4,0,0.9-0.2,1.3 c-0.2,1.4-0.3,2.8-0.3,4.2c0,1.4,0.1,2.7,0.2,4.1c0,0.4,0,0.9,0.2,1.3c0.2,0.4,0.3,1.8,0.5,2.7c0.2,0.9,0.3,1,0.4,1.5 c0.1,0.5,0.4,1.6,0.7,2.3s0.4,1,0.6,1.5c0.2,0.5,0.6,1.5,0.9,2.2l0.7,1.5c0.4,0.7,0.8,1.4,1.2,2.1l0.9,1.3c0.5,0.7,1,1.4,1.5,2 L122,87c0.7,0.8,1.4,1.5,2.1,2.2l0.7,0.7l0,0H75.1l0,0l0.6-0.6c0.7-0.7,1.5-1.5,2.1-2.3l0.9-1.1c0.5-0.7,1-1.4,1.5-2.1l0.8-1.3 c0.4-0.7,0.8-1.4,1.2-2.1l0.7-1.4c0.3-0.7,0.7-1.5,0.9-2.2c0.3-0.7,0.4-1,0.6-1.5c0.2-0.5,0.5-1.6,0.7-2.4c0.2-0.8,0.3-1,0.4-1.5 c0.1-0.5,0.3-1.8,0.5-2.7c0.1-0.9,0-0.9,0.2-1.3c0.2-1.3,0.3-2.7,0.3-4.1c0-1.4-0.1-2.8-0.3-4.2c0-0.4,0-0.9-0.2-1.3 c0-0.9-0.3-1.9-0.5-2.8c-0.2-0.9-0.2-1-0.4-1.4c-0.1-0.5-0.5-1.7-0.8-2.6c-0.3-0.8-0.3-0.9-0.5-1.3L83.7,49l16.3-5.5l16.3,5.4 L116,49.7z M80,63.4c0,1.2-0.1,2.4-0.2,3.5c-1.9,16.5-16.9,28.2-33.3,26.3c-6.8-0.8-13.1-3.9-17.9-8.8C17,72.5,17.2,53.6,29,42 s30.8-11.4,42.4,0.4C76.9,48,80,55.5,80,63.4z M20,84.5c0.3,0.4,0.6,0.8,1,1.2l0.7,0.8c0.7,0.9,1.4,1.7,2.2,2.5s1.7,1.6,2.6,2.4 l0.9,0.7c0.6,0.5,1.2,0.9,1.8,1.4l1.1,0.7l1.8,1.1l1.3,0.7l1.8,0.9l1.3,0.6l1.9,0.7l1.3,0.4l2.1,0.5l1.3,0.3l2.4,0.4h1h0.2v10H20 V84.5z M70.5,167l-18.3-31.8c-0.9-1.6-0.3-3.6,1.3-4.5c0.5-0.3,1-0.4,1.6-0.4c0.3,0,0.7,0,1,0c0.8,0.2,1.5,0.8,1.9,1.5l15.3,26.7 v10.3c-0.4,0-0.7-0.1-1.1-0.2C71.4,168.2,70.8,167.7,70.5,167z M80,170v-13.3h40V170H80z M147.9,135.2L147.9,135.2L129.5,167 c-0.4,0.7-1.1,1.2-1.9,1.5c-0.3,0.1-0.7,0.2-1,0.2v-10l15.5-26.7c0.4-0.8,1.2-1.3,2-1.5c0.8-0.2,1.7-0.1,2.5,0.3 C148.3,131.7,148.8,133.7,147.9,135.2L147.9,135.2z M180,84.5V110h-26.7v-10h0.2h1l2.4-0.4l1.3-0.3l2.1-0.5l1.3-0.4l1.9-0.7 l1.3-0.6l1.8-0.9l1.3-0.7l1.8-1.1l1.1-0.7c0.6-0.4,1.2-0.9,1.8-1.4l0.9-0.7c0.9-0.7,1.7-1.5,2.6-2.4c0.8-0.8,1.5-1.6,2.2-2.5 l0.6-0.8C179.4,85.3,179.7,84.9,180,84.5z M180,42.3c-0.2-0.3-0.5-0.7-0.8-1c-0.3-0.3-0.8-1.1-1.2-1.6l-1.1-1.2 c-0.4-0.5-0.9-1-1.4-1.4l-0.3-0.3L180,38V42.3z M112.1,12.3c-0.2-0.4-0.3-0.8-0.2-1.3l0.9-3.3c0.3-0.6,0.9-1,1.6-1h0.4l77.2,20.7 c0.9,0.2,1.4,1.2,1.2,2.1l-0.9,3.3c-0.3,0.9-1.2,1.4-2,1.2l-6.1-1.6l0,0l-16.7-4.4l-54.5-14.7c-0.4-0.1-0.8-0.4-1-0.7L112.1,12.3z M128.9,33.4l-0.7,0.6c-0.7,0.6-1.5,1.1-2.2,1.7l-1,1c-0.6,0.6-1.3,1.2-1.8,1.9l-1,1c-0.6,0.7-1.2,1.5-1.8,2.3l-0.6,0.8l-0.2,0.3 l-18.5-6.2c-0.7-0.2-1.4-0.2-2.1,0L80.5,43l-0.2-0.3l-0.6-0.8c-0.6-0.8-1.2-1.6-1.8-2.3l-1-1c-0.6-0.6-1.2-1.3-1.8-1.9l-1.1-1 c-0.7-0.6-1.4-1.2-2.2-1.7l-0.7-0.6H128.9z M7.9,27.5L85.1,6.7h0.4c0.8,0,1.4,0.5,1.6,1.2l0.9,3.3c0.1,0.4,0.1,0.9-0.2,1.3 c-0.2,0.4-0.6,0.7-1,0.8l0,0L32,27.9l-16.1,4.3l0,0l-6.1,1.6c-0.9,0.2-1.8-0.3-2.1-1.2l-0.9-3.3C6.6,28.6,7.1,27.8,7.9,27.5z"/>
+            <path d="M50,60L50,60c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3s3.3-1.5,3.3-3.3C53.3,61.5,51.8,60,50,60z"/>
+            <path d="M150,66.7c1.8,0,3.3-1.5,3.3-3.3c0-1.8-1.5-3.3-3.3-3.3l0,0c-1.8,0-3.3,1.5-3.3,3.3C146.7,65.2,148.2,66.7,150,66.7z"/>
+          </g>
+        </svg>
+      </a>
+    </li>
+    <li class="font-bold text-xiketic mb-4 text-lg">Getting Started
+      <ul class="font-normal text-base">
+        <li><a href="/getting-started/installation/">Installing J5e</a></li>
+      </ul>
+    </li>
+    <li class="font-bold text-xiketic mb-4 text-lg">Core Concepts
+      <ul class="font-normal text-base">
+        <li><a href="/core-concepts/animation/">Animation</a></li>
+        <li><a href="/core-concepts/instantiation/">Device Instantiation</a></li>
+      </ul>
+    </li>
+    <li class="font-bold text-xiketic mb-4 text-lg">Modules
+      <ul class="font-normal text-base">
+        
+          <li class="pt-1"><a href="/modules/animation">animation</a></li>
+        
+          <li class="pt-1"><a href="/modules/button">button</a></li>
+        
+          <li class="pt-1"><a href="/modules/easing">easing</a></li>
+        
+          <li class="pt-1"><a href="/modules/event">event</a></li>
+        
+          <li class="pt-1"><a href="/modules/fn">fn</a></li>
+        
+          <li class="pt-1"><a href="/modules/gps">gps</a></li>
+        
+          <li class="pt-1"><a href="/modules/led">led</a></li>
+        
+          <li class="pt-1"><a href="/modules/light">light</a></li>
+        
+          <li class="pt-1"><a href="/modules/motor">motor</a></li>
+        
+          <li class="pt-1"><a href="/modules/relay">relay</a></li>
+        
+          <li class="pt-1"><a href="/modules/rgb">rgb</a></li>
+        
+          <li class="pt-1"><a href="/modules/sensor">sensor</a></li>
+        
+          <li class="pt-1"><a href="/modules/servo">servo</a></li>
+        
+          <li class="pt-1"><a href="/modules/switch">switch</a></li>
+        
+          <li class="pt-1"><a href="/modules/thermometer">thermometer</a></li>
+        
+          <li class="pt-1"><a href="/modules/withinable">withinable</a></li>
+        
+      </ul>
+    </li>
+  </ul>
+</nav>
+      <section class="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 p-8 py-4">
+        <header>
+          <h1></h1>
+        </header>
+        <h1>Animation</h1>
+<p>Note: This is a pretty advanced topic and you should be comfortable with controlling devices without the Animation class before diving in.</p>
+<p>Ideally robotics or IoT projects monitor and respond to changes in their environment, but sometimes we just want to follow a predetermined set of rules without regard to input. Think of the animatronic characters you've seen at theme parks and sub-par pizza restaurants. They follow a scripted behavior that never varies. The Animation class allows you to do exactly that.</p>
+<p>The class constructs objects that represent a single Animation. An Animation consists of a target and a queue. A target is the device or list of devices that are being animated. A queue is an array of short, modular sequences (i.e. blink, fade, sit, stand, walk, etc). These sequences are called &quot;segments&quot; and are pushed onto the animation queue. Segments in the queue are synchronous and run first-in, first-out.</p>
+<p>Things that can be animated:</p>
+<ul>
+<li><a href="/modules/servo/">Servos</a></li>
+<li><a href="/modules/led/">LEDs</a></li>
+<li><a href="/modules/rgb/">RGB LEDs</a></li>
+</ul>
+<p>Before you start creating animations you should be familiar with the API of the device(s) you will be conrolling. You don't have to call the device methods directly but if you haven't used them before this will be a hard way to learn about them.</p>
+<h2>Instantiate an Animation</h2>
+<p>Instantiating an Animation is simple. Invoke the constructor and pass in the instances of the devices you want to control in an array. For example:</p>
+<pre><code class="language-js">// Create an animation using three servos
+import Servo from &quot;j5e/servo&quot;;
+import Animation from &quot;j5e/animation&quot;;
+
+const coxa = await new Servo(12);
+const femur = await new Servo(13);
+const tibia = await new Servo(14);
+
+const leg = await new Animation([coxa, femur, tibia]);
+
+  // Now we can animate the leg
+</code></pre>
+<p>The devices you pass in are called the &quot;Target&quot; and you can think of them as the actors on your stage. There will be a practical limit on how many things you can actually control while still achieving reasonable performance, but that's dependent on your microcontroller and all the other things happening in your program.</p>
+<h2>Enqueue a Segment</h2>
+<p>Now you need to make your Animation instance do something. You do this by enqueuing a segment or a series of segments. A segment is a short bit of an animation that represents a discreet, hopefully reusable sequence of actions. For example, you might have a walking robot with a segment called &quot;stand&quot;. This Segment would describe all the movements that need to be made by every joint in order for your robot to stand. Let's do that for the single leg we instantiated above. The stand segment for that leg might look like this:</p>
+<pre><code class="language-js">const stand = {
+  duration: 2000,
+  cuePoints: [0, 0.5, 1.0],
+  keyFrames: [ 
+    [{degrees: 0}, {degrees: 135}, {degrees: 180}],
+    [{degrees: 0}, {degrees: 90}, {degrees: 180}],
+    [{degrees: 0}, {degrees: 45}, {degrees: 180}]
+  ]
+};
+</code></pre>
+<p>Note that a segment is just a JavaScript Object literal. It can be defined statically like we've done here or with some clever code that will define a unique segment based on some input parameters (cool huh?). Here's a breakdown of all the properties you can include on an animation segment:</p>
+<ul>
+<li><strong>target:</strong> Overrides the target passed when the Animation was created</li>
+<li><strong>duration:</strong> Duration of the segment in milliseconds (default 1000)</li>
+<li><strong>cuePoints:</strong> Array of values from 0.0 to 1.0 representing the beginning and end of the animation respectively (default [0, 1])</li>
+<li><strong>keyFrames:</strong> A 1 or 2 dimensional array of device positions over time. See more on keyFrames below. (required)</li>
+<li><strong>easing:</strong> An easing function from <code>j5e/easing</code> to apply to the playback head on the timeline. (default: &quot;linear&quot;)</li>
+<li><strong>loop:</strong> When true, segment will loop until animation.next() or animation.stop() is called (default: false)</li>
+<li><strong>loopback:</strong> The cuePoint that the animation will loop back to. If the animation is playing in reverse, this is the point at which the animation will &quot;loop back&quot; to 1.0 (default: 0.0)</li>
+<li><strong>metronomic:</strong> Will play to cuePoint[1] then play in reverse to cuePoint[0]. If the segment is set to loop then the animation will play back and forth until next(), pause() or stop() are called (default: false)</li>
+<li><strong>progress:</strong> The starting point for the playback head (default 0.0)</li>
+<li><strong>currentSpeed:</strong> Controls the speed of the playback head and scales the calculated duration of this and all subsequent segments until it is changed by another segment or a call to the speed() method (default: 1.0)</li>
+<li><strong>fps:</strong> The maximum frames per second for the segment (default: 60)</li>
+<li><strong>onstart:</strong> function to execute when segment is started (default: none)</li>
+<li><strong>onpause:</strong> function to execute when segment is paused (default: none)</li>
+<li><strong>onstop:</strong> function to execute when animation is stopped (default: none)</li>
+<li><strong>oncomplete:</strong> function to execute when segment is completed (default: none)</li>
+<li><strong>onloop:</strong> function to execute when segment loops (default: none)</li>
+</ul>
+<h2>keyFrame Arrays</h2>
+<p>If a single device is being animated, keyFrames may be a single dimensional array. If more than one device is being animated it must be 2-dimensional (an array of arrays). We call this a &quot;keyFrame set&quot;. The index of each device in the target maps to the same index in a keyFrame set so the length of the two should be identical.</p>
+<p>Each keyFrame array should have an element that maps to each cue point in the cuePoints array. keyFrames[0][0] for example represents the position of the first device in your animation target at the first cuePoint. These may or may not be the same length. If there are fewer elements in a keyFrame array than in the cuePoints array, then the keyFrame array will be right padded with null values.</p>
+<p>Elements in a keyFrame array represent a device's position at the corresponding cuePoint. Positions can be described in a number of ways:</p>
+<h3>A Number</h3>
+<p>This is a step in value from the previous cuePoint's value.</p>
+<pre><code>// servo.last.degrees === 90
+... cuePoints: [0, 0.25, 0.5, 0.75, 1], keyFrames : [ -45, 90, -135, 20, 70 ], ...
+</code></pre>
+<p><img src="/images/Animation-Graph(1).png" alt="keyFrames as a number"></p>
+<h3>null</h3>
+<p>The behavior of null varies depending upon its position in the array. If used in the first position, it will adopt the device's current value at the time the animation segment is played.</p>
+<pre><code>// servo.last.degrees === 90
+... cuePoints: [0, 0.25, 0.5, 0.75, 1], keyFrames : [ null, 90, -135, 20, 70 ], ...
+</code></pre>
+<p><img src="/images/Animation-Graph(2).png" alt="null at beginning"></p>
+<hr>
+<p>If used at the end of the array it will copy the previous known value.</p>
+<pre><code>// servo.last.degrees === 90
+... cuePoints: [0, 0.25, 0.5, 0.75, 1], keyFrames : [ -45, 90, -135, 20, null ], ...
+</code></pre>
+<p><img src="/images/Animation-Graph(3).png" alt="null at end"></p>
+<hr>
+<p>If used between two keyFrames this cuePoint will be ignored for this device and the value will be a tween of the previous and next known values.</p>
+<pre><code>// servo.last.degrees === 90
+... cuePoints: [0, 0.25, 0.5, 0.75, 1], keyFrames : [ -45, 90, null, 20, -155 ], ...
+</code></pre>
+<p><img src="/images/Animation-Graph(4).png" alt="null in middle"></p>
+<h3>false</h3>
+<p>Will copy the previous known value (don't move the device)</p>
+<pre><code>// servo.last.degrees === 90
+... cuePoints: [0, 0.25, 0.5, 0.75, 1], keyFrames : [ -45, 90, false, 20, -155 ], ...
+</code></pre>
+<p><img src="/images/Animation-Graph(5).png" alt="false as a keyFrame"></p>
+<h3>A keyFrame object</h3>
+<p>The available properties for keyFrame objects are:</p>
+<p><strong>step</strong>: A step in value from the previous cuePoint value.</p>
+<pre><code>// servo.last.degrees === 90
+... cuePoints: [0, 0.25, 0.5, 0.75, 1], keyFrames : [ -45, {step: 90}, -135, 20, 70 ], ...
+</code></pre>
+<p><img src="/images/Animation-Graph(1).png" alt="step property"></p>
+<p><strong>value</strong>: An explicit value.</p>
+<pre><code>// servo.last.degrees === 90
+... cuePoints: [0, 0.25, 0.5, 0.75, 1], keyFrames : [ -45, {value: 180}, -135, 20, 70 ], ...
+</code></pre>
+<p><img src="/images/Animation-Graph(6).png" alt="degrees property"></p>
+<p><strong>degrees</strong>: The servo position in degrees.</p>
+<pre><code>// servo.last.degrees === 90
+... cuePoints: [0, 0.25, 0.5, 0.75, 1], keyFrames : [ -45, {degrees: 180}, -135, 20, 70 ], ...
+</code></pre>
+<p><img src="/images/Animation-Graph(6).png" alt="degrees property"></p>
+<p><strong>easing</strong>: An easing function from ease-component to apply to the tweened value of the previous and next keyFrames. See the <a href="https://www.npmjs.org/package/ease-component">ease-component docs</a> for a list of available easing functions (default: &quot;linear&quot;)</p>
+<pre><code>// servo.last.degrees === 90
+... cuePoints: [0, 0.25, 0.5, 0.75, 1], keyFrames : [ -45, {degrees: 180, easing: &quot;inOutCirc&quot;, -135, 20, 70 ], ...
+</code></pre>
+<p><img src="/images/Animation-Graph(7).png" alt="easing property"></p>
+<p><strong>copyDegrees</strong>: An index from this keyFrames array from which we copy the calculated or explicitly set degrees value.</p>
+<pre><code>// servo.last.degrees === 90
+... cuePoints: [0, 0.25, 0.5, 0.75, 1], keyFrames : [ -45, 90, -135, { copyDegrees: 1 }, -45 ], ...
+</code></pre>
+<p><img src="/images/Animation-Graph(8).png" alt="copyDegrees property"></p>
+<p><strong>copyFrame</strong>: An index from this keyFrames array from which we copy all of the properties.</p>
+<pre><code>// servo.last.degrees === 90
+... cuePoints: [0, 0.25, 0.5, 0.75, 1], keyFrames : [ -45, 90, -135, { copyFrame: 1 }, 70 ], ...
+</code></pre>
+<p><img src="/images/Animation-Graph(9).png" alt="copyFrame property"></p>
+<p><strong>position</strong>: A two or three tuple defining a coordinate in 2d or 3d space 🤯.</p>
+<pre><code>// two-tuple
+...  cuePoints: [0, 0.5, 1], keyFrames : [ { position: [10, 10 ] }, { position: [20, 50 ] }, { position: [10, 10 ] } ] ...
+
+// three-tuple
+...  cuePoints: [0, 0.5, 1], keyFrames : [ { position: [10, 10, 0 ] }, { position: [20, 50, 90 ] }, { position: [10, 10, 0 ] } ] ...
+</code></pre>
+<h2>Tips for Moving Robots</h2>
+<ul>
+<li>Reason about the position of your robot's limbs using <a href="https://github.com/dtex/tharp/wiki/Coordinate-Spaces">robot coordinate space</a>.</li>
+<li>Divide animations into small reusable components. These will be your segments.</li>
+<li>Use the servos' isInverted property to keep movements on the left and right side moving in the same direction when passed the same value.</li>
+<li>Use the servos' offset property so that 90 degrees on one is the same as 90 degrees on corresponding servos.</li>
+<li>Use onstop functions when your looping animation is halted to return a bot's animated limbs to their home positions. In other words, when an animation stops make sure your bot is ready for the next segment, whatever it may be.</li>
+<li>Use loopback properties to give you a place for prep moves that occur before a looping segment. For example, when walking the first step is half the size of the looping steps.</li>
+<li>Nearly always use null as the first value in an animation segment. It allows the segment to be started from a variety of positions.</li>
+<li>For most walking bots a step cannot be accomplished by turning a single servo. Joints must work together to keep your end effector (foot) in a stable position on the floor. Turning a single servo will force effectors to work against each other and make your robot look clumsy.</li>
+<li>Use an easing function on your segments. It gives your bot more natural movement.</li>
+<li>Easing functions can be applied to the segment timeline AND keyframes. They are additive. Experiment with this.</li>
+<li>Avoid having your end effector impact the ground with significant force. Doing so will eventually strip your servo gears.</li>
+</ul>
+<p><a href="https://en.wikipedia.org/wiki/Key_frame">&quot;Key frames&quot; on Wikipedia</a></p>
+
+      </section>
+    </main>
+    <footer class="m-4 max-w-screen-xl m-auto">
+  Footer
+</footer>
+  </body>
+</html>

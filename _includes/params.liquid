@@ -1,0 +1,18 @@
+<div class="col-span-3 p-4 params-cell">
+  {{ param.name | escape }}
+  {% if param.optional %}
+  {% else %}
+    <br/><span class="font-normal"> (required)</span>
+  {% endif %}
+</div>
+<div class="col-span-3 p-4 params-cell">
+  {% for type in param.type.names %}
+    {{ type | escape }}{% if forloop.last == false %}<br/>{% endif %}
+  {% endfor %}
+</div>
+<div class="col-span-6 p-4 params-cell">
+  {{ param.description }}
+  {% if param.defaultvalue %}
+    <br/>Default: <span class="font-normal">{{ param.defaultvalue }}</span>
+  {% endif %}
+</div>

@@ -1,0 +1,21 @@
+<h3 id="{{ class.name }}.{{ method.name }}">{{ method.name }}</h3>
+<p>{{ method.description }}</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">{{ class.name | downcase }}.{{ method.name }}({% for param in method.primaryParams %}{{ param.name }}{% if forloop.last == false %}, {% endif %}{% endfor %})</code></pre>
+{% if method.returns %}
+  <p><strong>Returns:</strong> {{ method.returns[0].description }}</p>
+{% endif %}
+{% if method.params.length > 0 %}
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="col-span-3 params-table-header">Name</div>
+    <div class="col-span-3 params-table-header">Type</div>
+    <div class="col-span-6 params-table-header">Description</div>
+    {% for param in method.params %}
+      {% include params %}
+    {% endfor %}
+  </div>
+{% endif %}
+{% for example in method.examples %}
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">{{ example }}</code></pre>
+{% endfor %}
