@@ -6,7 +6,7 @@ module.exports = function(eleventyConfig) {
   // Return your Object options:
   return {
     dir: {
-      output: "_site",
+      output: "docs",
       data: "_data"
     }
   }
