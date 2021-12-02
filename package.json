@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "rm -rf _site && mkdir _site && postcss css/styles.css > _site/style.css && npx esbuild ./js/highlight/highlight.js --bundle --minify --outfile=./js/index.min.js && eleventy --serve --quiet",
-    "build": "rm -rf _site && eleventy && NODE_ENV=production postcss css/styles.css > _site/style.css"
+    "dev": "rm -rf docs && mkdir docs && postcss css/styles.css > docs/style.css && npx esbuild ./js/highlight/highlight.js --bundle --minify --outfile=./js/index.min.js && eleventy --serve --quiet",
+    "build": "rm -rf docs && eleventy && NODE_ENV=production postcss css/styles.css > docs/style.css"
   },
   "repository": {
     "type": "git",
