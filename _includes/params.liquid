@@ -1,18 +1,27 @@
-<div class="col-span-3 p-4 params-cell">
-  {{ param.name | escape }}
-  {% if param.optional %}
-  {% else %}
-    <br/><span class="font-normal"> (required)</span>
-  {% endif %}
-</div>
-<div class="col-span-3 p-4 params-cell">
-  {% for type in param.type.names %}
-    {{ type | escape }}{% if forloop.last == false %}<br/>{% endif %}
-  {% endfor %}
-</div>
-<div class="col-span-6 p-4 params-cell">
-  {{ param.description }}
-  {% if param.defaultvalue %}
-    <br/>Default: <span class="font-normal">{{ param.defaultvalue }}</span>
-  {% endif %}
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  {% for param in myParams %}
+    <div class="params-cell">
+      {{ param.name | escape }}
+      {% if param.optional %}
+      {% else %}
+        <br/><span class="font-normal text-red"> (required)</span>
+      {% endif %}
+    </div>
+    <div class="params-cell">
+      {% for type in param.type.names %}
+      {% if forloop.last %} or {% endif %}{{ type | escape }}{% if forloop.last == false %}, {% endif %}
+      {% endfor %}
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      {{ param.description }}
+      {% if param.defaultvalue %}
+        <br/><span class="text-red pt-4">Default: {{ param.defaultvalue }}</span>
+      {% endif %}
+    </div>
+  {% endfor %} 
 </div>

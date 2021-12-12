@@ -15,7 +15,7 @@ The ```ioOptions``` object follows the [ECMA-419 specification](https://www.ecma
 
 In the physical world a provider is a thing (hardware or software) that provides constructors for IO instances. In ECMA-419 parlance, an "IO" is a single GPIO (General-Purpose Input/Output) instance. That GPIO Instance could be Digital, PWM, Serial, I2C, SPI or something else. The IO could be built into the device running your JavaScript, part of a physically connected device like an expander or external microcontroller, or even proxied through a cloud service that controls a device located halfway around the world. 
 
-In code a provider is a set of IO classes that work with your microcontroller. Providers could come from a board manufacturer, an expander library, an IoT cloud service, an open source hero, or maybe even you. For the ESP8266 and ESP32, providers are bundled with the [Moddable SDK](https://github.com/Moddable-OpenSource/moddable), and are found in that SDK's IO module. They give access to the built-in GPIO pins.
+In code a provider is a set of IO classes that work with your hardware. Providers could come from a board manufacturer, an expander library, an IoT cloud service, an open source hero, or maybe you've created your own. For the ESP8266 and ESP32, providers are bundled with the [Moddable SDK](https://github.com/Moddable-OpenSource/moddable), and are found in that SDK's IO module. They give access to the built-in GPIO pins.
 
 ## The `ioOptions` object
 The ```ioOptions``` object describes the configuration for an IO instance. This configuration could include which board to use, which pins, what data rate, etc. The details depend on your situation, provider, and desired IO type. 

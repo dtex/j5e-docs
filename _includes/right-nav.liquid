@@ -1,8 +1,8 @@
-<nav class="hidden xl:block xl:col-span-2">
-  <ul class="sticky top-20">
+<nav class="hidden lg:block lg:relative h-screen z-40 inset-0 flex-none  col-span-2 sticky overflow-y-scroll scrolling-touch ">
+  <ul class="sticky pt-12 text-xl">
     {% for class in module.classes %}
       <li class="font-bold text-xiketic mb-2 text-xl">
-        <a href="#{{class.name}}.class">{{ class.name }} Class</a>
+        <a href="#{{class.name}}.class">{{ class.name }} class</a>
         <ul class="text-base">
           <li class="my-4 text-lg"><a href="#{{ class.name }}.constructor">Constructor</a></li>
           {% if class.properties.length > 0 %}
@@ -12,7 +12,7 @@
             {% endfor %}
           {% endif %}
           {% if class.fires.length > 0 %}
-            <li class="text-lg"><a href="#{{ class.name }}.events">Events</a></li>
+            <li class="my-4 text-lg"><a href="#{{ class.name }}.events">Events</a></li>
           {% endif %}
           {% if class.methods.length > 0 %}
             <li class="mt-4 text-lg"><a href="#{{ class.name }}.methods">Methods</a></li>

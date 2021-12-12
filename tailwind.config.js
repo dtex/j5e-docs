@@ -28,6 +28,7 @@ module.exports = {
       },
       "red": "#ff0000",
       "white": "#ffffff",
+      "gray": "#cccccc",
       "black": "#000000",
     },
     extend: {},

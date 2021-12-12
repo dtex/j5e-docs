@@ -1,29 +1,31 @@
 <!doctype html>
 <html>
   <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
   <link rel="stylesheet" href="/style.css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
-  <script>hljs.highlightAll();</script>
+  <script src="/js/index.min.js"></script>
+  <script>
+    hljs.configure({ignoreUnescapedHTML: true });
+    hljs.highlightAll();
+  </script>
 </head>
-  <body class="bg-white">
-    <header class="py-2 bg-gradient-to-r from-xiketic to-seaweed overflow-hidden">
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="relative flex justify-center items-center">
-      <div class="text-white"> module.name J5e: Embedded JavaScript for IoT Devices and Robots</div>
-      <span aria-hidden="true" class="hidden sm:block mx-6 h-6 w-px bg-white bg-opacity-20"></span>
-      <div class="ml-6 sm:ml-0">
-        <a class="whitespace-nowrap inline-flex rounded-md bg-white py-2 px-3 text-xs font-semibold uppercase text-xiketic hover:bg-opacity-90" href="/docs/whats-new">What&rsquo;s New? →</a>
-      </div>
-    </div>
+  <body class="bg-gray">
+    <div class="max-w-screen-2xl grid grid-cols-12 mx-auto bg-white shadow-2xl">
+      <header class="py-2 bg-gradient-to-r from-xiketic to-seaweed col-span-12">
+  <div class="relative mx-auto px-4 sm:px-6 lg:px-8 text-right">
+    <a class="whitespace-nowrap inline-flex rounded-md bg-white py-2 px-3 text-xs font-semibold uppercase text-xiketic hover:bg-opacity-90 no-underline" href="/docs/whats-new">What&rsquo;s New? →</a>
+    <a class="whitespace-nowrap inline-flex rounded-md bg-white py-2 px-3 ml-8 text-xs font-semibold uppercase text-xiketic hover:bg-opacity-90 no-underline" href="https://github.com/dtex/j5e">Github</a>
   </div>
+  
 </header>
-    <!-- <div class="sticky top-0 z-40 lg:z-50 w-full max-w-7xl mx-auto my-4 bg-white grid grid-cols-12 p-4">
-  <div class="invisible md:visible md:col-span-2">
-    <a class="overflow-hidden" href="/">
-      <span class="sr-only">J5e: Embedded JavaScript for IoT Devices and Robots</span>
-      <svg class="fill-current text-seaweed-dark w-24 lg:w-3/5"  viewBox="0 0 526.1 178.8" >
+      <!-- <div xclass="sticky top-0 z-40 lg:z-50 w-full max-w-7xl mx-auto my-4 bg-white grid grid-cols-12 p-4">
+  <div xclass="invisible md:visible md:col-span-2">
+    <a xclass="overflow-hidden" href="/">
+      <span xclass="sr-only">J5e: Embedded JavaScript for IoT Devices and Robots</span>
+      <svg xclass="fill-current text-seaweed-dark w-24 lg:w-3/5"  viewBox="0 0 526.1 178.8" >
         <path d="M203.4,115.7h30.7v7.9c0,20.2,11,26.9,22.6,26.9c11.5,0,21.8-7,21.8-25.4V32.2h-43.9V5.5h74.9v120
 c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
         <path d="M363.4,64.3c-10.3,0-18.2,3.8-18.2,3.8l-3.3,2.4c0,0,0.1-5.5,0-10.3l-0.4-28.1h69.9V5.5h-96.5L314,91.9l17,6.2 c0,0,11.3-7.2,26.4-7.2c19.4,0,34.3,11.8,34.3,29.5c0,18-15.6,29.4-32.2,29c-23.6-0.5-40.3-18.2-45.7-24.8v5.5 c0,10.6-2.2,17.2-6,24.5c9.2,8,28.6,24,54,24c35.5,0,61.4-25,61.4-58.6C423.4,89.5,401.1,64.3,363.4,64.3z"/>
@@ -40,151 +42,148 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
       </svg>
     </a>
   </div>
-  <div class="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 border-b border-gray-200 h-18 justify-between px-4 sm:px-6 lg:mx-6 lg:px-0 xl:mx-8">
-    <button type="button" class="group leading-6 font-medium flex items-center space-x-3 sm:space-x-4 hover:text-gray-600 transition-colors duration-200 w-full py-2">
-      <svg width="24" height="24" fill="none" class="text-gray-400 group-hover:text-gray-500 transition-colors duration-200"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+  <div xclass="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 border-b border-gray-200 h-18 justify-between px-4 sm:px-6 lg:mx-6 lg:px-0 xl:mx-8">
+    <button type="button" xclass="group leading-6 font-medium flex items-center space-x-3 sm:space-x-4 hover:text-gray-600 transition-colors duration-200 w-full py-2">
+      <svg width="24" height="24" fill="none" xclass="text-gray-400 group-hover:text-gray-500 transition-colors duration-200"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
       <span>Quick search</span>
-      <span style="opacity: 1;" class="hidden sm:block text-gray-400 text-sm leading-5 py-0.5 px-1.5 border border-gray-300 rounded-md">
-        <span class="sr-only">Press </span>
-        <kbd class="font-sans">/</kbd>
-        <span class="sr-only"> to search</span>
+      <span style="opacity: 1;" xclass="hidden sm:block text-gray-400 text-sm leading-5 py-0.5 px-1.5 border border-gray-300 rounded-md">
+        <span xclass="sr-only">Press </span>
+        <kbd xclass="font-sans">/</kbd>
+        <span xclass="sr-only"> to search</span>
       </span>
     </button>
   </div>
 </div> -->
-    <main class="max-w-screen-xl m-auto grid grid-cols-12">
-      <nav class="hidden lg:block col-span-2 leading-8 p-4">
-  <ul class="sticky overflow-y-auto scrolling-touch top-4">
-    <li  class="mb-4">
-      <a class="overflow-hidden" href="/">
-        <span class="sr-only">J5e: Embedded JavaScript for IoT Devices and Robots</span>
-        <svg class="fill-current text-seaweed-dark w-24 lg:w-3/5"  viewBox="0 0 526.1 178.8" >
-          <path d="M203.4,115.7h30.7v7.9c0,20.2,11,26.9,22.6,26.9c11.5,0,21.8-7,21.8-25.4V32.2h-43.9V5.5h74.9v120
-    c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
-          <path d="M363.4,64.3c-10.3,0-18.2,3.8-18.2,3.8l-3.3,2.4c0,0,0.1-5.5,0-10.3l-0.4-28.1h69.9V5.5h-96.5L314,91.9l17,6.2 c0,0,11.3-7.2,26.4-7.2c19.4,0,34.3,11.8,34.3,29.5c0,18-15.6,29.4-32.2,29c-23.6-0.5-40.3-18.2-45.7-24.8v5.5 c0,10.6-2.2,17.2-6,24.5c9.2,8,28.6,24,54,24c35.5,0,61.4-25,61.4-58.6C423.4,89.5,401.1,64.3,363.4,64.3z"/>
-          <g>
-            <path d="M455.2,131.7c0,5,0.3,9.1,0.8,12.3c0.6,3.2,1.7,5.7,3.4,7.5c1.7,1.8,4.1,3.1,7.2,3.8c3.1,0.7,7.1,1,12.1,1 c4.9,0,10.5,0,16.7,0s14-0.1,23.2-0.4l-4.2,20.9c-3.9,0.1-7.4,0.2-10.5,0.3c-3.1,0.1-6,0.1-8.9,0.1c-2.9,0-5.7,0-8.5,0 c-2.8,0-5.9,0-9.2,0c-9.9,0-18-1.1-24.5-3.3c-6.4-2.2-11.5-5.4-15.2-9.6c-3.7-4.2-6.3-9.3-7.7-15.4c-1.5-6.1-2.2-13-2.2-20.8v-11.7 c0-8.4,0.8-15.7,2.3-22.2c1.5-6.4,4.2-11.8,8-16.2c3.8-4.4,9-7.7,15.5-9.9c6.5-2.2,14.7-3.3,24.6-3.3c9.2,0,16.8,1,22.9,3 c6.1,2,10.9,4.8,14.6,8.5c3.7,3.6,6.3,7.9,7.8,12.9c1.5,4.9,2.3,10.3,2.3,16.2v3.6c0,4.7-0.3,8.6-0.8,11.6c-0.6,3-1.5,5.3-2.8,7 c-1.3,1.7-3,2.8-5.1,3.3c-2.1,0.6-4.7,0.8-7.7,0.8H455.2z M477.8,85.3c-4.7,0-8.6,0.4-11.5,1.1c-2.9,0.8-5.2,2.2-6.9,4.2 c-1.7,2-2.8,4.7-3.3,8.2c-0.6,3.4-0.8,7.8-0.8,13.1h44.9V107c0-4-0.3-7.5-1-10.2c-0.7-2.8-1.9-5-3.6-6.7c-1.7-1.7-4-2.9-6.9-3.7 C485.7,85.6,482.1,85.3,477.8,85.3z"/>
-          </g>
-          <g>
-            <path d="M50,40c-12.9,0-23.3,10.4-23.3,23.3S37.1,86.7,50,86.7s23.3-10.4,23.3-23.3S62.9,40,50,40z M50,80 c-9.2,0-16.7-7.5-16.7-16.7S40.8,46.7,50,46.7s16.7,7.5,16.7,16.7S59.2,80,50,80z"/>
-            <path d="M150,86.7c12.9,0,23.3-10.4,23.3-23.3S162.9,40,150,40s-23.3,10.4-23.3,23.3S137.1,86.7,150,86.7z M150,46.7 c9.2,0,16.7,7.5,16.7,16.7S159.2,80,150,80c-9.2,0-16.7-7.5-16.7-16.7S140.8,46.7,150,46.7z"/>
-            <path d="M1.1,34.5c1,3.6,4.3,6.2,8.1,6.2c0.7,0,1.4-0.1,2.1-0.3l2-0.5V110c0,3.7,3,6.7,6.7,6.7h21.4l6,10.4 c-2.7,3.2-3.2,7.8-1.1,11.5l18.3,31.7c1.2,2.1,3.1,3.7,5.3,4.5c1.8,0.6,3.7,0.7,5.5,0.2c1.2,1.1,2.8,1.7,4.5,1.7h40 c1.6,0,3.2-0.6,4.4-1.7c0.7,0.2,1.5,0.3,2.3,0.3c1.1,0,2.1-0.2,3.1-0.5c2.4-0.7,4.3-2.3,5.6-4.5l18.3-31.8 c2.1-3.7,1.7-8.3-1.1-11.5l6-10.4H180c3.7,0,6.7-3,6.7-6.7V39.8l2,0.5c4.4,1.2,9-1.5,10.2-5.9l0.9-3.3l0,0c1.1-4.4-1.5-9-5.9-10.2 L116.7,0.3c-4.5-1.2-9.1,1.4-10.3,5.8c0,0,0,0.1,0,0.1l-0.9,3.3c-1.2,4.4,1.5,9,5.9,10.2l26.4,7H62.2l26.4-7.1 c4.4-1.2,7.1-5.8,5.9-10.2l-0.9-3.3c-1.2-4.4-5.8-7-10.3-5.8c0,0,0,0,0,0L6.1,21c-4.4,1.2-7,5.8-5.9,10.2L1.1,34.5z M20,42.3V38 l4.8-1.3l-0.3,0.4c-0.5,0.5-0.9,0.9-1.4,1.4L22,39.7c-0.4,0.5-0.8,1-1.2,1.6S20.2,42,20,42.3z M150,33.4c16.6,0,30,13.4,30,30 s-13.4,30-30,30s-30-13.4-30-30S133.4,33.4,150,33.4z M146.7,123.8c-1.4-0.3-2.9-0.3-4.3,0c-2.6,0.6-4.8,2.3-6.1,4.6L123.3,151 c-1-0.6-2.2-0.9-3.3-1h-6.7v-6.7c0-5.5-4.5-10-10-10V110h23.3c3.7,0,6.7-3,6.7-6.7V96c4.1,2.2,8.7,3.6,13.3,4v10 c0,2.8,1.8,5.3,4.5,6.3L146.7,123.8z M93.3,150v-6.7c0-1.8,1.5-3.3,3.3-3.3h6.7c1.8,0,3.3,1.5,3.3,3.3v6.7H93.3z M80,150 c-1.2,0-2.3,0.4-3.3,1l-13-22.4c-1.3-2.3-3.5-3.9-6-4.6c-1.4-0.4-2.9-0.4-4.3-0.2l-4.3-7.5c2.6-1,4.3-3.5,4.3-6.3v-10 c4.7-0.4,9.2-1.7,13.3-3.9v7.2c0,3.7,3,6.7,6.7,6.7h23.3v23.3c-5.5,0-10,4.5-10,10v6.7H80z M73.3,103.4v-6.7h53.3v6.7H73.3z M116,49.7c-0.2,0.4-0.3,0.9-0.5,1.3s-0.6,1.7-0.8,2.6c-0.3,0.9-0.3,0.9-0.4,1.4c-0.1,0.5-0.4,1.9-0.5,2.8c0,0.4,0,0.9-0.2,1.3 c-0.2,1.4-0.3,2.8-0.3,4.2c0,1.4,0.1,2.7,0.2,4.1c0,0.4,0,0.9,0.2,1.3c0.2,0.4,0.3,1.8,0.5,2.7c0.2,0.9,0.3,1,0.4,1.5 c0.1,0.5,0.4,1.6,0.7,2.3s0.4,1,0.6,1.5c0.2,0.5,0.6,1.5,0.9,2.2l0.7,1.5c0.4,0.7,0.8,1.4,1.2,2.1l0.9,1.3c0.5,0.7,1,1.4,1.5,2 L122,87c0.7,0.8,1.4,1.5,2.1,2.2l0.7,0.7l0,0H75.1l0,0l0.6-0.6c0.7-0.7,1.5-1.5,2.1-2.3l0.9-1.1c0.5-0.7,1-1.4,1.5-2.1l0.8-1.3 c0.4-0.7,0.8-1.4,1.2-2.1l0.7-1.4c0.3-0.7,0.7-1.5,0.9-2.2c0.3-0.7,0.4-1,0.6-1.5c0.2-0.5,0.5-1.6,0.7-2.4c0.2-0.8,0.3-1,0.4-1.5 c0.1-0.5,0.3-1.8,0.5-2.7c0.1-0.9,0-0.9,0.2-1.3c0.2-1.3,0.3-2.7,0.3-4.1c0-1.4-0.1-2.8-0.3-4.2c0-0.4,0-0.9-0.2-1.3 c0-0.9-0.3-1.9-0.5-2.8c-0.2-0.9-0.2-1-0.4-1.4c-0.1-0.5-0.5-1.7-0.8-2.6c-0.3-0.8-0.3-0.9-0.5-1.3L83.7,49l16.3-5.5l16.3,5.4 L116,49.7z M80,63.4c0,1.2-0.1,2.4-0.2,3.5c-1.9,16.5-16.9,28.2-33.3,26.3c-6.8-0.8-13.1-3.9-17.9-8.8C17,72.5,17.2,53.6,29,42 s30.8-11.4,42.4,0.4C76.9,48,80,55.5,80,63.4z M20,84.5c0.3,0.4,0.6,0.8,1,1.2l0.7,0.8c0.7,0.9,1.4,1.7,2.2,2.5s1.7,1.6,2.6,2.4 l0.9,0.7c0.6,0.5,1.2,0.9,1.8,1.4l1.1,0.7l1.8,1.1l1.3,0.7l1.8,0.9l1.3,0.6l1.9,0.7l1.3,0.4l2.1,0.5l1.3,0.3l2.4,0.4h1h0.2v10H20 V84.5z M70.5,167l-18.3-31.8c-0.9-1.6-0.3-3.6,1.3-4.5c0.5-0.3,1-0.4,1.6-0.4c0.3,0,0.7,0,1,0c0.8,0.2,1.5,0.8,1.9,1.5l15.3,26.7 v10.3c-0.4,0-0.7-0.1-1.1-0.2C71.4,168.2,70.8,167.7,70.5,167z M80,170v-13.3h40V170H80z M147.9,135.2L147.9,135.2L129.5,167 c-0.4,0.7-1.1,1.2-1.9,1.5c-0.3,0.1-0.7,0.2-1,0.2v-10l15.5-26.7c0.4-0.8,1.2-1.3,2-1.5c0.8-0.2,1.7-0.1,2.5,0.3 C148.3,131.7,148.8,133.7,147.9,135.2L147.9,135.2z M180,84.5V110h-26.7v-10h0.2h1l2.4-0.4l1.3-0.3l2.1-0.5l1.3-0.4l1.9-0.7 l1.3-0.6l1.8-0.9l1.3-0.7l1.8-1.1l1.1-0.7c0.6-0.4,1.2-0.9,1.8-1.4l0.9-0.7c0.9-0.7,1.7-1.5,2.6-2.4c0.8-0.8,1.5-1.6,2.2-2.5 l0.6-0.8C179.4,85.3,179.7,84.9,180,84.5z M180,42.3c-0.2-0.3-0.5-0.7-0.8-1c-0.3-0.3-0.8-1.1-1.2-1.6l-1.1-1.2 c-0.4-0.5-0.9-1-1.4-1.4l-0.3-0.3L180,38V42.3z M112.1,12.3c-0.2-0.4-0.3-0.8-0.2-1.3l0.9-3.3c0.3-0.6,0.9-1,1.6-1h0.4l77.2,20.7 c0.9,0.2,1.4,1.2,1.2,2.1l-0.9,3.3c-0.3,0.9-1.2,1.4-2,1.2l-6.1-1.6l0,0l-16.7-4.4l-54.5-14.7c-0.4-0.1-0.8-0.4-1-0.7L112.1,12.3z M128.9,33.4l-0.7,0.6c-0.7,0.6-1.5,1.1-2.2,1.7l-1,1c-0.6,0.6-1.3,1.2-1.8,1.9l-1,1c-0.6,0.7-1.2,1.5-1.8,2.3l-0.6,0.8l-0.2,0.3 l-18.5-6.2c-0.7-0.2-1.4-0.2-2.1,0L80.5,43l-0.2-0.3l-0.6-0.8c-0.6-0.8-1.2-1.6-1.8-2.3l-1-1c-0.6-0.6-1.2-1.3-1.8-1.9l-1.1-1 c-0.7-0.6-1.4-1.2-2.2-1.7l-0.7-0.6H128.9z M7.9,27.5L85.1,6.7h0.4c0.8,0,1.4,0.5,1.6,1.2l0.9,3.3c0.1,0.4,0.1,0.9-0.2,1.3 c-0.2,0.4-0.6,0.7-1,0.8l0,0L32,27.9l-16.1,4.3l0,0l-6.1,1.6c-0.9,0.2-1.8-0.3-2.1-1.2l-0.9-3.3C6.6,28.6,7.1,27.8,7.9,27.5z"/>
-            <path d="M50,60L50,60c-1.8,0-3.3,1.5-3.3,3.3c0,1.8,1.5,3.3,3.3,3.3s3.3-1.5,3.3-3.3C53.3,61.5,51.8,60,50,60z"/>
-            <path d="M150,66.7c1.8,0,3.3-1.5,3.3-3.3c0-1.8-1.5-3.3-3.3-3.3l0,0c-1.8,0-3.3,1.5-3.3,3.3C146.7,65.2,148.2,66.7,150,66.7z"/>
-          </g>
-        </svg>
-      </a>
-    </li>
-    <li class="font-bold text-xiketic mb-4 text-lg">Getting Started
-      <ul class="font-normal text-base">
-        <li><a href="/getting-started/installation/">Installing J5e</a></li>
+      <button id="menuButton" type="button" class="menuToggle fixed z-50 bottom-4 right-4 w-16 h-16 rounded-full bg-seaweed text-white block lg:hidden">
+  <span class="sr-only">Open site navigation</span>
+  <svg id="menuOpen" width="24" height="24" fill="none" class="menuToggle absolute top-1/2 left-1/2 -mt-3 -ml-3 transition duration-100 transform">
+    <path class="menuToggle" d="M4 4h16M4 12h16M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+  </svg>
+  <svg id="menuClose" width="24" height="24" fill="none" class="menuToggle absolute top-1/2 left-1/2 -mt-3 -ml-3 transition duration-100 transform opacity-0 scale-80">
+    <path class="menuToggle" d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+  </svg>
+</button>
+<nav id="leftnav" class="max-w-full bg-white hidden h-screen z-40 inset-0 flex-none col-span-12 leading-8 sticky overflow-y-scroll scrolling-touch lg:block lg:relative lg:col-span-2 pr-4">
+  <ul class="text-xl">
+    <li class="text-xiketic text-2xl p-4 lg:pb-0 lg:my-6">
+      <a href="/"><img class="h-8" src="/images/J5e.svg" /></a></li>
+    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mx-2 bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Getting Started</li>
+    <li>
+      <ul class="bg-white text-xiketic text-2xl xl:text-xl lg:text-base p-2 pl-6">
+        <li class="pb-3"><a href="/getting-started/installation/">Installing J5e</a></li>
       </ul>
     </li>
-    <li class="font-bold text-xiketic mb-4 text-lg">Core Concepts
-      <ul class="font-normal text-base">
-        <li><a href="/core-concepts/animation/">Animation</a></li>
-        <li><a href="/core-concepts/instantiation/">Device Instantiation</a></li>
+    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mx-2 bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Core Concepts</li>
+    <li>
+      <ul class="bg-white text-xiketic text-2xl lg:text-base xl:text-xl p-2 pl-6">
+        <li class="pb-3"><a href="/core-concepts/animation/">Animation</a></li>
+        <li class="pb-3"><a href="/core-concepts/instantiation/">Device Instantiation</a></li>
       </ul>
     </li>
-    <li class="font-bold text-xiketic mb-4 text-lg">Modules
-      <ul class="font-normal text-base">
+    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mx-2 bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Modules</li>
+    <li>
+      <ul class="bg-white text-xiketic text-2xl lg:text-base xl:text-xl p-2 pl-6">
         
-          <li class="pt-1"><a href="/modules/animation">animation</a></li>
+          <li class="pb-3"><a href="/modules/animation">animation</a></li>
         
-          <li class="pt-1"><a href="/modules/button">button</a></li>
+          <li class="pb-3"><a href="/modules/button">button</a></li>
         
-          <li class="pt-1"><a href="/modules/easing">easing</a></li>
+          <li class="pb-3"><a href="/modules/easing">easing</a></li>
         
-          <li class="pt-1"><a href="/modules/event">event</a></li>
+          <li class="pb-3"><a href="/modules/event">event</a></li>
         
-          <li class="pt-1"><a href="/modules/fn">fn</a></li>
+          <li class="pb-3"><a href="/modules/fn">fn</a></li>
         
-          <li class="pt-1"><a href="/modules/gps">gps</a></li>
+          <li class="pb-3"><a href="/modules/gps">gps</a></li>
         
-          <li class="pt-1"><a href="/modules/led">led</a></li>
+          <li class="pb-3"><a href="/modules/led">led</a></li>
         
-          <li class="pt-1"><a href="/modules/light">light</a></li>
+          <li class="pb-3"><a href="/modules/light">light</a></li>
         
-          <li class="pt-1"><a href="/modules/motor">motor</a></li>
+          <li class="pb-3"><a href="/modules/motor">motor</a></li>
         
-          <li class="pt-1"><a href="/modules/relay">relay</a></li>
+          <li class="pb-3"><a href="/modules/relay">relay</a></li>
         
-          <li class="pt-1"><a href="/modules/rgb">rgb</a></li>
+          <li class="pb-3"><a href="/modules/rgb">rgb</a></li>
         
-          <li class="pt-1"><a href="/modules/sensor">sensor</a></li>
+          <li class="pb-3"><a href="/modules/sensor">sensor</a></li>
         
-          <li class="pt-1"><a href="/modules/servo">servo</a></li>
+          <li class="pb-3"><a href="/modules/servo">servo</a></li>
         
-          <li class="pt-1"><a href="/modules/switch">switch</a></li>
+          <li class="pb-3"><a href="/modules/switch">switch</a></li>
         
-          <li class="pt-1"><a href="/modules/thermometer">thermometer</a></li>
+          <li class="pb-3"><a href="/modules/thermometer">thermometer</a></li>
         
-          <li class="pt-1"><a href="/modules/withinable">withinable</a></li>
+          <li class="pb-3"><a href="/modules/withinable">withinable</a></li>
         
       </ul>
     </li>
   </ul>
 </nav>
-      <section class="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 p-8 py-4">
+      <main class="align-top grid grid-cols-12 col-span-12 lg:col-span-8 h-screen overflow-y-scroll">
         
-        <header>
-          <h1 id="j5e/motor.module">Module: <span class="font-normal">j5e/motor</span></h1>
-        </header>
-        <h2>Description</h2>
-        <p>
-          Class library for managing Motors.
-        </p>
-        
-          <h2>Requires</h2>
-          <ul>
-            
-              <li><a href="/modules/event" class="underline">module:j5e/event</a></li>
-            
-              <li><a href="/modules/fn" class="underline">module:j5e/fn</a></li>
-            
-          </ul>
-        
-        
-        
-        
+        <section class="col-span-full p-8 py-4" xclass="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 p-8 py-4">
+          
+          <header>
+            <h1 id="j5e/motor.module">Module: <span class="font-normal">j5e/motor</span></h1>
+          </header>
+          <h2>Description</h2>
+          <p>
+            Class library for managing Motors.
+          </p>
+          
+            <h2>Requires</h2>
+            <ul>
+              
+                <li><a href="/modules/event" xclass="underline">module:j5e/event</a></li>
+              
+                <li><a href="/modules/fn" xclass="underline">module:j5e/fn</a></li>
+              
+            </ul>
+          
+          
+          
+          
   <hr class="my-8"/>
   <h2 id="Motor.class">Class: <span class="font-normal">Motor</span></h2>
   <p>The Motor class allows for control of non-directional DC Motors</p>
   <h3 id="Motor.constructor">Constructor</h3>
   <pre class="my-8"><code class="language-javascript">new <span class="font-normal">Motor()</code></pre>
   <h4>Parameters</h4>
-  <div class="params-table">
-    <div class="col-span-3 params-table-header">Name</div>
-    <div class="col-span-3 params-table-header">Type</div>
-    <div class="col-span-6 params-table-header">Description</div>
-    
-        <div class="col-span-3 p-4 params-cell">
-  io
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
   
-    <br/><span class="font-normal"> (required)</span>
-  
+    <div class="params-cell">
+      io
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+      number, 
+      
+      string, 
+      
+      Array.&lt;number&gt;, 
+      
+      Array.&lt;string&gt;, 
+      
+      Array.&lt;object&gt;, 
+      
+       or object
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A pin identifier or motor IO options object (See {@tutorial C-INSTANTIATING})
+      
+    </div>
+   
 </div>
-<div class="col-span-3 p-4 params-cell">
-  
-    number<br/>
-  
-    string<br/>
-  
-    Array.&lt;number&gt;<br/>
-  
-    Array.&lt;string&gt;<br/>
-  
-    Array.&lt;object&gt;<br/>
-  
-    object
-  
-</div>
-<div class="col-span-6 p-4 params-cell">
-  A pin identifier or motor IO options object (See {@tutorial C-INSTANTIATING})
-  
-</div>
-     
-  </div>
+
   
     <h2>Examples</h2>
     
@@ -204,78 +203,80 @@ motor.fwd();</code></pre>
     
   
   
-    <h2 id="Motor.properties">Properties</h2>
-    <div class="params-table">
-      <div class="col-span-3 params-table-header">Name</div>
-      <div class="col-span-3 params-table-header">Type</div>
-      <div class="col-span-6 params-table-header">Description</div>
-      
-        <div class="col-span-3 p-4 params-cell" id="Motor.isOn">
-  isOn
-  
-    <br/><span class="font-normal"> (read only)</span>
-  
-</div>
-<div class="col-span-3 p-4 params-cell">
-  
-    boolean
-  
-</div>
-<div class="col-span-6 p-4 params-cell">
-  Whether current is flowing. This does not necessarily mean the motor is turning.
-</div>
+  <h2 id="Motor.properties">Properties</h2>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell" id="Motor.isOn">
+        isOn
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          boolean
+        
+      </div>
+      <div class="params-cell">
+        Whether current is flowing. This does not necessarily mean the motor is turning.
+      </div>
+    
+    
+      <div class="params-cell" id="Motor.currentSpeed">
+        currentSpeed
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The Motor's current speed
+      </div>
+    
+    
+      <div class="params-cell" id="Motor.enabled">
+        enabled
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          boolean
+        
+      </div>
+      <div class="params-cell">
+        Whether the motor is enabled
+      </div>
+    
+    
+      <div class="params-cell" id="Motor.direction">
+        direction
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          boolean
+        
+      </div>
+      <div class="params-cell">
+        The current direction
+      </div>
+    
+    
+  </div>
 
-      
-        <div class="col-span-3 p-4 params-cell" id="Motor.currentSpeed">
-  currentSpeed
   
-    <br/><span class="font-normal"> (read only)</span>
-  
-</div>
-<div class="col-span-3 p-4 params-cell">
-  
-    number
-  
-</div>
-<div class="col-span-6 p-4 params-cell">
-  The Motor's current speed
-</div>
 
-      
-        <div class="col-span-3 p-4 params-cell" id="Motor.enabled">
-  enabled
-  
-    <br/><span class="font-normal"> (read only)</span>
-  
-</div>
-<div class="col-span-3 p-4 params-cell">
-  
-    boolean
-  
-</div>
-<div class="col-span-6 p-4 params-cell">
-  Whether the motor is enabled
-</div>
-
-      
-        <div class="col-span-3 p-4 params-cell" id="Motor.direction">
-  direction
-  
-    <br/><span class="font-normal"> (read only)</span>
-  
-</div>
-<div class="col-span-3 p-4 params-cell">
-  
-    boolean
-  
-</div>
-<div class="col-span-6 p-4 params-cell">
-  The current direction
-</div>
-
-      
-    </div>
-  
   
   
     <h2 id="Motor.methods">Methods</h2>
@@ -286,79 +287,82 @@ motor.fwd();</code></pre>
 
   <p><strong>Returns:</strong> The instance on which the method was called</p>
 
-
-  <h4>Parameters</h4>
-  <div class="params-table">
-    <div class="col-span-3 params-table-header">Name</div>
-    <div class="col-span-3 params-table-header">Type</div>
-    <div class="col-span-6 params-table-header">Description</div>
-    
-      <div class="col-span-3 p-4 params-cell">
-  options
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
   
-    <br/><span class="font-normal"> (required)</span>
+    <div class="params-cell">
+      options
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or object
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Device configuration options
+      
+    </div>
   
+    <div class="params-cell">
+      options.enabled
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or boolean
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Sets the enabled state of a motor
+      
+        <br/><span class="text-red pt-4">Default: true</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.threshold
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The minimum speed [0, 1] that will make the motor move
+      
+        <br/><span class="text-red pt-4">Default: 0.11</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.invertPWM
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or boolean
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      When true, PWM values will be inverted when directional motor is in reverse
+      
+    </div>
+   
 </div>
-<div class="col-span-3 p-4 params-cell">
-  
-    object
-  
-</div>
-<div class="col-span-6 p-4 params-cell">
-  Device configuration options
-  
-</div>
-    
-      <div class="col-span-3 p-4 params-cell">
-  options.enabled
-  
-  
-</div>
-<div class="col-span-3 p-4 params-cell">
-  
-    boolean
-  
-</div>
-<div class="col-span-6 p-4 params-cell">
-  Sets the enabled state of a motor
-  
-    <br/>Default: <span class="font-normal">true</span>
-  
-</div>
-    
-      <div class="col-span-3 p-4 params-cell">
-  options.threshold
-  
-  
-</div>
-<div class="col-span-3 p-4 params-cell">
-  
-    number
-  
-</div>
-<div class="col-span-6 p-4 params-cell">
-  The minimum speed [0, 1] that will make the motor move
-  
-    <br/>Default: <span class="font-normal">0.11</span>
-  
-</div>
-    
-      <div class="col-span-3 p-4 params-cell">
-  options.invertPWM
-  
-  
-</div>
-<div class="col-span-3 p-4 params-cell">
-  
-    boolean
-  
-</div>
-<div class="col-span-6 p-4 params-cell">
-  When true, PWM values will be inverted when directional motor is in reverse
-  
-</div>
-    
-  </div>
 
 
   <h4>Example</h4>
@@ -377,6 +381,13 @@ motor.forward(); // No signal is sent</code></pre>
 
   <p><strong>Returns:</strong> </p>
 
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
 
 
   <h4>Example</h4>
@@ -396,6 +407,13 @@ window.setTimeout(() => {
 
   <p><strong>Returns:</strong> </p>
 
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
 
 
   <h4>Example</h4>
@@ -412,80 +430,83 @@ motor.disable();</code></pre>
 
   <p><strong>Returns:</strong> </p>
 
-
-  <h4>Parameters</h4>
-  <div class="params-table">
-    <div class="col-span-3 params-table-header">Name</div>
-    <div class="col-span-3 params-table-header">Type</div>
-    <div class="col-span-6 params-table-header">Description</div>
-    
-      <div class="col-span-3 p-4 params-cell">
-  options
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
   
-    <br/><span class="font-normal"> (required)</span>
+    <div class="params-cell">
+      options
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+      object, 
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Speed options or value [0, 1]
+      
+    </div>
   
+    <div class="params-cell">
+      options.speed
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Speed [0, 1]
+      
+    </div>
+  
+    <div class="params-cell">
+      options.saveSpeed
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Wether speed should be saved
+      
+    </div>
+  
+    <div class="params-cell">
+      options.braking
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or boolean
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Wether brake is on
+      
+    </div>
+   
 </div>
-<div class="col-span-3 p-4 params-cell">
-  
-    object<br/>
-  
-    number
-  
-</div>
-<div class="col-span-6 p-4 params-cell">
-  Speed options or value [0, 1]
-  
-</div>
-    
-      <div class="col-span-3 p-4 params-cell">
-  options.speed
-  
-    <br/><span class="font-normal"> (required)</span>
-  
-</div>
-<div class="col-span-3 p-4 params-cell">
-  
-    number
-  
-</div>
-<div class="col-span-6 p-4 params-cell">
-  Speed [0, 1]
-  
-</div>
-    
-      <div class="col-span-3 p-4 params-cell">
-  options.saveSpeed
-  
-    <br/><span class="font-normal"> (required)</span>
-  
-</div>
-<div class="col-span-3 p-4 params-cell">
-  
-    number
-  
-</div>
-<div class="col-span-6 p-4 params-cell">
-  Wether speed should be saved
-  
-</div>
-    
-      <div class="col-span-3 p-4 params-cell">
-  options.braking
-  
-    <br/><span class="font-normal"> (required)</span>
-  
-</div>
-<div class="col-span-3 p-4 params-cell">
-  
-    boolean
-  
-</div>
-<div class="col-span-6 p-4 params-cell">
-  Wether brake is on
-  
-</div>
-    
-  </div>
 
 
     
@@ -495,30 +516,30 @@ motor.disable();</code></pre>
 
   <p><strong>Returns:</strong> </p>
 
-
-  <h4>Parameters</h4>
-  <div class="params-table">
-    <div class="col-span-3 params-table-header">Name</div>
-    <div class="col-span-3 params-table-header">Type</div>
-    <div class="col-span-6 params-table-header">Description</div>
-    
-      <div class="col-span-3 p-4 params-cell">
-  speed
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
   
-    <br/><span class="font-normal"> (required)</span>
-  
+    <div class="params-cell">
+      speed
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Speed [0, 1]
+      
+    </div>
+   
 </div>
-<div class="col-span-3 p-4 params-cell">
-  
-    number
-  
-</div>
-<div class="col-span-6 p-4 params-cell">
-  Speed [0, 1]
-  
-</div>
-    
-  </div>
 
 
     
@@ -528,6 +549,13 @@ motor.disable();</code></pre>
 
   <p><strong>Returns:</strong> </p>
 
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
 
 
     
@@ -537,6 +565,13 @@ motor.disable();</code></pre>
 
   <p><strong>Returns:</strong> </p>
 
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
 
 
     
@@ -546,29 +581,29 @@ motor.disable();</code></pre>
 
   <p><strong>Returns:</strong> </p>
 
-
-  <h4>Parameters</h4>
-  <div class="params-table">
-    <div class="col-span-3 params-table-header">Name</div>
-    <div class="col-span-3 params-table-header">Type</div>
-    <div class="col-span-6 params-table-header">Description</div>
-    
-      <div class="col-span-3 p-4 params-cell">
-  duration
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
   
-  
+    <div class="params-cell">
+      duration
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Time in millseconds to hold the brake
+      
+    </div>
+   
 </div>
-<div class="col-span-3 p-4 params-cell">
-  
-    number
-  
-</div>
-<div class="col-span-6 p-4 params-cell">
-  Time in millseconds to hold the brake
-  
-</div>
-    
-  </div>
 
 
     
@@ -578,6 +613,13 @@ motor.disable();</code></pre>
 
   <p><strong>Returns:</strong> </p>
 
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
 
 
     
@@ -587,6 +629,13 @@ motor.disable();</code></pre>
 
   <p><strong>Returns:</strong> </p>
 
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
 
 
     
@@ -596,31 +645,31 @@ motor.disable();</code></pre>
 
   <p><strong>Returns:</strong> </p>
 
-
-  <h4>Parameters</h4>
-  <div class="params-table">
-    <div class="col-span-3 params-table-header">Name</div>
-    <div class="col-span-3 params-table-header">Type</div>
-    <div class="col-span-6 params-table-header">Description</div>
-    
-      <div class="col-span-3 p-4 params-cell">
-  speed
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
   
-  
+    <div class="params-cell">
+      speed
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The speed expressed as a value from 0 to 1
+      
+        <br/><span class="text-red pt-4">Default: 1</span>
+      
+    </div>
+   
 </div>
-<div class="col-span-3 p-4 params-cell">
-  
-    number
-  
-</div>
-<div class="col-span-6 p-4 params-cell">
-  The speed expressed as a value from 0 to 1
-  
-    <br/>Default: <span class="font-normal">1</span>
-  
-</div>
-    
-  </div>
 
 
     
@@ -630,6 +679,13 @@ motor.disable();</code></pre>
 
   <p><strong>Returns:</strong> </p>
 
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
 
 
     
@@ -639,31 +695,31 @@ motor.disable();</code></pre>
 
   <p><strong>Returns:</strong> </p>
 
-
-  <h4>Parameters</h4>
-  <div class="params-table">
-    <div class="col-span-3 params-table-header">Name</div>
-    <div class="col-span-3 params-table-header">Type</div>
-    <div class="col-span-6 params-table-header">Description</div>
-    
-      <div class="col-span-3 p-4 params-cell">
-  speed
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
   
-  
+    <div class="params-cell">
+      speed
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The speed expressed as a value from 0 to 1
+      
+        <br/><span class="text-red pt-4">Default: 1</span>
+      
+    </div>
+   
 </div>
-<div class="col-span-3 p-4 params-cell">
-  
-    number
-  
-</div>
-<div class="col-span-6 p-4 params-cell">
-  The speed expressed as a value from 0 to 1
-  
-    <br/>Default: <span class="font-normal">1</span>
-  
-</div>
-    
-  </div>
 
 
     
@@ -673,41 +729,42 @@ motor.disable();</code></pre>
 
   <p><strong>Returns:</strong> </p>
 
-
-  <h4>Parameters</h4>
-  <div class="params-table">
-    <div class="col-span-3 params-table-header">Name</div>
-    <div class="col-span-3 params-table-header">Type</div>
-    <div class="col-span-6 params-table-header">Description</div>
-    
-      <div class="col-span-3 p-4 params-cell">
-  direction
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
   
-  
+    <div class="params-cell">
+      direction
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      0 = forward, 1 = reverse
+      
+    </div>
+   
 </div>
-<div class="col-span-3 p-4 params-cell">
-  
-    number
-  
-</div>
-<div class="col-span-6 p-4 params-cell">
-  0 = forward, 1 = reverse
-  
-</div>
-    
-  </div>
 
 
     
   
   
 
-      </section>
-      <nav class="hidden xl:block xl:col-span-2">
-  <ul class="sticky top-20">
+        </section>
+      </main>
+      <nav class="hidden lg:block lg:relative h-screen z-40 inset-0 flex-none  col-span-2 sticky overflow-y-scroll scrolling-touch ">
+  <ul class="sticky pt-12 text-xl">
     
       <li class="font-bold text-xiketic mb-2 text-xl">
-        <a href="#Motor.class">Motor Class</a>
+        <a href="#Motor.class">Motor class</a>
         <ul class="text-base">
           <li class="my-4 text-lg"><a href="#Motor.constructor">Constructor</a></li>
           
@@ -760,9 +817,9 @@ motor.disable();</code></pre>
     
   </ul>
 </nav>
-    </main>
-    <footer class="m-4 max-w-screen-xl m-auto">
+      <!--<footer xclass="m-4 max-w-screen-xl m-auto">
   Footer
-</footer>
+</footer>-->
+      </div>
   </body>
 </html>

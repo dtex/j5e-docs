@@ -3,7 +3,7 @@ layout: default.liquid
 title: Animation
 ---
 # Animation
-Note: This is a pretty advanced topic and you should be comfortable with controlling devices without the Animation class before diving in.
+*Note: This is a pretty advanced topic and you should be comfortable with controlling devices without the Animation class before diving in.*
 
 Ideally robotics or IoT projects monitor and respond to changes in their environment, but sometimes we just want to follow a predetermined set of rules without regard to input. Think of the animatronic characters you've seen at theme parks and sub-par pizza restaurants. They follow a scripted behavior that never varies. The Animation class allows you to do exactly that.
 
