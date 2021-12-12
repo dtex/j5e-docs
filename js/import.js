@@ -1,1 +1,1 @@
-import hljs from './highlight/highlight.js';
+import j5e from './j5e.js';

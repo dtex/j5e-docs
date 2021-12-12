@@ -3,11 +3,11 @@
 @tailwind utilities; 
 
 h1 {
-  @apply font-bold text-3xl text-xiketic mb-0;
+  @apply font-bold text-4xl text-xiketic mb-0 mt-4;
 	scroll-margin-top: 4em;
 }
 
-h2 {
+h2, .h2 {
   @apply font-bold text-2xl mt-8 text-xiketic mb-0;
 	scroll-margin-top: 4em;
 }
@@ -22,6 +22,14 @@ h4 {
 	scroll-margin-top: 4em;
 }
 
+hr {
+  @apply my-8;
+}
+
+pre {
+  @apply mb-4;
+}
+
 p {
   @apply mb-4;
 }
@@ -34,6 +42,15 @@ nav a {
   @apply no-underline;
 }
 
+main ul {
+  @apply ml-4 mb-6;
+  list-style-type: disc;
+}
+
+main ul li {
+  @apply mb-2;
+}
+
 .params-table {
   @apply grid grid-cols-12;
 }
@@ -42,8 +59,33 @@ nav a {
   @apply bg-black text-white font-bold p-4;
 }
 
+.params-table-header:first-of-type {
+  @apply col-span-5 sm:col-span-3 md:col-span-2;
+}
+
+.params-table-header:nth-of-type(2) {
+  @apply col-span-7 sm:col-span-3 md:col-span-2;
+}
+
+.params-table-header:nth-of-type(3) {
+  @apply col-span-6 hidden sm:col-span-6 md:col-span-8 sm:block;
+}
+
+.params-cell {
+  @apply p-4;
+  scroll-margin-top: 4em;
+}
+
 .params-cell:nth-of-type(3n+1) {
-  @apply font-bold;
+  @apply font-bold col-span-5 sm:col-span-3 md:col-span-2;
+}
+
+.params-cell:nth-of-type(3n+2) {
+  @apply col-span-7 sm:col-span-3 md:col-span-2;
+}
+
+.params-cell:nth-of-type(3n+3) {
+  @apply col-span-12 pt-0 sm:pt-4 sm:col-span-6 md:col-span-8;
 }
 
 .params-cell:nth-of-type(6n+1) {
@@ -58,6 +100,4 @@ nav a {
   @apply bg-orange-light;
 }
 
-.params-cell {
-  scroll-margin-top: 4em;
-}
+
