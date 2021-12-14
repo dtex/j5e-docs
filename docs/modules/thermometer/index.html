@@ -66,7 +66,7 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
 <nav id="leftnav" class="max-w-full bg-white hidden h-screen z-40 inset-0 flex-none col-span-12 leading-8 sticky overflow-y-scroll scrolling-touch lg:block lg:relative lg:col-span-2 pr-4">
   <ul class="text-xl">
     <li class="text-xiketic text-2xl p-4 lg:pb-0 lg:my-6">
-      <a href="/"><img class="h-8" src="/images/J5e.svg" /></a></li>
+      <a href="/"><img class="h-8" src="/images/j5e.svg" /></a></li>
     <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mx-2 bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Getting Started</li>
     <li>
       <ul class="bg-white text-xiketic text-2xl xl:text-xl lg:text-base p-2 pl-6">
@@ -1280,13 +1280,4977 @@ sensor.fscaleTo([0, 1]);</code></pre>
   
   
 
+  <hr class="my-8"/>
+  <h2 id="LM335.class">Class: <span class="font-normal">LM335</span></h2>
+  <p>The LM335 class allows for reading of LM335 thermistors</p>
+  <h3 id="LM335.constructor">Constructor</h3>
+  <pre class="my-8"><code class="language-javascript">new <span class="font-normal">LM335()</code></pre>
+  <h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      io
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+      number, 
+      
+      string, 
+      
+       or object
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Pin identifier or IO Options (See {@tutorial C-INSTANTIATING})
+      
+    </div>
+   
+</div>
+
+  
+    <h2>Example</h2>
+    
+      <pre><code class="language-javascript"><caption>Use a LM335</caption>
+import LM335 from "j5e/lm335";
+
+const myLM335 = await new LM335(12);
+
+myLM335.on("change", function(data) {
+  trace(data.C);
+});</code></pre>
+    
+  
+  
+  <h2 id="LM335.properties">Properties</h2>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell" id="LM335.celsius">
+        celsius
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get degrees in celsius
+      </div>
+    
+    
+      <div class="params-cell" id="LM335.C">
+        C
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Alias for celsius
+      </div>
+    
+    
+      <div class="params-cell" id="LM335.fahrenheit">
+        fahrenheit
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get degrees in fahrenheit
+      </div>
+    
+    
+      <div class="params-cell" id="LM335.F">
+        F
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Alias for fahrenheit
+      </div>
+    
+    
+      <div class="params-cell" id="LM335.kelvin">
+        kelvin
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get degrees in kelvin
+      </div>
+    
+    
+      <div class="params-cell" id="LM335.K">
+        K
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Alias for kelvin
+      </div>
+    
+    
+      <div class="params-cell" id="LM335.limit">
+        limit
+        
+      </div>
+      <div class="params-cell">
+        
+          Array.&lt;number&gt;
+        
+      </div>
+      <div class="params-cell">
+        Limits the output range
+      </div>
+    
+    
+      <div class="params-cell" id="LM335.threshold">
+        threshold
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The minimum amount of change required to emit a "change" event
+      </div>
+    
+    
+      <div class="params-cell" id="LM335.interval">
+        interval
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The interval between readings (in ms)
+      </div>
+    
+    
+      <div class="params-cell" id="LM335.smoothing">
+        smoothing
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The number of samples to take before finding the median
+      </div>
+    
+    
+      <div class="params-cell" id="LM335.aref">
+        aref
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The reference voltage
+      </div>
+    
+    
+      <div class="params-cell" id="LM335.samples">
+        samples
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The number of samples to take before finding the median
+      </div>
+    
+    
+      <div class="params-cell" id="LM335.range">
+        range
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          Array.&lt;number&gt;
+        
+      </div>
+      <div class="params-cell">
+        The input range of the sensor
+      </div>
+    
+    
+      <div class="params-cell" id="LM335.raw">
+        raw
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get the most recent raw ADC reading
+      </div>
+    
+    
+      <div class="params-cell" id="LM335.median">
+        median
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get the most recent median ADC reading
+      </div>
+    
+    
+      <div class="params-cell" id="LM335.resolution">
+        resolution
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The maximum possible ADC reading
+      </div>
+    
+    
+      <div class="params-cell" id="LM335.scaled">
+        scaled
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get the most recent scaled raw reading
+      </div>
+    
+    
+      <div class="params-cell" id="LM335.value">
+        value
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+  
+    <h2 id="LM335.events">Events</h2>
+    <ul>
+      
+        <li>event:data</li>
+      
+        <li>event:change</li>
+      
+    </ul>
+  
+  
+    <h2 id="LM335.methods">Methods</h2>
+    
+      <h3 id="LM335.configure">configure</h3>
+<p>Configure an LM335</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm335.configure()</code></pre>
+
+  <p><strong>Returns:</strong> The instance on which the method was called</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      options
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or object
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Device configuration options
+      
+    </div>
+  
+    <div class="params-cell">
+      options.aref
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Analog reference voltage
+      
+        <br/><span class="text-red pt-4">Default: 3.3</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.enabled
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or boolean
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Wether the device is currently performing reads every <interval>ms
+      
+        <br/><span class="text-red pt-4">Default: true</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.interval
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Interval between readings in millseconds
+      
+        <br/><span class="text-red pt-4">Default: 100</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.limit
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Limit the output range
+      
+    </div>
+  
+    <div class="params-cell">
+      options.range
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The input range of the sensor
+      
+        <br/><span class="text-red pt-4">Default: [0, N]</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.scale
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The output range for the sensor's value
+      
+        <br/><span class="text-red pt-4">Default: [0, N]</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.threshold
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The minimum amount of change required to emit a "change" event
+      
+        <br/><span class="text-red pt-4">Default: 1</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.toCelsius
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or callback
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Function that converts raw value to Celsius
+      
+    </div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Passing in Cofiguration Options</caption>
+   import LM335 from "j5e/lm335";
+
+const thermometer = await new LM335({
+ pin: 14
+});
+
+thermometer.on("change", data => {
+ trace(thermometer.celsius);
+});</code></pre>
+
+    
+      <h3 id="LM335.toCelsius">toCelsius</h3>
+<p>Convert a raw reading to Celsius
+param {number} value</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm335.toCelsius()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+    
+      <h3 id="LM335.emitEvents">emitEvents</h3>
+<p>Internal method for processing reads</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm335.emitEvents()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+    
+      <h3 id="LM335.enable">enable</h3>
+<p>Enable a disabled sensor.</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm335.enable()</code></pre>
+
+  <p><strong>Returns:</strong> instance</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+sensor.disable();
+
+// Wait 5 seconds and then take readings
+timer.setTimeout(function() {
+ sensor.enable();
+});</code></pre>
+
+    
+      <h3 id="LM335.disable">disable</h3>
+<p>Disable an enabled sensor.</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm335.disable()</code></pre>
+
+  <p><strong>Returns:</strong> instance</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+// Take reading for 5 seconds and then stop
+timer.setTimeout(function() {
+ sensor.disable();
+});</code></pre>
+
+    
+      <h3 id="LM335.read">read</h3>
+<p>Synchronous read of a sensor.</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm335.read()</code></pre>
+
+  <p><strong>Returns:</strong> sensor value</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+let myValue = sensor.read();</code></pre>
+
+    
+      <h3 id="LM335.sample">sample</h3>
+<p>Sample a sensor</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm335.sample()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+    
+      <h3 id="LM335.eventProcessing">eventProcessing</h3>
+<p>Internal method for processing reads</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm335.eventProcessing()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+    
+      <h3 id="LM335.scale">scale</h3>
+<p>scale/scaleTo Set a value scaling range</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm335.scale()</code></pre>
+
+  <p><strong>Returns:</strong> instance</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      low
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Lowerbound
+      
+    </div>
+  
+    <div class="params-cell">
+      high
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Upperbound
+      
+    </div>
+  
+    <div class="params-cell">
+      low, high
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Lowerbound
+      
+    </div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+// Scale all future values to 8-bit range
+sensor.scale([0, 255]);</code></pre>
+
+    
+      <h3 id="LM335.scaleTo">scaleTo</h3>
+<p>scaleTo Scales value to integer representation</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm335.scaleTo()</code></pre>
+
+  <p><strong>Returns:</strong> The scaled value</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      low
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      An array containing a lower and upper bound
+      
+    </div>
+  
+    <div class="params-cell">
+      low
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A number to use as a lower bound
+      
+    </div>
+  
+    <div class="params-cell">
+      high
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A number to use as an upper bound
+      
+    </div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+// Scale the returned value to 8-bit range
+sensor.scaleTo([0, 255]);</code></pre>
+
+    
+      <h3 id="LM335.fscaleTo">fscaleTo</h3>
+<p>fscaleTo Scales value to single precision float representation</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm335.fscaleTo()</code></pre>
+
+  <p><strong>Returns:</strong> The scaled value</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      low
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      An array containing a lower and upper bound
+      
+    </div>
+  
+    <div class="params-cell">
+      low
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A number to use as a lower bound
+      
+    </div>
+  
+    <div class="params-cell">
+      high
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A number to use as an upper bound
+      
+    </div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+// Scale the returned value to float between 0 and 1
+sensor.fscaleTo([0, 1]);</code></pre>
+
+    
+      <h3 id="LM335.within">within</h3>
+<p>Fire a callback when the value is within a certain range</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm335.within()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      range
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The upper and lower ends of the range to watch
+      
+    </div>
+  
+    <div class="params-cell">
+      unit
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or string
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The property to test
+      
+    </div>
+  
+    <div class="params-cell">
+      callback
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or function
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A callback to run when the event is fired.
+      
+    </div>
+   
+</div>
+
+
+    
+      <h3 id="LM335.on">on</h3>
+<p>Create an event listener</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm335.on()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      event
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or string
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The name of the event to listen for
+      
+    </div>
+  
+    <div class="params-cell">
+      listener
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or function
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A callback to run when the event is fired.
+      
+    </div>
+   
+</div>
+
+
+    
+      <h3 id="LM335.removeListener">removeListener</h3>
+<p>Remove an event listener</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm335.removeListener()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      event
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or string
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The name of the event that we are removing a listener from
+      
+    </div>
+  
+    <div class="params-cell">
+      listener
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or function
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The callback that we are removing
+      
+    </div>
+   
+</div>
+
+
+    
+      <h3 id="LM335.emit">emit</h3>
+<p>Emit an event</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm335.emit()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      event
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or string
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The name of the event to emit
+      
+    </div>
+   
+</div>
+
+
+    
+      <h3 id="LM335.once">once</h3>
+<p>Create an event listener that will only fire one time.</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm335.once()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      event
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or string
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The name of the event to listen for
+      
+    </div>
+  
+    <div class="params-cell">
+      listener
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or function
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A callback to run when the event is fired.
+      
+    </div>
+   
+</div>
+
+
+    
+  
+  
+
+  <hr class="my-8"/>
+  <h2 id="LM35.class">Class: <span class="font-normal">LM35</span></h2>
+  <p>The LM35 class allows for reading of LM35 thermistors</p>
+  <h3 id="LM35.constructor">Constructor</h3>
+  <pre class="my-8"><code class="language-javascript">new <span class="font-normal">LM35()</code></pre>
+  <h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      io
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+      number, 
+      
+      string, 
+      
+       or object
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Pin identifier or IO Options (See {@tutorial C-INSTANTIATING})
+      
+    </div>
+   
+</div>
+
+  
+    <h2>Example</h2>
+    
+      <pre><code class="language-javascript"><caption>Use a LM35</caption>
+import LM35 from "j5e/lm35";
+
+const myLM35 = await new LM35(12);
+
+myLM35.on("change", function(data) {
+  trace(data.C);
+});</code></pre>
+    
+  
+  
+  <h2 id="LM35.properties">Properties</h2>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell" id="LM35.celsius">
+        celsius
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get degrees in celsius
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.C">
+        C
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Alias for celsius
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.fahrenheit">
+        fahrenheit
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get degrees in fahrenheit
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.F">
+        F
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Alias for fahrenheit
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.kelvin">
+        kelvin
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get degrees in kelvin
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.K">
+        K
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Alias for kelvin
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.limit">
+        limit
+        
+      </div>
+      <div class="params-cell">
+        
+          Array.&lt;number&gt;
+        
+      </div>
+      <div class="params-cell">
+        Limits the output range
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.threshold">
+        threshold
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The minimum amount of change required to emit a "change" event
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.interval">
+        interval
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The interval between readings (in ms)
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.smoothing">
+        smoothing
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The number of samples to take before finding the median
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.aref">
+        aref
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The reference voltage
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.samples">
+        samples
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The number of samples to take before finding the median
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.range">
+        range
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          Array.&lt;number&gt;
+        
+      </div>
+      <div class="params-cell">
+        The input range of the sensor
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.raw">
+        raw
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get the most recent raw ADC reading
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.median">
+        median
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get the most recent median ADC reading
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.resolution">
+        resolution
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The maximum possible ADC reading
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.scaled">
+        scaled
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get the most recent scaled raw reading
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.value">
+        value
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+  
+    <h2 id="LM35.events">Events</h2>
+    <ul>
+      
+        <li>event:data</li>
+      
+        <li>event:change</li>
+      
+    </ul>
+  
+  
+    <h2 id="LM35.methods">Methods</h2>
+    
+      <h3 id="LM35.configure">configure</h3>
+<p>Configure an LM35</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.configure()</code></pre>
+
+  <p><strong>Returns:</strong> The instance on which the method was called</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Passing in Cofiguration Options</caption>
+import LM35 from "j5e/lm35";
+
+const thermometer = await new LM35({
+ pin: 14
+});
+
+thermometer.on("change", data => {
+ trace(thermometer.celsius);
+});</code></pre>
+
+    
+      <h3 id="LM35.configure">configure</h3>
+<p>Configure a Thermometer</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.configure()</code></pre>
+
+  <p><strong>Returns:</strong> The instance on which the method was called</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      options
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or object
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Device configuration options
+      
+    </div>
+  
+    <div class="params-cell">
+      options.aref
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Analog reference voltage
+      
+        <br/><span class="text-red pt-4">Default: 3.3</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.enabled
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or boolean
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Wether the device is currently performing reads every <interval>ms
+      
+        <br/><span class="text-red pt-4">Default: true</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.interval
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Interval between readings in millseconds
+      
+        <br/><span class="text-red pt-4">Default: 100</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.limit
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Limit the output range
+      
+    </div>
+  
+    <div class="params-cell">
+      options.range
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The input range of the sensor
+      
+        <br/><span class="text-red pt-4">Default: [0, N]</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.scale
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The output range for the sensor's value
+      
+        <br/><span class="text-red pt-4">Default: [0, N]</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.threshold
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The minimum amount of change required to emit a "change" event
+      
+        <br/><span class="text-red pt-4">Default: 1</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.toCelsius
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or callback
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Function that converts raw value to Celsius
+      
+    </div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Passing in Cofiguration Options</caption>
+   import Thermometer from "j5e/thermometer";
+
+const thermometer = await new Thermometer({
+ pin: 14
+});
+
+myThermometer.configure({
+  toCelsius: function(raw) {
+    return raw / 16;
+  }
+}) ;
+
+thermometer.on("change", data => {
+ trace(thermometer.celsius);
+});</code></pre>
+
+    
+      <h3 id="LM35.toCelsius">toCelsius</h3>
+<p>Convert a raw reading to Celsius
+param {number} value</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.toCelsius()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+    
+      <h3 id="LM35.emitEvents">emitEvents</h3>
+<p>Internal method for processing reads</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.emitEvents()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+    
+      <h3 id="LM35.enable">enable</h3>
+<p>Enable a disabled sensor.</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.enable()</code></pre>
+
+  <p><strong>Returns:</strong> instance</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+sensor.disable();
+
+// Wait 5 seconds and then take readings
+timer.setTimeout(function() {
+ sensor.enable();
+});</code></pre>
+
+    
+      <h3 id="LM35.disable">disable</h3>
+<p>Disable an enabled sensor.</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.disable()</code></pre>
+
+  <p><strong>Returns:</strong> instance</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+// Take reading for 5 seconds and then stop
+timer.setTimeout(function() {
+ sensor.disable();
+});</code></pre>
+
+    
+      <h3 id="LM35.read">read</h3>
+<p>Synchronous read of a sensor.</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.read()</code></pre>
+
+  <p><strong>Returns:</strong> sensor value</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+let myValue = sensor.read();</code></pre>
+
+    
+      <h3 id="LM35.sample">sample</h3>
+<p>Sample a sensor</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.sample()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+    
+      <h3 id="LM35.eventProcessing">eventProcessing</h3>
+<p>Internal method for processing reads</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.eventProcessing()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+    
+      <h3 id="LM35.scale">scale</h3>
+<p>scale/scaleTo Set a value scaling range</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.scale()</code></pre>
+
+  <p><strong>Returns:</strong> instance</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      low
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Lowerbound
+      
+    </div>
+  
+    <div class="params-cell">
+      high
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Upperbound
+      
+    </div>
+  
+    <div class="params-cell">
+      low, high
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Lowerbound
+      
+    </div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+// Scale all future values to 8-bit range
+sensor.scale([0, 255]);</code></pre>
+
+    
+      <h3 id="LM35.scaleTo">scaleTo</h3>
+<p>scaleTo Scales value to integer representation</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.scaleTo()</code></pre>
+
+  <p><strong>Returns:</strong> The scaled value</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      low
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      An array containing a lower and upper bound
+      
+    </div>
+  
+    <div class="params-cell">
+      low
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A number to use as a lower bound
+      
+    </div>
+  
+    <div class="params-cell">
+      high
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A number to use as an upper bound
+      
+    </div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+// Scale the returned value to 8-bit range
+sensor.scaleTo([0, 255]);</code></pre>
+
+    
+      <h3 id="LM35.fscaleTo">fscaleTo</h3>
+<p>fscaleTo Scales value to single precision float representation</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.fscaleTo()</code></pre>
+
+  <p><strong>Returns:</strong> The scaled value</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      low
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      An array containing a lower and upper bound
+      
+    </div>
+  
+    <div class="params-cell">
+      low
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A number to use as a lower bound
+      
+    </div>
+  
+    <div class="params-cell">
+      high
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A number to use as an upper bound
+      
+    </div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+// Scale the returned value to float between 0 and 1
+sensor.fscaleTo([0, 1]);</code></pre>
+
+    
+      <h3 id="LM35.within">within</h3>
+<p>Fire a callback when the value is within a certain range</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.within()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      range
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The upper and lower ends of the range to watch
+      
+    </div>
+  
+    <div class="params-cell">
+      unit
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or string
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The property to test
+      
+    </div>
+  
+    <div class="params-cell">
+      callback
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or function
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A callback to run when the event is fired.
+      
+    </div>
+   
+</div>
+
+
+    
+      <h3 id="LM35.on">on</h3>
+<p>Create an event listener</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.on()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      event
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or string
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The name of the event to listen for
+      
+    </div>
+  
+    <div class="params-cell">
+      listener
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or function
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A callback to run when the event is fired.
+      
+    </div>
+   
+</div>
+
+
+    
+      <h3 id="LM35.removeListener">removeListener</h3>
+<p>Remove an event listener</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.removeListener()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      event
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or string
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The name of the event that we are removing a listener from
+      
+    </div>
+  
+    <div class="params-cell">
+      listener
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or function
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The callback that we are removing
+      
+    </div>
+   
+</div>
+
+
+    
+      <h3 id="LM35.emit">emit</h3>
+<p>Emit an event</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.emit()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      event
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or string
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The name of the event to emit
+      
+    </div>
+   
+</div>
+
+
+    
+      <h3 id="LM35.once">once</h3>
+<p>Create an event listener that will only fire one time.</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.once()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      event
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or string
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The name of the event to listen for
+      
+    </div>
+  
+    <div class="params-cell">
+      listener
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or function
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A callback to run when the event is fired.
+      
+    </div>
+   
+</div>
+
+
+    
+      <h3 id="LM35.configure">configure</h3>
+<p>Configure a Thermometer</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.configure()</code></pre>
+
+  <p><strong>Returns:</strong> The instance on which the method was called</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      options
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or object
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Device configuration options
+      
+    </div>
+  
+    <div class="params-cell">
+      options.aref
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Analog reference voltage
+      
+        <br/><span class="text-red pt-4">Default: 3.3</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.enabled
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or boolean
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Wether the device is currently performing reads every <interval>ms
+      
+        <br/><span class="text-red pt-4">Default: true</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.interval
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Interval between readings in millseconds
+      
+        <br/><span class="text-red pt-4">Default: 100</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.limit
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Limit the output range
+      
+    </div>
+  
+    <div class="params-cell">
+      options.range
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The input range of the sensor
+      
+        <br/><span class="text-red pt-4">Default: [0, N]</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.scale
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The output range for the sensor's value
+      
+        <br/><span class="text-red pt-4">Default: [0, N]</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.threshold
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The minimum amount of change required to emit a "change" event
+      
+        <br/><span class="text-red pt-4">Default: 1</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.toCelsius
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or callback
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Function that converts raw value to Celsius
+      
+    </div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Passing in Cofiguration Options</caption>
+   import Thermometer from "j5e/thermometer";
+
+const thermometer = await new Thermometer({
+ pin: 14
+});
+
+myThermometer.configure({
+  toCelsius: function(raw) {
+    return raw / 16;
+  }
+}) ;
+
+thermometer.on("change", data => {
+ trace(thermometer.celsius);
+});</code></pre>
+
+    
+  
+  
+
+  <hr class="my-8"/>
+  <h2 id="MF52A103J3470.class">Class: <span class="font-normal">MF52A103J3470</span></h2>
+  <p>The MF52A103J3470 class allows for reading of MF52A103J3470 thermistors°</p>
+  <h3 id="MF52A103J3470.constructor">Constructor</h3>
+  <pre class="my-8"><code class="language-javascript">new <span class="font-normal">MF52A103J3470()</code></pre>
+  <h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      io
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+      number, 
+      
+      string, 
+      
+       or object
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Pin identifier or IO Options (See {@tutorial C-INSTANTIATING})
+      
+    </div>
+   
+</div>
+
+  
+    <h2>Example</h2>
+    
+      <pre><code class="language-javascript"><caption>Use an MF52A103J3470</caption>
+import MF52A103J3470 from "j5e/tmp36";
+
+const myMF52A103J3470 = await new MF52A103J3470(12);
+
+myMF52A103J3470.on("change", function(data) {
+  trace(data.C);
+});</code></pre>
+    
+  
+  
+  <h2 id="MF52A103J3470.properties">Properties</h2>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell" id="MF52A103J3470.celsius">
+        celsius
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get degrees in celsius
+      </div>
+    
+    
+      <div class="params-cell" id="MF52A103J3470.C">
+        C
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Alias for celsius
+      </div>
+    
+    
+      <div class="params-cell" id="MF52A103J3470.fahrenheit">
+        fahrenheit
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get degrees in fahrenheit
+      </div>
+    
+    
+      <div class="params-cell" id="MF52A103J3470.F">
+        F
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Alias for fahrenheit
+      </div>
+    
+    
+      <div class="params-cell" id="MF52A103J3470.kelvin">
+        kelvin
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get degrees in kelvin
+      </div>
+    
+    
+      <div class="params-cell" id="MF52A103J3470.K">
+        K
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Alias for kelvin
+      </div>
+    
+    
+      <div class="params-cell" id="MF52A103J3470.limit">
+        limit
+        
+      </div>
+      <div class="params-cell">
+        
+          Array.&lt;number&gt;
+        
+      </div>
+      <div class="params-cell">
+        Limits the output range
+      </div>
+    
+    
+      <div class="params-cell" id="MF52A103J3470.threshold">
+        threshold
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The minimum amount of change required to emit a "change" event
+      </div>
+    
+    
+      <div class="params-cell" id="MF52A103J3470.interval">
+        interval
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The interval between readings (in ms)
+      </div>
+    
+    
+      <div class="params-cell" id="MF52A103J3470.smoothing">
+        smoothing
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The number of samples to take before finding the median
+      </div>
+    
+    
+      <div class="params-cell" id="MF52A103J3470.aref">
+        aref
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The reference voltage
+      </div>
+    
+    
+      <div class="params-cell" id="MF52A103J3470.samples">
+        samples
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The number of samples to take before finding the median
+      </div>
+    
+    
+      <div class="params-cell" id="MF52A103J3470.range">
+        range
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          Array.&lt;number&gt;
+        
+      </div>
+      <div class="params-cell">
+        The input range of the sensor
+      </div>
+    
+    
+      <div class="params-cell" id="MF52A103J3470.raw">
+        raw
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get the most recent raw ADC reading
+      </div>
+    
+    
+      <div class="params-cell" id="MF52A103J3470.median">
+        median
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get the most recent median ADC reading
+      </div>
+    
+    
+      <div class="params-cell" id="MF52A103J3470.resolution">
+        resolution
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The maximum possible ADC reading
+      </div>
+    
+    
+      <div class="params-cell" id="MF52A103J3470.scaled">
+        scaled
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get the most recent scaled raw reading
+      </div>
+    
+    
+      <div class="params-cell" id="MF52A103J3470.value">
+        value
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+  
+    <h2 id="MF52A103J3470.events">Events</h2>
+    <ul>
+      
+        <li>event:data</li>
+      
+        <li>event:change</li>
+      
+    </ul>
+  
+  
+    <h2 id="MF52A103J3470.methods">Methods</h2>
+    
+      <h3 id="MF52A103J3470.configure">configure</h3>
+<p>Configure an MF52A103J3470</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">mf52a103j3470.configure()</code></pre>
+
+  <p><strong>Returns:</strong> The instance on which the method was called</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Passing in Cofiguration Options</caption>
+   import MF52A103J3470 from "j5e/mf52a103j3470";
+
+const thermometer = await new MF52A103J3470({
+ pin: 14
+});
+
+thermometer.on("change", data => {
+ trace(thermometer.celsius);
+});</code></pre>
+
+    
+      <h3 id="MF52A103J3470.configure">configure</h3>
+<p>Configure a Thermometer</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">mf52a103j3470.configure()</code></pre>
+
+  <p><strong>Returns:</strong> The instance on which the method was called</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      options
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or object
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Device configuration options
+      
+    </div>
+  
+    <div class="params-cell">
+      options.aref
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Analog reference voltage
+      
+        <br/><span class="text-red pt-4">Default: 3.3</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.enabled
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or boolean
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Wether the device is currently performing reads every <interval>ms
+      
+        <br/><span class="text-red pt-4">Default: true</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.interval
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Interval between readings in millseconds
+      
+        <br/><span class="text-red pt-4">Default: 100</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.limit
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Limit the output range
+      
+    </div>
+  
+    <div class="params-cell">
+      options.range
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The input range of the sensor
+      
+        <br/><span class="text-red pt-4">Default: [0, N]</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.scale
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The output range for the sensor's value
+      
+        <br/><span class="text-red pt-4">Default: [0, N]</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.threshold
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The minimum amount of change required to emit a "change" event
+      
+        <br/><span class="text-red pt-4">Default: 1</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.toCelsius
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or callback
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Function that converts raw value to Celsius
+      
+    </div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Passing in Cofiguration Options</caption>
+   import Thermometer from "j5e/thermometer";
+
+const thermometer = await new Thermometer({
+ pin: 14
+});
+
+myThermometer.configure({
+  toCelsius: function(raw) {
+    return raw / 16;
+  }
+}) ;
+
+thermometer.on("change", data => {
+ trace(thermometer.celsius);
+});</code></pre>
+
+    
+      <h3 id="MF52A103J3470.toCelsius">toCelsius</h3>
+<p>Convert a raw reading to Celsius
+param {number} value</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">mf52a103j3470.toCelsius()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+    
+      <h3 id="MF52A103J3470.emitEvents">emitEvents</h3>
+<p>Internal method for processing reads</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">mf52a103j3470.emitEvents()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+    
+      <h3 id="MF52A103J3470.enable">enable</h3>
+<p>Enable a disabled sensor.</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">mf52a103j3470.enable()</code></pre>
+
+  <p><strong>Returns:</strong> instance</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+sensor.disable();
+
+// Wait 5 seconds and then take readings
+timer.setTimeout(function() {
+ sensor.enable();
+});</code></pre>
+
+    
+      <h3 id="MF52A103J3470.disable">disable</h3>
+<p>Disable an enabled sensor.</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">mf52a103j3470.disable()</code></pre>
+
+  <p><strong>Returns:</strong> instance</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+// Take reading for 5 seconds and then stop
+timer.setTimeout(function() {
+ sensor.disable();
+});</code></pre>
+
+    
+      <h3 id="MF52A103J3470.read">read</h3>
+<p>Synchronous read of a sensor.</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">mf52a103j3470.read()</code></pre>
+
+  <p><strong>Returns:</strong> sensor value</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+let myValue = sensor.read();</code></pre>
+
+    
+      <h3 id="MF52A103J3470.sample">sample</h3>
+<p>Sample a sensor</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">mf52a103j3470.sample()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+    
+      <h3 id="MF52A103J3470.eventProcessing">eventProcessing</h3>
+<p>Internal method for processing reads</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">mf52a103j3470.eventProcessing()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+    
+      <h3 id="MF52A103J3470.scale">scale</h3>
+<p>scale/scaleTo Set a value scaling range</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">mf52a103j3470.scale()</code></pre>
+
+  <p><strong>Returns:</strong> instance</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      low
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Lowerbound
+      
+    </div>
+  
+    <div class="params-cell">
+      high
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Upperbound
+      
+    </div>
+  
+    <div class="params-cell">
+      low, high
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Lowerbound
+      
+    </div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+// Scale all future values to 8-bit range
+sensor.scale([0, 255]);</code></pre>
+
+    
+      <h3 id="MF52A103J3470.scaleTo">scaleTo</h3>
+<p>scaleTo Scales value to integer representation</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">mf52a103j3470.scaleTo()</code></pre>
+
+  <p><strong>Returns:</strong> The scaled value</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      low
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      An array containing a lower and upper bound
+      
+    </div>
+  
+    <div class="params-cell">
+      low
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A number to use as a lower bound
+      
+    </div>
+  
+    <div class="params-cell">
+      high
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A number to use as an upper bound
+      
+    </div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+// Scale the returned value to 8-bit range
+sensor.scaleTo([0, 255]);</code></pre>
+
+    
+      <h3 id="MF52A103J3470.fscaleTo">fscaleTo</h3>
+<p>fscaleTo Scales value to single precision float representation</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">mf52a103j3470.fscaleTo()</code></pre>
+
+  <p><strong>Returns:</strong> The scaled value</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      low
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      An array containing a lower and upper bound
+      
+    </div>
+  
+    <div class="params-cell">
+      low
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A number to use as a lower bound
+      
+    </div>
+  
+    <div class="params-cell">
+      high
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A number to use as an upper bound
+      
+    </div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+// Scale the returned value to float between 0 and 1
+sensor.fscaleTo([0, 1]);</code></pre>
+
+    
+      <h3 id="MF52A103J3470.within">within</h3>
+<p>Fire a callback when the value is within a certain range</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">mf52a103j3470.within()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      range
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The upper and lower ends of the range to watch
+      
+    </div>
+  
+    <div class="params-cell">
+      unit
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or string
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The property to test
+      
+    </div>
+  
+    <div class="params-cell">
+      callback
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or function
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A callback to run when the event is fired.
+      
+    </div>
+   
+</div>
+
+
+    
+      <h3 id="MF52A103J3470.on">on</h3>
+<p>Create an event listener</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">mf52a103j3470.on()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      event
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or string
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The name of the event to listen for
+      
+    </div>
+  
+    <div class="params-cell">
+      listener
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or function
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A callback to run when the event is fired.
+      
+    </div>
+   
+</div>
+
+
+    
+      <h3 id="MF52A103J3470.removeListener">removeListener</h3>
+<p>Remove an event listener</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">mf52a103j3470.removeListener()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      event
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or string
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The name of the event that we are removing a listener from
+      
+    </div>
+  
+    <div class="params-cell">
+      listener
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or function
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The callback that we are removing
+      
+    </div>
+   
+</div>
+
+
+    
+      <h3 id="MF52A103J3470.emit">emit</h3>
+<p>Emit an event</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">mf52a103j3470.emit()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      event
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or string
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The name of the event to emit
+      
+    </div>
+   
+</div>
+
+
+    
+      <h3 id="MF52A103J3470.once">once</h3>
+<p>Create an event listener that will only fire one time.</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">mf52a103j3470.once()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      event
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or string
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The name of the event to listen for
+      
+    </div>
+  
+    <div class="params-cell">
+      listener
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or function
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A callback to run when the event is fired.
+      
+    </div>
+   
+</div>
+
+
+    
+      <h3 id="MF52A103J3470.configure">configure</h3>
+<p>Configure a Thermometer</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">mf52a103j3470.configure()</code></pre>
+
+  <p><strong>Returns:</strong> The instance on which the method was called</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      options
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or object
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Device configuration options
+      
+    </div>
+  
+    <div class="params-cell">
+      options.aref
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Analog reference voltage
+      
+        <br/><span class="text-red pt-4">Default: 3.3</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.enabled
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or boolean
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Wether the device is currently performing reads every <interval>ms
+      
+        <br/><span class="text-red pt-4">Default: true</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.interval
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Interval between readings in millseconds
+      
+        <br/><span class="text-red pt-4">Default: 100</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.limit
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Limit the output range
+      
+    </div>
+  
+    <div class="params-cell">
+      options.range
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The input range of the sensor
+      
+        <br/><span class="text-red pt-4">Default: [0, N]</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.scale
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The output range for the sensor's value
+      
+        <br/><span class="text-red pt-4">Default: [0, N]</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.threshold
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The minimum amount of change required to emit a "change" event
+      
+        <br/><span class="text-red pt-4">Default: 1</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.toCelsius
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or callback
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Function that converts raw value to Celsius
+      
+    </div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Passing in Cofiguration Options</caption>
+   import Thermometer from "j5e/thermometer";
+
+const thermometer = await new Thermometer({
+ pin: 14
+});
+
+myThermometer.configure({
+  toCelsius: function(raw) {
+    return raw / 16;
+  }
+}) ;
+
+thermometer.on("change", data => {
+ trace(thermometer.celsius);
+});</code></pre>
+
+    
+  
+  
+
+  <hr class="my-8"/>
+  <h2 id="TMP36.class">Class: <span class="font-normal">TMP36</span></h2>
+  <p>The TMP36 class allows for reading of TMP36 thermistors. Accuracy is within ~1°</p>
+  <h3 id="TMP36.constructor">Constructor</h3>
+  <pre class="my-8"><code class="language-javascript">new <span class="font-normal">TMP36()</code></pre>
+  <h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      io
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+      number, 
+      
+      string, 
+      
+       or object
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Pin identifier or IO Options (See {@tutorial C-INSTANTIATING})
+      
+    </div>
+   
+</div>
+
+  
+    <h2>Example</h2>
+    
+      <pre><code class="language-javascript"><caption>Use a TMP36</caption>
+import TMP36 from "j5e/tmp36";
+
+const myTMP36 = await new TMP36(12);
+
+myTMP36.on("change", function(data) {
+  trace(data.C);
+});</code></pre>
+    
+  
+  
+  <h2 id="TMP36.properties">Properties</h2>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell" id="TMP36.celsius">
+        celsius
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get degrees in celsius
+      </div>
+    
+    
+      <div class="params-cell" id="TMP36.C">
+        C
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Alias for celsius
+      </div>
+    
+    
+      <div class="params-cell" id="TMP36.fahrenheit">
+        fahrenheit
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get degrees in fahrenheit
+      </div>
+    
+    
+      <div class="params-cell" id="TMP36.F">
+        F
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Alias for fahrenheit
+      </div>
+    
+    
+      <div class="params-cell" id="TMP36.kelvin">
+        kelvin
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get degrees in kelvin
+      </div>
+    
+    
+      <div class="params-cell" id="TMP36.K">
+        K
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Alias for kelvin
+      </div>
+    
+    
+      <div class="params-cell" id="TMP36.limit">
+        limit
+        
+      </div>
+      <div class="params-cell">
+        
+          Array.&lt;number&gt;
+        
+      </div>
+      <div class="params-cell">
+        Limits the output range
+      </div>
+    
+    
+      <div class="params-cell" id="TMP36.threshold">
+        threshold
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The minimum amount of change required to emit a "change" event
+      </div>
+    
+    
+      <div class="params-cell" id="TMP36.interval">
+        interval
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The interval between readings (in ms)
+      </div>
+    
+    
+      <div class="params-cell" id="TMP36.smoothing">
+        smoothing
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The number of samples to take before finding the median
+      </div>
+    
+    
+      <div class="params-cell" id="TMP36.aref">
+        aref
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The reference voltage
+      </div>
+    
+    
+      <div class="params-cell" id="TMP36.samples">
+        samples
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The number of samples to take before finding the median
+      </div>
+    
+    
+      <div class="params-cell" id="TMP36.range">
+        range
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          Array.&lt;number&gt;
+        
+      </div>
+      <div class="params-cell">
+        The input range of the sensor
+      </div>
+    
+    
+      <div class="params-cell" id="TMP36.raw">
+        raw
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get the most recent raw ADC reading
+      </div>
+    
+    
+      <div class="params-cell" id="TMP36.median">
+        median
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get the most recent median ADC reading
+      </div>
+    
+    
+      <div class="params-cell" id="TMP36.resolution">
+        resolution
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The maximum possible ADC reading
+      </div>
+    
+    
+      <div class="params-cell" id="TMP36.scaled">
+        scaled
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get the most recent scaled raw reading
+      </div>
+    
+    
+      <div class="params-cell" id="TMP36.value">
+        value
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+  
+    <h2 id="TMP36.events">Events</h2>
+    <ul>
+      
+        <li>event:data</li>
+      
+        <li>event:change</li>
+      
+    </ul>
+  
+  
+    <h2 id="TMP36.methods">Methods</h2>
+    
+      <h3 id="TMP36.configure">configure</h3>
+<p>Configure a TMP36</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">tmp36.configure()</code></pre>
+
+  <p><strong>Returns:</strong> The instance on which the method was called</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      options
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or object
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Device configuration options
+      
+    </div>
+  
+    <div class="params-cell">
+      options.aref
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Analog reference voltage
+      
+        <br/><span class="text-red pt-4">Default: 3.3</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.enabled
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or boolean
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Wether the device is currently performing reads every <interval>ms
+      
+        <br/><span class="text-red pt-4">Default: true</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.interval
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Interval between readings in millseconds
+      
+        <br/><span class="text-red pt-4">Default: 100</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.limit
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Limit the output range
+      
+    </div>
+  
+    <div class="params-cell">
+      options.range
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The input range of the sensor
+      
+        <br/><span class="text-red pt-4">Default: [0, N]</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.scale
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The output range for the sensor's value
+      
+        <br/><span class="text-red pt-4">Default: [0, N]</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.threshold
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The minimum amount of change required to emit a "change" event
+      
+        <br/><span class="text-red pt-4">Default: 1</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.toCelsius
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or callback
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Function that converts raw value to Celsius
+      
+    </div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Passing in Cofiguration Options</caption>
+   import Thermometer from "j5e/thermometer";
+
+const thermometer = await new Thermometer({
+ pin: 14
+});
+
+myThermometer.configure({
+  toCelsius: function(raw) {
+    return raw / 16;
+  }
+}) ;
+
+thermometer.on("change", data => {
+ trace(thermometer.celsius);
+});</code></pre>
+
+    
+      <h3 id="TMP36.toCelsius">toCelsius</h3>
+<p>Convert a raw reading to Celsius
+param {number} value</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">tmp36.toCelsius()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+    
+      <h3 id="TMP36.emitEvents">emitEvents</h3>
+<p>Internal method for processing reads</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">tmp36.emitEvents()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+    
+      <h3 id="TMP36.enable">enable</h3>
+<p>Enable a disabled sensor.</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">tmp36.enable()</code></pre>
+
+  <p><strong>Returns:</strong> instance</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+sensor.disable();
+
+// Wait 5 seconds and then take readings
+timer.setTimeout(function() {
+ sensor.enable();
+});</code></pre>
+
+    
+      <h3 id="TMP36.disable">disable</h3>
+<p>Disable an enabled sensor.</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">tmp36.disable()</code></pre>
+
+  <p><strong>Returns:</strong> instance</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+// Take reading for 5 seconds and then stop
+timer.setTimeout(function() {
+ sensor.disable();
+});</code></pre>
+
+    
+      <h3 id="TMP36.read">read</h3>
+<p>Synchronous read of a sensor.</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">tmp36.read()</code></pre>
+
+  <p><strong>Returns:</strong> sensor value</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+let myValue = sensor.read();</code></pre>
+
+    
+      <h3 id="TMP36.sample">sample</h3>
+<p>Sample a sensor</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">tmp36.sample()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+    
+      <h3 id="TMP36.eventProcessing">eventProcessing</h3>
+<p>Internal method for processing reads</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">tmp36.eventProcessing()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+    
+      <h3 id="TMP36.scale">scale</h3>
+<p>scale/scaleTo Set a value scaling range</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">tmp36.scale()</code></pre>
+
+  <p><strong>Returns:</strong> instance</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      low
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Lowerbound
+      
+    </div>
+  
+    <div class="params-cell">
+      high
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Upperbound
+      
+    </div>
+  
+    <div class="params-cell">
+      low, high
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Lowerbound
+      
+    </div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+// Scale all future values to 8-bit range
+sensor.scale([0, 255]);</code></pre>
+
+    
+      <h3 id="TMP36.scaleTo">scaleTo</h3>
+<p>scaleTo Scales value to integer representation</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">tmp36.scaleTo()</code></pre>
+
+  <p><strong>Returns:</strong> The scaled value</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      low
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      An array containing a lower and upper bound
+      
+    </div>
+  
+    <div class="params-cell">
+      low
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A number to use as a lower bound
+      
+    </div>
+  
+    <div class="params-cell">
+      high
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A number to use as an upper bound
+      
+    </div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+// Scale the returned value to 8-bit range
+sensor.scaleTo([0, 255]);</code></pre>
+
+    
+      <h3 id="TMP36.fscaleTo">fscaleTo</h3>
+<p>fscaleTo Scales value to single precision float representation</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">tmp36.fscaleTo()</code></pre>
+
+  <p><strong>Returns:</strong> The scaled value</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      low
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      An array containing a lower and upper bound
+      
+    </div>
+  
+    <div class="params-cell">
+      low
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A number to use as a lower bound
+      
+    </div>
+  
+    <div class="params-cell">
+      high
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A number to use as an upper bound
+      
+    </div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+// Scale the returned value to float between 0 and 1
+sensor.fscaleTo([0, 1]);</code></pre>
+
+    
+      <h3 id="TMP36.within">within</h3>
+<p>Fire a callback when the value is within a certain range</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">tmp36.within()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      range
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The upper and lower ends of the range to watch
+      
+    </div>
+  
+    <div class="params-cell">
+      unit
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or string
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The property to test
+      
+    </div>
+  
+    <div class="params-cell">
+      callback
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or function
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A callback to run when the event is fired.
+      
+    </div>
+   
+</div>
+
+
+    
+      <h3 id="TMP36.on">on</h3>
+<p>Create an event listener</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">tmp36.on()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      event
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or string
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The name of the event to listen for
+      
+    </div>
+  
+    <div class="params-cell">
+      listener
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or function
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A callback to run when the event is fired.
+      
+    </div>
+   
+</div>
+
+
+    
+      <h3 id="TMP36.removeListener">removeListener</h3>
+<p>Remove an event listener</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">tmp36.removeListener()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      event
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or string
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The name of the event that we are removing a listener from
+      
+    </div>
+  
+    <div class="params-cell">
+      listener
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or function
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The callback that we are removing
+      
+    </div>
+   
+</div>
+
+
+    
+      <h3 id="TMP36.emit">emit</h3>
+<p>Emit an event</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">tmp36.emit()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      event
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or string
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The name of the event to emit
+      
+    </div>
+   
+</div>
+
+
+    
+      <h3 id="TMP36.once">once</h3>
+<p>Create an event listener that will only fire one time.</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">tmp36.once()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      event
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or string
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The name of the event to listen for
+      
+    </div>
+  
+    <div class="params-cell">
+      listener
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or function
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A callback to run when the event is fired.
+      
+    </div>
+   
+</div>
+
+
+    
+  
+  
+
         </section>
       </main>
       <nav class="hidden lg:block lg:relative h-screen z-40 inset-0 flex-none  col-span-2 sticky overflow-y-scroll scrolling-touch ">
   <ul class="sticky pt-12 text-xl">
     
       <li class="font-bold text-xiketic mb-2 text-xl">
-        <a href="#Thermometer.class">Thermometer class</a>
+        <a href="#Thermometer.class">Thermometer class</a>["module:j5e/sensor~Sensor"],module:j5e/thermometer
         <ul class="text-base">
           <li class="my-4 text-lg"><a href="#Thermometer.constructor">Constructor</a></li>
           
@@ -1366,6 +6330,358 @@ sensor.fscaleTo([0, 1]);</code></pre>
               <li class="pl-4 pt-1 font-normal"><a href="#Thermometer.emit">emit</a></li>
             
               <li class="pl-4 pt-1 font-normal"><a href="#Thermometer.once">once</a></li>
+            
+          
+        </ul>
+      </li>
+    
+      <li class="font-bold text-xiketic mb-2 text-xl">
+        <a href="#LM335.class">LM335 class</a>["module:j5e/thermometer~Thermometer"],module:j5e/thermometer
+        <ul class="text-base">
+          <li class="my-4 text-lg"><a href="#LM335.constructor">Constructor</a></li>
+          
+            <li class="text-lg"><a href="#LM335.properties">Properties</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM335.celsius">celsius</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM335.C">C</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM335.fahrenheit">fahrenheit</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM335.F">F</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM335.kelvin">kelvin</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM335.K">K</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM335.limit">limit</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM335.threshold">threshold</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM335.interval">interval</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM335.smoothing">smoothing</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM335.aref">aref</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM335.samples">samples</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM335.range">range</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM335.raw">raw</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM335.median">median</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM335.resolution">resolution</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM335.scaled">scaled</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM335.value">value</a></li>
+            
+          
+          
+            <li class="my-4 text-lg"><a href="#LM335.events">Events</a></li>
+          
+          
+            <li class="mt-4 text-lg"><a href="#LM335.methods">Methods</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM335.configure">configure</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM335.toCelsius">toCelsius</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM335.emitEvents">emitEvents</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM335.enable">enable</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM335.disable">disable</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM335.read">read</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM335.sample">sample</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM335.eventProcessing">eventProcessing</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM335.scale">scale</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM335.scaleTo">scaleTo</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM335.fscaleTo">fscaleTo</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM335.within">within</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM335.on">on</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM335.removeListener">removeListener</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM335.emit">emit</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM335.once">once</a></li>
+            
+          
+        </ul>
+      </li>
+    
+      <li class="font-bold text-xiketic mb-2 text-xl">
+        <a href="#LM35.class">LM35 class</a>["module:j5e/thermometer~Thermometer"],module:j5e/thermometer
+        <ul class="text-base">
+          <li class="my-4 text-lg"><a href="#LM35.constructor">Constructor</a></li>
+          
+            <li class="text-lg"><a href="#LM35.properties">Properties</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.celsius">celsius</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.C">C</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.fahrenheit">fahrenheit</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.F">F</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.kelvin">kelvin</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.K">K</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.limit">limit</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.threshold">threshold</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.interval">interval</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.smoothing">smoothing</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.aref">aref</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.samples">samples</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.range">range</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.raw">raw</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.median">median</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.resolution">resolution</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.scaled">scaled</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.value">value</a></li>
+            
+          
+          
+            <li class="my-4 text-lg"><a href="#LM35.events">Events</a></li>
+          
+          
+            <li class="mt-4 text-lg"><a href="#LM35.methods">Methods</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.configure">configure</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.configure">configure</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.toCelsius">toCelsius</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.emitEvents">emitEvents</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.enable">enable</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.disable">disable</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.read">read</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.sample">sample</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.eventProcessing">eventProcessing</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.scale">scale</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.scaleTo">scaleTo</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.fscaleTo">fscaleTo</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.within">within</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.on">on</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.removeListener">removeListener</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.emit">emit</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.once">once</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.configure">configure</a></li>
+            
+          
+        </ul>
+      </li>
+    
+      <li class="font-bold text-xiketic mb-2 text-xl">
+        <a href="#MF52A103J3470.class">MF52A103J3470 class</a>["module:j5e/thermometer~Thermometer"],module:j5e/thermometer
+        <ul class="text-base">
+          <li class="my-4 text-lg"><a href="#MF52A103J3470.constructor">Constructor</a></li>
+          
+            <li class="text-lg"><a href="#MF52A103J3470.properties">Properties</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#MF52A103J3470.celsius">celsius</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#MF52A103J3470.C">C</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#MF52A103J3470.fahrenheit">fahrenheit</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#MF52A103J3470.F">F</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#MF52A103J3470.kelvin">kelvin</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#MF52A103J3470.K">K</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#MF52A103J3470.limit">limit</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#MF52A103J3470.threshold">threshold</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#MF52A103J3470.interval">interval</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#MF52A103J3470.smoothing">smoothing</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#MF52A103J3470.aref">aref</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#MF52A103J3470.samples">samples</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#MF52A103J3470.range">range</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#MF52A103J3470.raw">raw</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#MF52A103J3470.median">median</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#MF52A103J3470.resolution">resolution</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#MF52A103J3470.scaled">scaled</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#MF52A103J3470.value">value</a></li>
+            
+          
+          
+            <li class="my-4 text-lg"><a href="#MF52A103J3470.events">Events</a></li>
+          
+          
+            <li class="mt-4 text-lg"><a href="#MF52A103J3470.methods">Methods</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#MF52A103J3470.configure">configure</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#MF52A103J3470.configure">configure</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#MF52A103J3470.toCelsius">toCelsius</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#MF52A103J3470.emitEvents">emitEvents</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#MF52A103J3470.enable">enable</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#MF52A103J3470.disable">disable</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#MF52A103J3470.read">read</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#MF52A103J3470.sample">sample</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#MF52A103J3470.eventProcessing">eventProcessing</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#MF52A103J3470.scale">scale</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#MF52A103J3470.scaleTo">scaleTo</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#MF52A103J3470.fscaleTo">fscaleTo</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#MF52A103J3470.within">within</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#MF52A103J3470.on">on</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#MF52A103J3470.removeListener">removeListener</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#MF52A103J3470.emit">emit</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#MF52A103J3470.once">once</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#MF52A103J3470.configure">configure</a></li>
+            
+          
+        </ul>
+      </li>
+    
+      <li class="font-bold text-xiketic mb-2 text-xl">
+        <a href="#TMP36.class">TMP36 class</a>["module:j5e/thermometer~Thermometer"],module:j5e/thermometer
+        <ul class="text-base">
+          <li class="my-4 text-lg"><a href="#TMP36.constructor">Constructor</a></li>
+          
+            <li class="text-lg"><a href="#TMP36.properties">Properties</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#TMP36.celsius">celsius</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#TMP36.C">C</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#TMP36.fahrenheit">fahrenheit</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#TMP36.F">F</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#TMP36.kelvin">kelvin</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#TMP36.K">K</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#TMP36.limit">limit</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#TMP36.threshold">threshold</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#TMP36.interval">interval</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#TMP36.smoothing">smoothing</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#TMP36.aref">aref</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#TMP36.samples">samples</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#TMP36.range">range</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#TMP36.raw">raw</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#TMP36.median">median</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#TMP36.resolution">resolution</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#TMP36.scaled">scaled</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#TMP36.value">value</a></li>
+            
+          
+          
+            <li class="my-4 text-lg"><a href="#TMP36.events">Events</a></li>
+          
+          
+            <li class="mt-4 text-lg"><a href="#TMP36.methods">Methods</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#TMP36.configure">configure</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#TMP36.toCelsius">toCelsius</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#TMP36.emitEvents">emitEvents</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#TMP36.enable">enable</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#TMP36.disable">disable</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#TMP36.read">read</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#TMP36.sample">sample</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#TMP36.eventProcessing">eventProcessing</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#TMP36.scale">scale</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#TMP36.scaleTo">scaleTo</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#TMP36.fscaleTo">fscaleTo</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#TMP36.within">within</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#TMP36.on">on</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#TMP36.removeListener">removeListener</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#TMP36.emit">emit</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#TMP36.once">once</a></li>
             
           
         </ul>

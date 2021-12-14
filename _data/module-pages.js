@@ -9,10 +9,23 @@ module.exports = function(eleventyConfig) {
 
   modules = modules.filter(module => module !== ".DS_Store");
 
+  let devices = [];
+  
   let modulePaths = modules.map(module => {
+    
+    let moduleDevices = fs.readdirSync(`./node_modules/j5e/lib/${module}`, { withFileTypes: true })
+    moduleDevices = moduleDevices.filter(device => device.isDirectory());
+    moduleDevices = moduleDevices.map(device => {
+      device = `./node_modules/j5e/lib/${module}/${device.name}/index.js`;
+      return device;
+    });
+    devices.push(...moduleDevices);
+    
     return `./node_modules/j5e/lib/${module}/index.js`;
   });
- 
+
+  modulePaths.push(...devices);
+
   let jsdocData = jsdoc.explainSync({ files: modulePaths });
 
   modules = modules.map((module, index) => {
@@ -36,6 +49,7 @@ module.exports = function(eleventyConfig) {
       });
 
     });
+
     main = linkify(main);
 
 /*
