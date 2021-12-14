@@ -27,7 +27,7 @@ module.exports = function(eleventyConfig) {
   modulePaths.push(...devices);
 
   let jsdocData = jsdoc.explainSync({ files: modulePaths });
-
+  
   modules = modules.map((module, index) => {
     
     let main = jsdocData.filter(comment => {
@@ -40,6 +40,9 @@ module.exports = function(eleventyConfig) {
     });
 
     main.classes.forEach(thisClass => {
+      
+      thisClass.isDevice = thisClass.longname.indexOf(".") > -1;
+      
       thisClass.methods = jsdocData.filter(comment => {
         return comment.kind === "function" && comment.memberof === thisClass.longname  && !comment.undocumented;
       });

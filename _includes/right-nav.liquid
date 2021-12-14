@@ -1,27 +1,29 @@
 <nav class="hidden lg:block lg:relative h-screen z-40 inset-0 flex-none  col-span-2 sticky overflow-y-scroll scrolling-touch ">
   <ul class="sticky pt-12 text-xl">
     {% for class in module.classes %}
-      <li class="font-bold text-xiketic mb-2 text-xl">
-        <a href="#{{class.name}}.class">{{ class.name }} class</a>{{class.augments}},{{module.longname}}
-        <ul class="text-base">
-          <li class="my-4 text-lg"><a href="#{{ class.name }}.constructor">Constructor</a></li>
-          {% if class.properties.length > 0 %}
-            <li class="text-lg"><a href="#{{ class.name }}.properties">Properties</a></li>
-            {% for prop in class.properties %}
-              <li class="pl-4 font-normal text-base"><a href="#{{ class.name }}.{{ prop.name }}">{{ prop.name }}</a></li>
-            {% endfor %}
-          {% endif %}
-          {% if class.fires.length > 0 %}
-            <li class="my-4 text-lg"><a href="#{{ class.name }}.events">Events</a></li>
-          {% endif %}
-          {% if class.methods.length > 0 %}
-            <li class="mt-4 text-lg"><a href="#{{ class.name }}.methods">Methods</a></li>
-            {% for method in class.methods %}
-              <li class="pl-4 pt-1 font-normal"><a href="#{{ class.name }}.{{ method.name }}">{{ method.name }}</a></li>
-            {% endfor %}
-          {% endif %}
-        </ul>
-      </li>
+      {% if class.isDevice == false %}
+        <li class="font-bold text-xiketic mb-2 text-xl">
+          <a href="#{{class.name}}.class">{{ class.name }} class</a>
+          <ul class="text-base">
+            <li class="my-4 text-lg"><a href="#{{ class.name }}.constructor">Constructor</a></li>
+            {% if class.properties.length > 0 %}
+              <li class="text-lg"><a href="#{{ class.name }}.properties">Properties</a></li>
+              {% for prop in class.properties %}
+                <li class="pl-4 font-normal text-base"><a href="#{{ class.name }}.{{ prop.name }}">{{ prop.name }}</a></li>
+              {% endfor %}
+            {% endif %}
+            {% if class.fires.length > 0 %}
+              <li class="my-4 text-lg"><a href="#{{ class.name }}.events">Events</a></li>
+            {% endif %}
+            {% if class.methods.length > 0 %}
+              <li class="mt-4 text-lg"><a href="#{{ class.name }}.methods">Methods</a></li>
+              {% for method in class.methods %}
+                <li class="pl-4 pt-1 font-normal"><a href="#{{ class.name }}.{{ method.name }}">{{ method.name }}</a></li>
+              {% endfor %}
+            {% endif %}
+          </ul>
+        </li>
+      {% endif %}
     {% endfor %}
   </ul>
 </nav>
