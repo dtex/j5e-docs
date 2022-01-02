@@ -16,8 +16,8 @@
     <div class="max-w-screen-2xl grid grid-cols-12 mx-auto bg-white shadow-2xl">
       <header class="py-2 bg-gradient-to-r from-xiketic to-seaweed col-span-12">
   <div class="relative mx-auto px-4 sm:px-6 lg:px-8 text-right">
-    <a class="whitespace-nowrap inline-flex rounded-md bg-white py-2 px-3 text-xs font-semibold uppercase text-xiketic hover:bg-opacity-90 no-underline" href="/docs/whats-new">What&rsquo;s New? →</a>
-    <a class="whitespace-nowrap inline-flex rounded-md bg-white py-2 px-3 ml-8 text-xs font-semibold uppercase text-xiketic hover:bg-opacity-90 no-underline" href="https://github.com/dtex/j5e">Github</a>
+    <!--<a class="whitespace-nowrap inline-flex rounded-md bg-white py-2 px-3 text-xs font-semibold uppercase text-xiketic hover:bg-opacity-90 no-underline" href="/docs/whats-new">What&rsquo;s New? →</a>-->
+    <a class="inline-flex py-2 px-3 hover:opacity-80" href="https://github.com/dtex/j5e"><img src="/images/GitHub-Mark-Light-64px.png" height="32" width="32" /></a>
   </div>
   
 </header>
@@ -67,22 +67,22 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
   <ul class="text-xl">
     <li class="text-xiketic text-2xl p-4 lg:pb-0 lg:my-6">
       <a href="/"><img class="h-8" src="/images/j5e.svg" /></a></li>
-    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mx-2 bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Getting Started</li>
+    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mr-2 ml-4 bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Getting Started</li>
     <li>
-      <ul class="bg-white text-xiketic text-2xl xl:text-xl lg:text-base p-2 pl-6">
+      <ul class="bg-white text-xiketic text-2xl xl:text-xl lg:text-base p-2 pl-8">
         <li class="pb-3"><a href="/getting-started/installation/">Installing J5e</a></li>
       </ul>
     </li>
-    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mx-2 bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Core Concepts</li>
+    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mr-2 ml-4  bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Core Concepts</li>
     <li>
-      <ul class="bg-white text-xiketic text-2xl lg:text-base xl:text-xl p-2 pl-6">
+      <ul class="bg-white text-xiketic text-2xl lg:text-base xl:text-xl p-2 pl-8">
         <li class="pb-3"><a href="/core-concepts/animation/">Animation</a></li>
         <li class="pb-3"><a href="/core-concepts/instantiation/">Device Instantiation</a></li>
       </ul>
     </li>
-    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mx-2 bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Modules</li>
+    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mr-2 ml-4  bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Modules</li>
     <li>
-      <ul class="bg-white text-xiketic text-2xl lg:text-base xl:text-xl p-2 pl-6">
+      <ul class="bg-white text-xiketic text-2xl lg:text-base xl:text-xl p-2 pl-8">
         
           <li class="pb-3"><a href="/modules/animation">animation</a></li>
         
@@ -129,24 +129,27 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
           </header>
           <h2>Description</h2>
           <p>
-            For working with GPS receivers
+            A module that allows communication with a GPS receiver. The default receiver is any that will send NMEA 0183 sentences over serial as soon as it is powered on.<p>A <b>satellite navigation device</b>, colloquially called a <b>GPS receiver</b>, or simply a <b>GPS</b>, is a device that is capable of receiving information from GNSS satellites and then calculate the device's geographical position. Using suitable software, the device may display the position on a map, and it may offer routing directions. The Global Positioning System (GPS) is one of a handful of global navigation satellite systems (GNSS) made up of a network of a minimum of 24, but currently 30, satellites placed into orbit by the U.S. Department of Defense.<span class="-mt-4 text-right text-xs pl-2"><a href="https://en.wikipedia.org/wiki/Satellite_navigation_device">Read more on Wikipedia</a></span></p><p>The <b>Global Positioning System</b> (<b>GPS</b>), originally <b>Navstar GPS</b>, is a satellite-based radionavigation system owned by the United States government and operated by the United States Space Force. It is one of the global navigation satellite systems (GNSS) that provides geolocation and time information to a GPS receiver anywhere on or near the Earth where there is an unobstructed line of sight to four or more GPS satellites. Obstacles such as mountains and buildings can block the relatively weak GPS signals.<span class="-mt-4 text-right text-xs pl-2"><a href="https://en.wikipedia.org/wiki/Global_Positioning_System">Read more on Wikipedia</a></span></p><p><b>NMEA 0183</b> is a combined electrical and data specification for communication between marine electronics such as echo sounder, sonars, anemometer, gyrocompass, autopilot, GPS receivers and many other types of instruments. It has been defined and is controlled by the National Marine Electronics Association (NMEA). It replaces the earlier <b>NMEA 0180</b> and <b>NMEA 0182</b> standards. In leisure marine applications it is slowly being phased out in favor of the newer NMEA 2000 standard, though NMEA0183 remains the norm in commercial shipping.<span class="-mt-4 text-right text-xs pl-2"><a href="https://en.wikipedia.org/wiki/NMEA_0183">Read more on Wikipedia</a></span></p><p>In telecommunication and data transmission, <b>serial communication</b> is the process of sending data one bit at a time, sequentially, over a communication channel or computer bus. This is in contrast to parallel communication, where several bits are sent as a whole, on a link with several parallel channels.<span class="-mt-4 text-right text-xs pl-2"><a href="https://en.wikipedia.org/wiki/Serial_communication">Read more on Wikipedia</a></span></p>
           </p>
           
             <h2>Requires</h2>
             <ul>
               
-                <li><a href="/modules/event" xclass="underline">module:j5e/event</a></li>
+                <li><a href="/modules/event">module:j5e/event</a></li>
               
-                <li><a href="/modules/fn" xclass="underline">module:j5e/fn</a></li>
+                <li><a href="/modules/fn">module:j5e/fn</a></li>
               
             </ul>
+          
+
+          
           
           
           
           
   <hr class="my-8"/>
   <h2 id="GPS.class">Class: <span class="font-normal">GPS</span></h2>
-  <p>The GPS class allows communication with any GPS receiver that will send NMEA sentences over serial as soon as it is powered on</p>
+  <p>The GPS class allows communication with any GPS receiver that will send NMEA 0183 sentences over serial as soon as it is powered on</p>
   <h3 id="GPS.constructor">Constructor</h3>
   <pre class="my-8"><code class="language-javascript">new <span class="font-normal">GPS()</code></pre>
   <h4>Parameters</h4>
@@ -523,49 +526,47 @@ gps.configure({
       <nav class="hidden lg:block lg:relative h-screen z-40 inset-0 flex-none  col-span-2 sticky overflow-y-scroll scrolling-touch ">
   <ul class="sticky pt-12 text-xl">
     
-      
-        <li class="font-bold text-xiketic mb-2 text-xl">
-          <a href="#GPS.class">GPS class</a>
-          <ul class="text-base">
-            <li class="my-4 text-lg"><a href="#GPS.constructor">Constructor</a></li>
+      <li class="font-bold text-xiketic mb-2 text-xl">
+        <a href="#GPS.class">GPS class</a>
+        <ul class="text-base">
+          <li class="my-4 text-lg"><a href="#GPS.constructor">Constructor</a></li>
+          
+            <li class="text-lg"><a href="#GPS.properties">Properties</a></li>
             
-              <li class="text-lg"><a href="#GPS.properties">Properties</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#GPS.latitude">latitude</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#GPS.longitude">longitude</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#GPS.altitude">altitude</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#GPS.sat">sat</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#GPS.speed">speed</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#GPS.course">course</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#GPS.time">time</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#GPS.frequency">frequency</a></li>
-              
+              <li class="pl-4 font-normal text-base"><a href="#GPS.latitude">latitude</a></li>
             
+              <li class="pl-4 font-normal text-base"><a href="#GPS.longitude">longitude</a></li>
             
-              <li class="my-4 text-lg"><a href="#GPS.events">Events</a></li>
+              <li class="pl-4 font-normal text-base"><a href="#GPS.altitude">altitude</a></li>
             
+              <li class="pl-4 font-normal text-base"><a href="#GPS.sat">sat</a></li>
             
-              <li class="mt-4 text-lg"><a href="#GPS.methods">Methods</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#GPS.config">config</a></li>
-              
+              <li class="pl-4 font-normal text-base"><a href="#GPS.speed">speed</a></li>
             
-          </ul>
-        </li>
-      
+              <li class="pl-4 font-normal text-base"><a href="#GPS.course">course</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#GPS.time">time</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#GPS.frequency">frequency</a></li>
+            
+          
+          
+            <li class="my-4 text-lg"><a href="#GPS.events">Events</a></li>
+          
+          
+            <li class="mt-4 text-lg"><a href="#GPS.methods">Methods</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#GPS.config">config</a></li>
+            
+          
+        </ul>
+      </li>
     
   </ul>
 </nav>
-      <!--<footer xclass="m-4 max-w-screen-xl m-auto">
-  Footer
-</footer>-->
+      <footer class="bg-gradient-to-r from-xiketic to-seaweed col-span-12 text-white text-center p-4">
+  <p><a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> excerpts re-published under the Creative Commons Attribution-ShareAlike 3.0 license<br/>All other content &copy; 2021, 2022 The J5e Contributors Licensed under the MIT license</p>
+</footer>
       </div>
   </body>
 </html>

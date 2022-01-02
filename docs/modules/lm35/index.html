@@ -125,21 +125,17 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
         <section class="col-span-full p-8 py-4" xclass="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 p-8 py-4">
           
           <header>
-            <h1 id="j5e/servo.module">Module: <span class="font-normal">j5e/servo</span></h1>
+            <h1 id="j5e/lm35.module">Module: <span class="font-normal">j5e/lm35</span></h1>
           </header>
           <h2>Description</h2>
           <p>
-            A module for controlling hobby servos and continuous rotation servos using PWM servo control.<p>A <b>servomotor</b> is a rotary actuator or linear actuator that allows for precise control of angular or linear position, velocity and acceleration. It consists of a suitable motor coupled to a sensor for position feedback. It also requires a relatively sophisticated controller, often a dedicated module designed specifically for use with servomotors.<span class="-mt-4 text-right text-xs pl-2"><a href="https://en.wikipedia.org/wiki/Servomotor">Read more on Wikipedia</a></span></p><p><b>Servo control</b> is a method of controlling many types of RC/hobbyist servos by sending the servo a PWM signal, a series of repeating pulses of variable width where either the width of the pulse or the duty cycle of a pulse train determines the position to be achieved by the servo. The PWM signal might come from a radio control receiver to the servo or from common microcontrollers such as the Arduino.<span class="-mt-4 text-right text-xs pl-2"><a href="https://en.wikipedia.org/wiki/Servo_control">Read more on Wikipedia</a></span></p><p><b>Pulse-width modulation</b> (<b>PWM</b>), or <b>pulse-duration modulation</b> (<b>PDM</b>), is a method of reducing the average power delivered by an electrical signal, by effectively chopping it up into discrete parts. The average value of voltage fed to the load is controlled by turning the switch between supply and load on and off at a fast rate. The longer the switch is on compared to the off periods, the higher the total power supplied to the load. Along with maximum power point tracking (MPPT), it is one of the primary methods of reducing the output of solar panels to that which can be utilized by a battery. PWM is particularly suited for running inertial loads such as motors, which are not as easily affected by this discrete switching, because their inertia causes them to react slowly. The PWM switching frequency has to be high enough not to affect the load, which is to say that the resultant waveform perceived by the load must be as smooth as possible.<span class="-mt-4 text-right text-xs pl-2"><a href="https://en.wikipedia.org/wiki/Pulse-width_modulation">Read more on Wikipedia</a></span></p>
+            A module for measuring temperature using a LM35 thermistor.<p>A <b>thermistor</b> is a type of resistor whose resistance is strongly dependent on temperature, more so than in standard resistors. The word is a combination of <i>thermal</i> and <i>resistor</i>. Thermistors are widely used as inrush current limiters, temperature sensors, self-resetting overcurrent protectors, and self-regulating heating elements. An operational temperature range of a thermistor is dependent on the probe type and is typically in between −100 °C (−148 °F) and 300 °C (572 °F).<span class="-mt-4 text-right text-xs pl-2"><a href="https://en.wikipedia.org/wiki/Thermistor">Read more on Wikipedia</a></span></p>
           </p>
           
             <h2>Requires</h2>
             <ul>
               
-                <li><a href="/modules/animation">module:j5e/animation</a></li>
-              
-                <li><a href="/modules/easing">module:j5e/easing</a></li>
-              
-                <li><a href="/modules/event">module:j5e/event</a></li>
+                <li><a href="/modules/thermometer">module:j5e/thermometer</a></li>
               
                 <li><a href="/modules/fn">module:j5e/fn</a></li>
               
@@ -152,10 +148,10 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
           
           
   <hr class="my-8"/>
-  <h2 id="Servo.class">Class: <span class="font-normal">Servo</span></h2>
-  <p>The Servo class allows for control of hobby servos</p>
-  <h3 id="Servo.constructor">Constructor</h3>
-  <pre class="my-8"><code class="language-javascript">new <span class="font-normal">Servo()</code></pre>
+  <h2 id="LM35.class">Class: <span class="font-normal">LM35</span></h2>
+  <p>The LM35 class allows for reading of LM35 thermistors</p>
+  <h3 id="LM35.constructor">Constructor</h3>
+  <pre class="my-8"><code class="language-javascript">new <span class="font-normal">LM35()</code></pre>
   <h4>Parameters</h4>
 <div class="params-table">
   <div class="params-table-header">Name</div>
@@ -188,59 +184,296 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
   
     <h2>Example</h2>
     
-      <pre><code class="language-javascript"><caption>Sweep a servo back and forth</caption>
-import Servo from "j5e/servo";
+      <pre><code class="language-javascript"><caption>Use a LM35</caption>
+import LM35 from "j5e/lm35";
 
-const servo = await new Servo(12);
-servo.sweep();</code></pre>
+const myLM35 = await new LM35(12);
+
+myLM35.on("change", function(data) {
+  trace(data.C);
+});</code></pre>
     
   
   
-  <h2 id="Servo.properties">Properties</h2>
+  <h2 id="LM35.properties">Properties</h2>
   <div class="params-table">
     <div class="params-table-header">Name</div>
     <div class="params-table-header">Type</div>
     <div class="params-table-header">Description</div>
     
-      <div class="params-cell" id="Servo.history">
-        history
+      <div class="params-cell" id="LM35.celsius">
+        celsius
         
           <br/><span class="font-normal"> (read only)</span>
         
       </div>
       <div class="params-cell">
         
+          number
+        
       </div>
       <div class="params-cell">
-        The last five position updates
+        Get degrees in celsius
       </div>
     
     
-      <div class="params-cell" id="Servo.last">
-        last
+      <div class="params-cell" id="LM35.C">
+        C
         
           <br/><span class="font-normal"> (read only)</span>
         
       </div>
       <div class="params-cell">
         
+          number
+        
       </div>
       <div class="params-cell">
-        The most recent position update
+        Alias for celsius
       </div>
     
     
-      <div class="params-cell" id="Servo.position">
-        position
+      <div class="params-cell" id="LM35.fahrenheit">
+        fahrenheit
         
           <br/><span class="font-normal"> (read only)</span>
         
       </div>
       <div class="params-cell">
         
+          number
+        
       </div>
       <div class="params-cell">
-        The most recent request and corrected position (factors in offset and invert)
+        Get degrees in fahrenheit
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.F">
+        F
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Alias for fahrenheit
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.kelvin">
+        kelvin
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get degrees in kelvin
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.K">
+        K
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Alias for kelvin
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.limit">
+        limit
+        
+      </div>
+      <div class="params-cell">
+        
+          Array.&lt;number&gt;
+        
+      </div>
+      <div class="params-cell">
+        Limits the output range
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.threshold">
+        threshold
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The minimum amount of change required to emit a "change" event
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.interval">
+        interval
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The interval between readings (in ms)
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.smoothing">
+        smoothing
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The number of samples to take before finding the median
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.aref">
+        aref
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The reference voltage
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.samples">
+        samples
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The number of samples to take before finding the median
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.range">
+        range
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          Array.&lt;number&gt;
+        
+      </div>
+      <div class="params-cell">
+        The input range of the sensor
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.raw">
+        raw
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get the most recent raw ADC reading
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.median">
+        median
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get the most recent median ADC reading
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.resolution">
+        resolution
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        The maximum possible ADC reading
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.scaled">
+        scaled
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        Get the most recent scaled raw reading
+      </div>
+    
+    
+      <div class="params-cell" id="LM35.value">
+        value
+        
+          <br/><span class="font-normal"> (read only)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+          number
+        
+      </div>
+      <div class="params-cell">
+        
       </div>
     
     
@@ -249,19 +482,49 @@ servo.sweep();</code></pre>
   
 
   
-    <h2 id="Servo.events">Events</h2>
+    <h2 id="LM35.events">Events</h2>
     <ul>
       
-        <li>move:complete - Fires when a servo reaches its requested position</li>
+        <li>event:data</li>
+      
+        <li>event:change</li>
       
     </ul>
   
   
-    <h2 id="Servo.methods">Methods</h2>
+    <h2 id="LM35.methods">Methods</h2>
     
-      <h3 id="Servo.configure">configure</h3>
-<p>Configure a Servo</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.configure()</code></pre>
+      <h3 id="LM35.configure">configure</h3>
+<p>Configure an LM35</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.configure()</code></pre>
+
+  <p><strong>Returns:</strong> The instance on which the method was called</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Passing in Cofiguration Options</caption>
+import LM35 from "j5e/lm35";
+
+const thermometer = await new LM35({
+ pin: 14
+});
+
+thermometer.on("change", data => {
+ trace(thermometer.celsius);
+});</code></pre>
+
+    
+      <h3 id="LM35.configure">configure</h3>
+<p>Configure a Thermometer</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.configure()</code></pre>
 
   <p><strong>Returns:</strong> The instance on which the method was called</p>
 
@@ -289,63 +552,61 @@ servo.sweep();</code></pre>
     </div>
   
     <div class="params-cell">
-      options.pin
+      options.aref
       
       
     </div>
     <div class="params-cell">
       
-      number, 
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      If passing an object, a pin number or pin identifier
-      
-    </div>
-  
-    <div class="params-cell">
-      options.io
-      
-      
-    </div>
-    <div class="params-cell">
-      
-      string, 
-      
-       or constructor
+       or number
       
     </div>
     <div class="params-cell">
       <p><span class="font-bold sm:hidden">Description:<br/></span>
-      If passing an object, a string specifying a path to the IO provider or a constructor
+      Analog reference voltage
       
-        <br/><span class="text-red pt-4">Default: builtin/pwm</span>
+        <br/><span class="text-red pt-4">Default: 3.3</span>
       
     </div>
   
     <div class="params-cell">
-      options.type
+      options.enabled
       
       
     </div>
     <div class="params-cell">
       
-       or string
+       or boolean
       
     </div>
     <div class="params-cell">
       <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Type of servo ("standard" or "continuous")
+      Wether the device is currently performing reads every <interval>ms
       
-        <br/><span class="text-red pt-4">Default: "standard"</span>
+        <br/><span class="text-red pt-4">Default: true</span>
       
     </div>
   
     <div class="params-cell">
-      options.pwmRange
+      options.interval
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Interval between readings in millseconds
+      
+        <br/><span class="text-red pt-4">Default: 100</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.limit
       
       
     </div>
@@ -356,27 +617,7 @@ servo.sweep();</code></pre>
     </div>
     <div class="params-cell">
       <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The pulse width range in microseconds
-      
-        <br/><span class="text-red pt-4">Default: [600, 2400]</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      options.deadband
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Array.&lt;number&gt;
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The degree range at which a continuos motion servo will not turn
-      
-        <br/><span class="text-red pt-4">Default: [90,90]</span>
+      Limit the output range
       
     </div>
   
@@ -392,14 +633,14 @@ servo.sweep();</code></pre>
     </div>
     <div class="params-cell">
       <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The allowed range of motion in degrees
+      The input range of the sensor
       
-        <br/><span class="text-red pt-4">Default: [0, 180]</span>
+        <br/><span class="text-red pt-4">Default: [0, N]</span>
       
     </div>
   
     <div class="params-cell">
-      options.deviceRange
+      options.scale
       
       
     </div>
@@ -410,14 +651,14 @@ servo.sweep();</code></pre>
     </div>
     <div class="params-cell">
       <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The physical range (throw) of the servo in degrees
+      The output range for the sensor's value
       
-        <br/><span class="text-red pt-4">Default: [0, 180]</span>
+        <br/><span class="text-red pt-4">Default: [0, N]</span>
       
     </div>
   
     <div class="params-cell">
-      options.startAt
+      options.threshold
       
       
     </div>
@@ -428,592 +669,129 @@ servo.sweep();</code></pre>
     </div>
     <div class="params-cell">
       <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The desired start position of the servo
-      
-        <br/><span class="text-red pt-4">Default: "Any value within options.range"</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      options.offset
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Adjust the position of the servo for trimming
-      
-        <br/><span class="text-red pt-4">Default: 0</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      options.invert
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or boolean
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Reverses the direction of rotation
-      
-    </div>
-  
-    <div class="params-cell">
-      options.center
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or boolean
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Center the servo on instantiation
-      
-    </div>
-   
-</div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a continuos rotation servo forward</caption>
-import Servo from "j5e/servo";
-
-const servo = await new Servo({ pin: 12 });
-servo.configure({type: "continuous"});
-servo.cw();</code></pre>
-
-    
-      <h3 id="Servo.initialize">initialize</h3>
-<p>The initialization code for a servo</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.initialize()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
-</div>
-
-
-    
-      <h3 id="Servo.update">update</h3>
-<p>Calls the write param on the IO instance for this servo.</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.update()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-  
-    <div class="params-cell">
-      pulseWidth
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The target pulseWidth
-      
-    </div>
-   
-</div>
-
-
-    
-      <h3 id="Servo.to">to</h3>
-<p>Set the servo's position to given degree over time.</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.to()</code></pre>
-
-  <p><strong>Returns:</strong> instance</p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-  
-    <div class="params-cell">
-      degrees
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-      Number, 
-      
-       or Object
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Degrees to move servo to or an animation object (See {@tutorial D-ANIMATING})
-      
-    </div>
-  
-    <div class="params-cell">
-      time
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Time to spend in motion. If degrees is a number and this value is ommitted, the servo will move to the requested degrees as quickly as possible.
-      
-    </div>
-  
-    <div class="params-cell">
-      rate
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The target frame rate of the motion transiton
-      
-        <br/><span class="text-red pt-4">Default: 20</span>
-      
-    </div>
-   
-</div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 180° as quickly as possible</caption>
-import Servo from "j5e/servo";
-
-const servo = await new Servo(12);
-servo.to(180);</code></pre>
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 180° over one second</caption>
-import Servo from "j5e/servo";
-
-const servo = await new Servo(12);
-servo.to(180, 1000);</code></pre>
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 180° using an animation segment object</caption>
-import Servo from "j5e/servo";
-import { inOutQuad } from "j5e/easing";
-
-const servo = await new Servo(12);
-servo.to({
-  duration: 1000,
-  cuePoints: [0, 1.0],
-  keyFrames: [ null, 180 ],
-  easing: inOutQuad
-});</code></pre>
-
-    
-      <h3 id="Servo.step">step</h3>
-<p>Update the servo position by specified degrees (over time)</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.step()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-  
-    <div class="params-cell">
-      degrees
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Degrees to turn servo to.
-      
-    </div>
-  
-    <div class="params-cell">
-      time
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Time to spend in motion.
-      
-    </div>
-   
-</div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 120° as quickly as possible</caption>
-import Servo from "j5e/servo";
-
-const servo = await new Servo(12);
-// The servo's default position is 90 degrees
-servo.step(30);</code></pre>
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 120° over one second</caption>
-import Servo from "j5e/servo";
-
-const servo = await new Servo(12);
-// The servo's default position is 90 degrees
-servo.step(30, 1000);</code></pre>
-
-    
-      <h3 id="Servo.min">min</h3>
-<p>min Set Servo to minimum degrees, defaults to 0deg</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.min()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-  
-    <div class="params-cell">
-      time
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Time to spend in motion.
-      
-    </div>
-   
-</div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 0° as quickly as possible</caption>
-import Servo from "j5e/servo";
-
-const servo = await new Servo(12);
-servo.min();</code></pre>
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 0° over one second</caption>
-import Servo from "j5e/servo";
-
-const servo = await new Servo(12);
-servo.min(1000);</code></pre>
-
-    
-      <h3 id="Servo.max">max</h3>
-<p>Set Servo to maximum degrees, defaults to 180deg</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.max()</code></pre>
-
-  <p><strong>Returns:</strong> instance</p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-  
-    <div class="params-cell">
-      time
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Time to spend in motion.
-      
-    </div>
-   
-</div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a standard servo to 180° as quickly as possible</caption>
-import Servo from "j5e/servo";
-
-const servo = await new Servo(12);
-servo.max();</code></pre>
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a standard servo to 180° over one second</caption>
-import Servo from "j5e/servo";
-
-const servo = await new Servo(12);
-servo.max(1000);</code></pre>
-
-    
-      <h3 id="Servo.center">center</h3>
-<p>Set Servo to centerpoint, defaults to 90deg</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.center()</code></pre>
-
-  <p><strong>Returns:</strong> instance</p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-  
-    <div class="params-cell">
-      time
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Time to spend in motion.
-      
-    </div>
-   
-</div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 180° and then back to 90° as quickly as possible</caption>
-import Servo from "j5e/servo";
-import { timer } from "j5e/fn";
-
-const servo = await new Servo(12);
-servo.to(180);
-
-timer.setTimeout(function() {
-  servo.center();
-}, 1000);</code></pre>
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 180° and then back to 90° over one second</caption>
-import Servo from "j5e/servo";
-import { timer } from "j5e/fn";
-
-const servo = await new Servo(12);
-servo.to(180);
-
-timer.setTimeout(function() {
-  servo.center(1000);
-}, 1000);</code></pre>
-
-    
-      <h3 id="Servo.home">home</h3>
-<p>Return Servo to its startAt position</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.home()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
-</div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 180° and then back to 90° as quickly as possible</caption>
-import Servo from "j5e/servo";
-import { timer } from "j5e/fn";
-
-const servo = await new Servo(12);
-servo.to(180);
-
-timer.setTimeout(function() {
-  servo.home();
-}, 1000);</code></pre>
-
-    
-      <h3 id="Servo.sweep">sweep</h3>
-<p>Sweep the servo between min and max or provided range</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.sweep()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-  
-    <div class="params-cell">
-      opts
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-      Array, 
-      
-       or Object
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      An array describing the range of the sweep in degrees or an animation segment options object
-      
-    </div>
-   
-</div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Sweep a servo back and forth between 10° to 170°</caption>
-import Servo from "j5e/servo";
-
-const servo = await new Servo(12);
-servo.sweep([10, 170]));
-
-example
-<caption>Sweep a servo back and forth between 10° to 170° with inOutCirc easing</caption>
-import Servo from "j5e/servo";
-import {inOutCirc} from "j5e/easing";
-
-const servo = await new Servo(12);
-servo.sweep({
-  keyFrames: [10, 170],
-  cuePoints: [0, 1],
-  easing: inOutCirc
-});</code></pre>
-
-    
-      <h3 id="Servo.stop">stop</h3>
-<p>Stop a moving servo
-return {Servo}</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.stop()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
-</div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Sweep a servo back and forth for two seconds then stop</caption>
-import Servo from "j5e/servo";
-
-const servo = await new Servo(12);
-servo.sweep([10, 170]));
-
-timer.setTimeout(function() {
-  servo.stop();
-}, 2000);</code></pre>
-
-    
-      <h3 id="Servo.cw">cw</h3>
-<p>Move a continuous rotation servo clockwise</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.cw()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-  
-    <div class="params-cell">
-      speed
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Speed between 0 and 1.
+      The minimum amount of change required to emit a "change" event
       
         <br/><span class="text-red pt-4">Default: 1</span>
       
     </div>
+  
+    <div class="params-cell">
+      options.toCelsius
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or callback
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Function that converts raw value to Celsius
+      
+    </div>
    
 </div>
 
 
   <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a continuos rotation servo clockwise</caption>
-import Servo from "j5e/servo";
+  <pre class="mb-4"><code class="language-javascript"><caption>Passing in Cofiguration Options</caption>
+   import Thermometer from "j5e/thermometer";
 
-const servo = await new Servo({ pin: 12, type: "continuous"});
-servo.cw();</code></pre>
+const thermometer = await new Thermometer({
+ pin: 14
+});
 
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a continuos rotation servo clockwise at half speed</caption>
-import Servo from "j5e/servo";
+myThermometer.configure({
+  toCelsius: function(raw) {
+    return raw / 16;
+  }
+}) ;
 
-const servo = await new Servo({ pin: 12, type: "continuous"});
-servo.cw(0.5);</code></pre>
+thermometer.on("change", data => {
+ trace(thermometer.celsius);
+});</code></pre>
 
     
-      <h3 id="Servo.ccw">ccw</h3>
-<p>Move a continuous rotation servo counter-clockwise</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.ccw()</code></pre>
+      <h3 id="LM35.enable">enable</h3>
+<p>Enable a disabled sensor.</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.enable()</code></pre>
 
-  <p><strong>Returns:</strong> </p>
+  <p><strong>Returns:</strong> instance</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+sensor.disable();
+
+// Wait 5 seconds and then take readings
+timer.setTimeout(function() {
+ sensor.enable();
+});</code></pre>
+
+    
+      <h3 id="LM35.disable">disable</h3>
+<p>Disable an enabled sensor.</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.disable()</code></pre>
+
+  <p><strong>Returns:</strong> instance</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+// Take reading for 5 seconds and then stop
+timer.setTimeout(function() {
+ sensor.disable();
+});</code></pre>
+
+    
+      <h3 id="LM35.read">read</h3>
+<p>Synchronous read of a sensor.</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.read()</code></pre>
+
+  <p><strong>Returns:</strong> sensor value</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+let myValue = sensor.read();</code></pre>
+
+    
+      <h3 id="LM35.scale">scale</h3>
+<p>scale/scaleTo Set a value scaling range</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.scale()</code></pre>
+
+  <p><strong>Returns:</strong> instance</p>
 
 <h4>Parameters</h4>
 <div class="params-table">
@@ -1022,21 +800,52 @@ servo.cw(0.5);</code></pre>
   <div class="params-table-header">Description</div>
   
     <div class="params-cell">
-      speed
+      low
       
         <br/><span class="font-normal text-red"> (required)</span>
       
     </div>
     <div class="params-cell">
       
-       or number
+       or Number
       
     </div>
     <div class="params-cell">
       <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Speed between 0 and 1.
+      Lowerbound
       
-        <br/><span class="text-red pt-4">Default: 1</span>
+    </div>
+  
+    <div class="params-cell">
+      high
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Upperbound
+      
+    </div>
+  
+    <div class="params-cell">
+      low, high
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Lowerbound
       
     </div>
    
@@ -1044,23 +853,18 @@ servo.cw(0.5);</code></pre>
 
 
   <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a continuos rotation servo counter-clockwise</caption>
-import Servo from "j5e/servo";
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
 
-const servo = await new Servo({ pin: 12, type: "continuous"});
-servo.ccw();</code></pre>
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a continuos rotation servo counter-clockwise at half speed</caption>
-import Servo from "j5e/servo";
-
-const servo = await new Servo({ pin: 12, type: "continuous"});
-servo.ccw(0.5);</code></pre>
+// Scale all future values to 8-bit range
+sensor.scale([0, 255]);</code></pre>
 
     
-      <h3 id="Servo.normalize">normalize</h3>
-<p></p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.normalize()</code></pre>
+      <h3 id="LM35.scaleTo">scaleTo</h3>
+<p>scaleTo Scales value to integer representation</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.scaleTo()</code></pre>
+
+  <p><strong>Returns:</strong> The scaled value</p>
 
 <h4>Parameters</h4>
 <div class="params-table">
@@ -1069,40 +873,209 @@ servo.ccw(0.5);</code></pre>
   <div class="params-table-header">Description</div>
   
     <div class="params-cell">
-      number || object
+      low
       
+        <br/><span class="font-normal text-red"> (required)</span>
       
     </div>
     <div class="params-cell">
+      
+       or Number
       
     </div>
     <div class="params-cell">
       <p><span class="font-bold sm:hidden">Description:<br/></span>
-      keyFrames An array of step values or a keyFrame objects
+      An array containing a lower and upper bound
+      
+    </div>
+  
+    <div class="params-cell">
+      low
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A number to use as a lower bound
+      
+    </div>
+  
+    <div class="params-cell">
+      high
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A number to use as an upper bound
       
     </div>
    
 </div>
 
 
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+// Scale the returned value to 8-bit range
+sensor.scaleTo([0, 255]);</code></pre>
+
     
-      <h3 id="Servo.render">render</h3>
-<p>render</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.render()</code></pre>
+      <h3 id="LM35.fscaleTo">fscaleTo</h3>
+<p>fscaleTo Scales value to single precision float representation</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.fscaleTo()</code></pre>
+
+  <p><strong>Returns:</strong> The scaled value</p>
 
 <h4>Parameters</h4>
 <div class="params-table">
   <div class="params-table-header">Name</div>
   <div class="params-table-header">Type</div>
   <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      low
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      An array containing a lower and upper bound
+      
+    </div>
+  
+    <div class="params-cell">
+      low
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A number to use as a lower bound
+      
+    </div>
+  
+    <div class="params-cell">
+      high
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A number to use as an upper bound
+      
+    </div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+const sensor = await new Sensor(12);
+
+// Scale the returned value to float between 0 and 1
+sensor.fscaleTo([0, 1]);</code></pre>
+
+    
+      <h3 id="LM35.within">within</h3>
+<p>Fire a callback when the value is within a certain range</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.within()</code></pre>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      range
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The upper and lower ends of the range to watch
+      
+    </div>
+  
+    <div class="params-cell">
+      unit
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or string
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The property to test
+      
+    </div>
+  
+    <div class="params-cell">
+      callback
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or function
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      A callback to run when the event is fired.
+      
+    </div>
    
 </div>
 
 
     
-      <h3 id="Servo.on">on</h3>
+      <h3 id="LM35.on">on</h3>
 <p>Create an event listener</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.on()</code></pre>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.on()</code></pre>
 
 <h4>Parameters</h4>
 <div class="params-table">
@@ -1148,9 +1121,9 @@ servo.ccw(0.5);</code></pre>
 
 
     
-      <h3 id="Servo.removeListener">removeListener</h3>
+      <h3 id="LM35.removeListener">removeListener</h3>
 <p>Remove an event listener</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.removeListener()</code></pre>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.removeListener()</code></pre>
 
 <h4>Parameters</h4>
 <div class="params-table">
@@ -1196,9 +1169,9 @@ servo.ccw(0.5);</code></pre>
 
 
     
-      <h3 id="Servo.emit">emit</h3>
+      <h3 id="LM35.emit">emit</h3>
 <p>Emit an event</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.emit()</code></pre>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.emit()</code></pre>
 
 <h4>Parameters</h4>
 <div class="params-table">
@@ -1227,9 +1200,9 @@ servo.ccw(0.5);</code></pre>
 
 
     
-      <h3 id="Servo.once">once</h3>
+      <h3 id="LM35.once">once</h3>
 <p>Create an event listener that will only fire one time.</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.once()</code></pre>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.once()</code></pre>
 
 <h4>Parameters</h4>
 <div class="params-table">
@@ -1275,6 +1248,197 @@ servo.ccw(0.5);</code></pre>
 
 
     
+      <h3 id="LM35.configure">configure</h3>
+<p>Configure a Thermometer</p>
+<pre class="mb-4"><code class="language-javascript"><span class="font-normal">lm35.configure()</code></pre>
+
+  <p><strong>Returns:</strong> The instance on which the method was called</p>
+
+<h4>Parameters</h4>
+<div class="params-table">
+  <div class="params-table-header">Name</div>
+  <div class="params-table-header">Type</div>
+  <div class="params-table-header">Description</div>
+  
+    <div class="params-cell">
+      options
+      
+        <br/><span class="font-normal text-red"> (required)</span>
+      
+    </div>
+    <div class="params-cell">
+      
+       or object
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Device configuration options
+      
+    </div>
+  
+    <div class="params-cell">
+      options.aref
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Analog reference voltage
+      
+        <br/><span class="text-red pt-4">Default: 3.3</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.enabled
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or boolean
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Wether the device is currently performing reads every <interval>ms
+      
+        <br/><span class="text-red pt-4">Default: true</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.interval
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Interval between readings in millseconds
+      
+        <br/><span class="text-red pt-4">Default: 100</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.limit
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Limit the output range
+      
+    </div>
+  
+    <div class="params-cell">
+      options.range
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The input range of the sensor
+      
+        <br/><span class="text-red pt-4">Default: [0, N]</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.scale
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or Array.&lt;number&gt;
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The output range for the sensor's value
+      
+        <br/><span class="text-red pt-4">Default: [0, N]</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.threshold
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or number
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      The minimum amount of change required to emit a "change" event
+      
+        <br/><span class="text-red pt-4">Default: 1</span>
+      
+    </div>
+  
+    <div class="params-cell">
+      options.toCelsius
+      
+      
+    </div>
+    <div class="params-cell">
+      
+       or callback
+      
+    </div>
+    <div class="params-cell">
+      <p><span class="font-bold sm:hidden">Description:<br/></span>
+      Function that converts raw value to Celsius
+      
+    </div>
+   
+</div>
+
+
+  <h4>Example</h4>
+  <pre class="mb-4"><code class="language-javascript"><caption>Passing in Cofiguration Options</caption>
+   import Thermometer from "j5e/thermometer";
+
+const thermometer = await new Thermometer({
+ pin: 14
+});
+
+myThermometer.configure({
+  toCelsius: function(raw) {
+    return raw / 16;
+  }
+}) ;
+
+thermometer.on("change", data => {
+ trace(thermometer.celsius);
+});</code></pre>
+
+    
   
   
 
@@ -1284,62 +1448,82 @@ servo.ccw(0.5);</code></pre>
   <ul class="sticky pt-12 text-xl">
     
       <li class="font-bold text-xiketic mb-2 text-xl">
-        <a href="#Servo.class">Servo class</a>
+        <a href="#LM35.class">LM35 class</a>
         <ul class="text-base">
-          <li class="my-4 text-lg"><a href="#Servo.constructor">Constructor</a></li>
+          <li class="my-4 text-lg"><a href="#LM35.constructor">Constructor</a></li>
           
-            <li class="text-lg"><a href="#Servo.properties">Properties</a></li>
+            <li class="text-lg"><a href="#LM35.properties">Properties</a></li>
             
-              <li class="pl-4 font-normal text-base"><a href="#Servo.history">history</a></li>
+              <li class="pl-4 font-normal text-base"><a href="#LM35.celsius">celsius</a></li>
             
-              <li class="pl-4 font-normal text-base"><a href="#Servo.last">last</a></li>
+              <li class="pl-4 font-normal text-base"><a href="#LM35.C">C</a></li>
             
-              <li class="pl-4 font-normal text-base"><a href="#Servo.position">position</a></li>
+              <li class="pl-4 font-normal text-base"><a href="#LM35.fahrenheit">fahrenheit</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.F">F</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.kelvin">kelvin</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.K">K</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.limit">limit</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.threshold">threshold</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.interval">interval</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.smoothing">smoothing</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.aref">aref</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.samples">samples</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.range">range</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.raw">raw</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.median">median</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.resolution">resolution</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.scaled">scaled</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#LM35.value">value</a></li>
             
           
           
-            <li class="my-4 text-lg"><a href="#Servo.events">Events</a></li>
+            <li class="my-4 text-lg"><a href="#LM35.events">Events</a></li>
           
           
-            <li class="mt-4 text-lg"><a href="#Servo.methods">Methods</a></li>
+            <li class="mt-4 text-lg"><a href="#LM35.methods">Methods</a></li>
             
-              <li class="pl-4 pt-1 font-normal"><a href="#Servo.configure">configure</a></li>
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.configure">configure</a></li>
             
-              <li class="pl-4 pt-1 font-normal"><a href="#Servo.initialize">initialize</a></li>
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.configure">configure</a></li>
             
-              <li class="pl-4 pt-1 font-normal"><a href="#Servo.update">update</a></li>
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.enable">enable</a></li>
             
-              <li class="pl-4 pt-1 font-normal"><a href="#Servo.to">to</a></li>
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.disable">disable</a></li>
             
-              <li class="pl-4 pt-1 font-normal"><a href="#Servo.step">step</a></li>
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.read">read</a></li>
             
-              <li class="pl-4 pt-1 font-normal"><a href="#Servo.min">min</a></li>
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.scale">scale</a></li>
             
-              <li class="pl-4 pt-1 font-normal"><a href="#Servo.max">max</a></li>
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.scaleTo">scaleTo</a></li>
             
-              <li class="pl-4 pt-1 font-normal"><a href="#Servo.center">center</a></li>
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.fscaleTo">fscaleTo</a></li>
             
-              <li class="pl-4 pt-1 font-normal"><a href="#Servo.home">home</a></li>
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.within">within</a></li>
             
-              <li class="pl-4 pt-1 font-normal"><a href="#Servo.sweep">sweep</a></li>
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.on">on</a></li>
             
-              <li class="pl-4 pt-1 font-normal"><a href="#Servo.stop">stop</a></li>
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.removeListener">removeListener</a></li>
             
-              <li class="pl-4 pt-1 font-normal"><a href="#Servo.cw">cw</a></li>
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.emit">emit</a></li>
             
-              <li class="pl-4 pt-1 font-normal"><a href="#Servo.ccw">ccw</a></li>
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.once">once</a></li>
             
-              <li class="pl-4 pt-1 font-normal"><a href="#Servo.normalize">normalize</a></li>
-            
-              <li class="pl-4 pt-1 font-normal"><a href="#Servo.render">render</a></li>
-            
-              <li class="pl-4 pt-1 font-normal"><a href="#Servo.on">on</a></li>
-            
-              <li class="pl-4 pt-1 font-normal"><a href="#Servo.removeListener">removeListener</a></li>
-            
-              <li class="pl-4 pt-1 font-normal"><a href="#Servo.emit">emit</a></li>
-            
-              <li class="pl-4 pt-1 font-normal"><a href="#Servo.once">once</a></li>
+              <li class="pl-4 pt-1 font-normal"><a href="#LM35.configure">configure</a></li>
             
           
         </ul>

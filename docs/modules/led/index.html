@@ -16,8 +16,8 @@
     <div class="max-w-screen-2xl grid grid-cols-12 mx-auto bg-white shadow-2xl">
       <header class="py-2 bg-gradient-to-r from-xiketic to-seaweed col-span-12">
   <div class="relative mx-auto px-4 sm:px-6 lg:px-8 text-right">
-    <a class="whitespace-nowrap inline-flex rounded-md bg-white py-2 px-3 text-xs font-semibold uppercase text-xiketic hover:bg-opacity-90 no-underline" href="/docs/whats-new">What&rsquo;s New? →</a>
-    <a class="whitespace-nowrap inline-flex rounded-md bg-white py-2 px-3 ml-8 text-xs font-semibold uppercase text-xiketic hover:bg-opacity-90 no-underline" href="https://github.com/dtex/j5e">Github</a>
+    <!--<a class="whitespace-nowrap inline-flex rounded-md bg-white py-2 px-3 text-xs font-semibold uppercase text-xiketic hover:bg-opacity-90 no-underline" href="/docs/whats-new">What&rsquo;s New? →</a>-->
+    <a class="inline-flex py-2 px-3 hover:opacity-80" href="https://github.com/dtex/j5e"><img src="/images/GitHub-Mark-Light-64px.png" height="32" width="32" /></a>
   </div>
   
 </header>
@@ -67,22 +67,22 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
   <ul class="text-xl">
     <li class="text-xiketic text-2xl p-4 lg:pb-0 lg:my-6">
       <a href="/"><img class="h-8" src="/images/j5e.svg" /></a></li>
-    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mx-2 bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Getting Started</li>
+    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mr-2 ml-4 bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Getting Started</li>
     <li>
-      <ul class="bg-white text-xiketic text-2xl xl:text-xl lg:text-base p-2 pl-6">
+      <ul class="bg-white text-xiketic text-2xl xl:text-xl lg:text-base p-2 pl-8">
         <li class="pb-3"><a href="/getting-started/installation/">Installing J5e</a></li>
       </ul>
     </li>
-    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mx-2 bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Core Concepts</li>
+    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mr-2 ml-4  bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Core Concepts</li>
     <li>
-      <ul class="bg-white text-xiketic text-2xl lg:text-base xl:text-xl p-2 pl-6">
+      <ul class="bg-white text-xiketic text-2xl lg:text-base xl:text-xl p-2 pl-8">
         <li class="pb-3"><a href="/core-concepts/animation/">Animation</a></li>
         <li class="pb-3"><a href="/core-concepts/instantiation/">Device Instantiation</a></li>
       </ul>
     </li>
-    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mx-2 bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Modules</li>
+    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mr-2 ml-4  bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Modules</li>
     <li>
-      <ul class="bg-white text-xiketic text-2xl lg:text-base xl:text-xl p-2 pl-6">
+      <ul class="bg-white text-xiketic text-2xl lg:text-base xl:text-xl p-2 pl-8">
         
           <li class="pb-3"><a href="/modules/animation">animation</a></li>
         
@@ -129,19 +129,22 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
           </header>
           <h2>Description</h2>
           <p>
-            Class library for controlling LED's (Light Emitting Diodes). Connect the LED to a digital IO for on/off functionality. Use a PWM IO for varying brightness.
+            A module for controlling LED's using PWM.<p>A <b>light-emitting diode</b> (<b>LED</b>) is a semiconductor light source that emits light when current flows through it. Electrons in the semiconductor recombine with electron holes, releasing energy in the form of photons. The color of the light is determined by the energy required for electrons to cross the band gap of the semiconductor. White light is obtained by using multiple semiconductors or a layer of light-emitting phosphor on the semiconductor device.<span class="-mt-4 text-right text-xs pl-2"><a href="https://en.wikipedia.org/wiki/Light-emitting_diode">Read more on Wikipedia</a></span></p><p><b>Pulse-width modulation</b> (<b>PWM</b>), or <b>pulse-duration modulation</b> (<b>PDM</b>), is a method of reducing the average power delivered by an electrical signal, by effectively chopping it up into discrete parts. The average value of voltage fed to the load is controlled by turning the switch between supply and load on and off at a fast rate. The longer the switch is on compared to the off periods, the higher the total power supplied to the load. Along with maximum power point tracking (MPPT), it is one of the primary methods of reducing the output of solar panels to that which can be utilized by a battery. PWM is particularly suited for running inertial loads such as motors, which are not as easily affected by this discrete switching, because their inertia causes them to react slowly. The PWM switching frequency has to be high enough not to affect the load, which is to say that the resultant waveform perceived by the load must be as smooth as possible.<span class="-mt-4 text-right text-xs pl-2"><a href="https://en.wikipedia.org/wiki/Pulse-width_modulation">Read more on Wikipedia</a></span></p>
           </p>
           
             <h2>Requires</h2>
             <ul>
               
-                <li><a href="/modules/animation" xclass="underline">module:j5e/animation</a></li>
+                <li><a href="/modules/animation">module:j5e/animation</a></li>
               
-                <li><a href="/modules/easing" xclass="underline">module:j5e/easing</a></li>
+                <li><a href="/modules/easing">module:j5e/easing</a></li>
               
-                <li><a href="/modules/fn" xclass="underline">module:j5e/fn</a></li>
+                <li><a href="/modules/fn">module:j5e/fn</a></li>
               
             </ul>
+          
+
+          
           
           
           
@@ -326,20 +329,6 @@ led.configure({
 
 // With sink: true, led.on() sets pin 14 low
 led.on();</code></pre>
-
-    
-      <h3 id="LED.write">write</h3>
-<p>Internal method that writes the current LED value to the IO</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.write()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
-</div>
-
 
     
       <h3 id="LED.on">on</h3>
@@ -892,48 +881,6 @@ timer.setTimeout(function() {
 }, 5000);</code></pre>
 
     
-      <h3 id="LED.normalize">normalize</h3>
-<p></p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.normalize()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-  
-    <div class="params-cell">
-      number || object
-      
-      
-    </div>
-    <div class="params-cell">
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      keyFrames An array of step values or a keyFrame objects
-      
-    </div>
-   
-</div>
-
-
-    
-      <h3 id="LED.render">render</h3>
-<p></p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.render()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
-</div>
-
-
-    
   
   
 
@@ -942,67 +889,59 @@ timer.setTimeout(function() {
       <nav class="hidden lg:block lg:relative h-screen z-40 inset-0 flex-none  col-span-2 sticky overflow-y-scroll scrolling-touch ">
   <ul class="sticky pt-12 text-xl">
     
-      
-        <li class="font-bold text-xiketic mb-2 text-xl">
-          <a href="#LED.class">LED class</a>
-          <ul class="text-base">
-            <li class="my-4 text-lg"><a href="#LED.constructor">Constructor</a></li>
+      <li class="font-bold text-xiketic mb-2 text-xl">
+        <a href="#LED.class">LED class</a>
+        <ul class="text-base">
+          <li class="my-4 text-lg"><a href="#LED.constructor">Constructor</a></li>
+          
+            <li class="text-lg"><a href="#LED.properties">Properties</a></li>
             
-              <li class="text-lg"><a href="#LED.properties">Properties</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#LED.value">value</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#LED.isOn">isOn</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#LED.isRunning">isRunning</a></li>
-              
+              <li class="pl-4 font-normal text-base"><a href="#LED.value">value</a></li>
             
+              <li class="pl-4 font-normal text-base"><a href="#LED.isOn">isOn</a></li>
             
+              <li class="pl-4 font-normal text-base"><a href="#LED.isRunning">isRunning</a></li>
             
-              <li class="mt-4 text-lg"><a href="#LED.methods">Methods</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#LED.configure">configure</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#LED.write">write</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#LED.on">on</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#LED.off">off</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#LED.toggle">toggle</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#LED.blink">blink</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#LED.brightness">brightness</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#LED.intensity">intensity</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#LED.fade">fade</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#LED.fadeIn">fadeIn</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#LED.fadeOut">fadeOut</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#LED.pulse">pulse</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#LED.animate">animate</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#LED.stop">stop</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#LED.normalize">normalize</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#LED.render">render</a></li>
-              
+          
+          
+          
+            <li class="mt-4 text-lg"><a href="#LED.methods">Methods</a></li>
             
-          </ul>
-        </li>
-      
+              <li class="pl-4 pt-1 font-normal"><a href="#LED.configure">configure</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LED.on">on</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LED.off">off</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LED.toggle">toggle</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LED.blink">blink</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LED.brightness">brightness</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LED.intensity">intensity</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LED.fade">fade</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LED.fadeIn">fadeIn</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LED.fadeOut">fadeOut</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LED.pulse">pulse</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LED.animate">animate</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#LED.stop">stop</a></li>
+            
+          
+        </ul>
+      </li>
     
   </ul>
 </nav>
-      <!--<footer xclass="m-4 max-w-screen-xl m-auto">
-  Footer
-</footer>-->
+      <footer class="bg-gradient-to-r from-xiketic to-seaweed col-span-12 text-white text-center p-4">
+  <p><a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> excerpts re-published under the Creative Commons Attribution-ShareAlike 3.0 license<br/>All other content &copy; 2021, 2022 The J5e Contributors Licensed under the MIT license</p>
+</footer>
       </div>
   </body>
 </html>

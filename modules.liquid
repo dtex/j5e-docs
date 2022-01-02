@@ -30,10 +30,20 @@ permalink: "modules/{{ module.name | replace: 'j5e', '' | slug }}/"
             <h2>Requires</h2>
             <ul>
               {% for mod in module.requires %}
-                <li><a href="/modules/{{ mod | remove: "module:j5e/" }}" xclass="underline">{{ mod }}</a></li>
+                <li><a href="/modules/{{ mod | remove: "module:j5e/" }}">{{ mod }}</a></li>
               {% endfor %}
             </ul>
           {% endif %}
+
+          {% if module.devices %}
+            <h2>Device Specific Modules</h2>
+            <ul>
+              {% for device in module.devices %}
+                <li><a href="/modules/{{ device.memberof | remove: "module:j5e/" }}">{{ device.name }}</a></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+          
           {% if module.see %}
             <h2>References</h2>
             <ul>
@@ -52,7 +62,7 @@ permalink: "modules/{{ module.name | replace: 'j5e', '' | slug }}/"
         </section>
       </main>
       {% include right-nav %}
-      <!--{% include footer %}-->
+      {% include footer %}
       </div>
   </body>
 </html>
