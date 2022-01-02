@@ -16,8 +16,8 @@
     <div class="max-w-screen-2xl grid grid-cols-12 mx-auto bg-white shadow-2xl">
       <header class="py-2 bg-gradient-to-r from-xiketic to-seaweed col-span-12">
   <div class="relative mx-auto px-4 sm:px-6 lg:px-8 text-right">
-    <a class="whitespace-nowrap inline-flex rounded-md bg-white py-2 px-3 text-xs font-semibold uppercase text-xiketic hover:bg-opacity-90 no-underline" href="/docs/whats-new">What&rsquo;s New? →</a>
-    <a class="whitespace-nowrap inline-flex rounded-md bg-white py-2 px-3 ml-8 text-xs font-semibold uppercase text-xiketic hover:bg-opacity-90 no-underline" href="https://github.com/dtex/j5e">Github</a>
+    <!--<a class="whitespace-nowrap inline-flex rounded-md bg-white py-2 px-3 text-xs font-semibold uppercase text-xiketic hover:bg-opacity-90 no-underline" href="/docs/whats-new">What&rsquo;s New? →</a>-->
+    <a class="inline-flex py-2 px-3 hover:opacity-80" href="https://github.com/dtex/j5e"><img src="/images/GitHub-Mark-Light-64px.png" height="32" width="32" /></a>
   </div>
   
 </header>
@@ -67,22 +67,22 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
   <ul class="text-xl">
     <li class="text-xiketic text-2xl p-4 lg:pb-0 lg:my-6">
       <a href="/"><img class="h-8" src="/images/j5e.svg" /></a></li>
-    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mx-2 bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Getting Started</li>
+    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mr-2 ml-4 bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Getting Started</li>
     <li>
-      <ul class="bg-white text-xiketic text-2xl xl:text-xl lg:text-base p-2 pl-6">
+      <ul class="bg-white text-xiketic text-2xl xl:text-xl lg:text-base p-2 pl-8">
         <li class="pb-3"><a href="/getting-started/installation/">Installing J5e</a></li>
       </ul>
     </li>
-    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mx-2 bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Core Concepts</li>
+    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mr-2 ml-4  bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Core Concepts</li>
     <li>
-      <ul class="bg-white text-xiketic text-2xl lg:text-base xl:text-xl p-2 pl-6">
+      <ul class="bg-white text-xiketic text-2xl lg:text-base xl:text-xl p-2 pl-8">
         <li class="pb-3"><a href="/core-concepts/animation/">Animation</a></li>
         <li class="pb-3"><a href="/core-concepts/instantiation/">Device Instantiation</a></li>
       </ul>
     </li>
-    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mx-2 bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Modules</li>
+    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mr-2 ml-4  bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Modules</li>
     <li>
-      <ul class="bg-white text-xiketic text-2xl lg:text-base xl:text-xl p-2 pl-6">
+      <ul class="bg-white text-xiketic text-2xl lg:text-base xl:text-xl p-2 pl-8">
         
           <li class="pb-3"><a href="/modules/animation">animation</a></li>
         
@@ -129,17 +129,20 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
           </header>
           <h2>Description</h2>
           <p>
-            For working with switches
+            A module for working with switches. It will emit open and close events when the state of a mechanical switch changes.<p>In electrical engineering, a <b>switch</b> is an electrical component that can disconnect or connect the conducting path in an electrical circuit, interrupting the electric current or diverting it from one conductor to another. The most common type of switch is an electromechanical device consisting of one or more sets of movable electrical contacts connected to external circuits. When a pair of contacts is touching current can pass between them, while when the contacts are separated no current can flow.<span class="-mt-4 text-right text-xs pl-2"><a href="https://en.wikipedia.org/wiki/Switch">Read more on Wikipedia</a></span></p>
           </p>
           
             <h2>Requires</h2>
             <ul>
               
-                <li><a href="/modules/event" xclass="underline">module:j5e/event</a></li>
+                <li><a href="/modules/event">module:j5e/event</a></li>
               
-                <li><a href="/modules/fn" xclass="underline">module:j5e/fn</a></li>
+                <li><a href="/modules/fn">module:j5e/fn</a></li>
               
             </ul>
+          
+
+          
           
           
           
@@ -268,54 +271,6 @@ mySwitch.on("close", function() {
   
   
     <h2 id="Switch.methods">Methods</h2>
-    
-      <h3 id="Switch.configure">configure</h3>
-<p>Configure a switch - Noop</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">switch.configure()</code></pre>
-
-  <p><strong>Returns:</strong> The instance on which the method was called</p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-  
-    <div class="params-cell">
-      options
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or object
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Device configuration options
-      
-    </div>
-   
-</div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript">import Button from "j5e/button";
-import LED from "j5e/led";
-
-const button = await new Button(14);
-button.configure();
-
-button.on("open", function() {
- led.off();
-});
-
-button.on("close", function() {
- led.on();
-});</code></pre>
-
     
       <h3 id="Switch.on">on</h3>
 <p>Create an event listener</p>
@@ -500,45 +455,41 @@ button.on("close", function() {
       <nav class="hidden lg:block lg:relative h-screen z-40 inset-0 flex-none  col-span-2 sticky overflow-y-scroll scrolling-touch ">
   <ul class="sticky pt-12 text-xl">
     
-      
-        <li class="font-bold text-xiketic mb-2 text-xl">
-          <a href="#Switch.class">Switch class</a>
-          <ul class="text-base">
-            <li class="my-4 text-lg"><a href="#Switch.constructor">Constructor</a></li>
+      <li class="font-bold text-xiketic mb-2 text-xl">
+        <a href="#Switch.class">Switch class</a>
+        <ul class="text-base">
+          <li class="my-4 text-lg"><a href="#Switch.constructor">Constructor</a></li>
+          
+            <li class="text-lg"><a href="#Switch.properties">Properties</a></li>
             
-              <li class="text-lg"><a href="#Switch.properties">Properties</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#Switch.isClosed">isClosed</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#Switch.isOpen">isOpen</a></li>
-              
+              <li class="pl-4 font-normal text-base"><a href="#Switch.isClosed">isClosed</a></li>
             
+              <li class="pl-4 font-normal text-base"><a href="#Switch.isOpen">isOpen</a></li>
             
-              <li class="my-4 text-lg"><a href="#Switch.events">Events</a></li>
+          
+          
+            <li class="my-4 text-lg"><a href="#Switch.events">Events</a></li>
+          
+          
+            <li class="mt-4 text-lg"><a href="#Switch.methods">Methods</a></li>
             
+              <li class="pl-4 pt-1 font-normal"><a href="#Switch.on">on</a></li>
             
-              <li class="mt-4 text-lg"><a href="#Switch.methods">Methods</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#Switch.configure">configure</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#Switch.on">on</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#Switch.removeListener">removeListener</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#Switch.emit">emit</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#Switch.once">once</a></li>
-              
+              <li class="pl-4 pt-1 font-normal"><a href="#Switch.removeListener">removeListener</a></li>
             
-          </ul>
-        </li>
-      
+              <li class="pl-4 pt-1 font-normal"><a href="#Switch.emit">emit</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Switch.once">once</a></li>
+            
+          
+        </ul>
+      </li>
     
   </ul>
 </nav>
-      <!--<footer xclass="m-4 max-w-screen-xl m-auto">
-  Footer
-</footer>-->
+      <footer class="bg-gradient-to-r from-xiketic to-seaweed col-span-12 text-white text-center p-4">
+  <p><a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> excerpts re-published under the Creative Commons Attribution-ShareAlike 3.0 license<br/>All other content &copy; 2021, 2022 The J5e Contributors Licensed under the MIT license</p>
+</footer>
       </div>
   </body>
 </html>

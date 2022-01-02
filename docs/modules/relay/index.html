@@ -16,8 +16,8 @@
     <div class="max-w-screen-2xl grid grid-cols-12 mx-auto bg-white shadow-2xl">
       <header class="py-2 bg-gradient-to-r from-xiketic to-seaweed col-span-12">
   <div class="relative mx-auto px-4 sm:px-6 lg:px-8 text-right">
-    <a class="whitespace-nowrap inline-flex rounded-md bg-white py-2 px-3 text-xs font-semibold uppercase text-xiketic hover:bg-opacity-90 no-underline" href="/docs/whats-new">What&rsquo;s New? →</a>
-    <a class="whitespace-nowrap inline-flex rounded-md bg-white py-2 px-3 ml-8 text-xs font-semibold uppercase text-xiketic hover:bg-opacity-90 no-underline" href="https://github.com/dtex/j5e">Github</a>
+    <!--<a class="whitespace-nowrap inline-flex rounded-md bg-white py-2 px-3 text-xs font-semibold uppercase text-xiketic hover:bg-opacity-90 no-underline" href="/docs/whats-new">What&rsquo;s New? →</a>-->
+    <a class="inline-flex py-2 px-3 hover:opacity-80" href="https://github.com/dtex/j5e"><img src="/images/GitHub-Mark-Light-64px.png" height="32" width="32" /></a>
   </div>
   
 </header>
@@ -67,22 +67,22 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
   <ul class="text-xl">
     <li class="text-xiketic text-2xl p-4 lg:pb-0 lg:my-6">
       <a href="/"><img class="h-8" src="/images/j5e.svg" /></a></li>
-    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mx-2 bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Getting Started</li>
+    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mr-2 ml-4 bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Getting Started</li>
     <li>
-      <ul class="bg-white text-xiketic text-2xl xl:text-xl lg:text-base p-2 pl-6">
+      <ul class="bg-white text-xiketic text-2xl xl:text-xl lg:text-base p-2 pl-8">
         <li class="pb-3"><a href="/getting-started/installation/">Installing J5e</a></li>
       </ul>
     </li>
-    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mx-2 bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Core Concepts</li>
+    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mr-2 ml-4  bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Core Concepts</li>
     <li>
-      <ul class="bg-white text-xiketic text-2xl lg:text-base xl:text-xl p-2 pl-6">
+      <ul class="bg-white text-xiketic text-2xl lg:text-base xl:text-xl p-2 pl-8">
         <li class="pb-3"><a href="/core-concepts/animation/">Animation</a></li>
         <li class="pb-3"><a href="/core-concepts/instantiation/">Device Instantiation</a></li>
       </ul>
     </li>
-    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mx-2 bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Modules</li>
+    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mr-2 ml-4  bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Modules</li>
     <li>
-      <ul class="bg-white text-xiketic text-2xl lg:text-base xl:text-xl p-2 pl-6">
+      <ul class="bg-white text-xiketic text-2xl lg:text-base xl:text-xl p-2 pl-8">
         
           <li class="pb-3"><a href="/modules/animation">animation</a></li>
         
@@ -129,15 +129,18 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
           </header>
           <h2>Description</h2>
           <p>
-            Relay
+            A module for controlling an electrically operated switch. Relays are often used to control high voltage devices such as motors, motors, and even motors. These higher voltages can be dangerous, so excercise caution when using this module.<p>A <b>relay</b> is an electrically operated switch. It consists of a set of input terminals for a single or multiple control signals, and a set of operating contact terminals. The switch may have any number of contacts in multiple contact forms, such as make contacts, break contacts, or combinations thereof.<span class="-mt-4 text-right text-xs pl-2"><a href="https://en.wikipedia.org/wiki/Relay">Read more on Wikipedia</a></span></p>
           </p>
           
             <h2>Requires</h2>
             <ul>
               
-                <li><a href="/modules/fn" xclass="underline">module:j5e/fn</a></li>
+                <li><a href="/modules/fn">module:j5e/fn</a></li>
               
             </ul>
+          
+
+          
           
           
           
@@ -439,43 +442,41 @@ system.setTimeout(function() {
       <nav class="hidden lg:block lg:relative h-screen z-40 inset-0 flex-none  col-span-2 sticky overflow-y-scroll scrolling-touch ">
   <ul class="sticky pt-12 text-xl">
     
-      
-        <li class="font-bold text-xiketic mb-2 text-xl">
-          <a href="#Relay.class">Relay class</a>
-          <ul class="text-base">
-            <li class="my-4 text-lg"><a href="#Relay.constructor">Constructor</a></li>
+      <li class="font-bold text-xiketic mb-2 text-xl">
+        <a href="#Relay.class">Relay class</a>
+        <ul class="text-base">
+          <li class="my-4 text-lg"><a href="#Relay.constructor">Constructor</a></li>
+          
+            <li class="text-lg"><a href="#Relay.properties">Properties</a></li>
             
-              <li class="text-lg"><a href="#Relay.properties">Properties</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#Relay.value">value</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#Relay.isClosed">isClosed</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#Relay.type">type</a></li>
-              
+              <li class="pl-4 font-normal text-base"><a href="#Relay.value">value</a></li>
             
+              <li class="pl-4 font-normal text-base"><a href="#Relay.isClosed">isClosed</a></li>
             
+              <li class="pl-4 font-normal text-base"><a href="#Relay.type">type</a></li>
             
-              <li class="mt-4 text-lg"><a href="#Relay.methods">Methods</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#Relay.configure">configure</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#Relay.close">close</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#Relay.open">open</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#Relay.toggle">toggle</a></li>
-              
+          
+          
+          
+            <li class="mt-4 text-lg"><a href="#Relay.methods">Methods</a></li>
             
-          </ul>
-        </li>
-      
+              <li class="pl-4 pt-1 font-normal"><a href="#Relay.configure">configure</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Relay.close">close</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Relay.open">open</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Relay.toggle">toggle</a></li>
+            
+          
+        </ul>
+      </li>
     
   </ul>
 </nav>
-      <!--<footer xclass="m-4 max-w-screen-xl m-auto">
-  Footer
-</footer>-->
+      <footer class="bg-gradient-to-r from-xiketic to-seaweed col-span-12 text-white text-center p-4">
+  <p><a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> excerpts re-published under the Creative Commons Attribution-ShareAlike 3.0 license<br/>All other content &copy; 2021, 2022 The J5e Contributors Licensed under the MIT license</p>
+</footer>
       </div>
   </body>
 </html>

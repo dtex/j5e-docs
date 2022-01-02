@@ -32,6 +32,8 @@
     "esbuild": "^0.13.4",
     "fs-extra": "^10.0.0",
     "jsdoc-api": "^7.0.1",
-    "jsdoc-parse": "^6.0.1"
+    "jsdoc-parse": "^6.0.1",
+    "node-fetch": "^2.6.6",
+    "node-fetch-cache": "^3.0.3"
   }
 }

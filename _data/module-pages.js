@@ -1,47 +1,145 @@
 const jsdoc = require('jsdoc-api');
 const fs = require('fs-extra');
 const { comment } = require('postcss');
+const fetch = require('node-fetch-cache');
 
-module.exports = function(eleventyConfig) {
+module.exports = async function(eleventyConfig) {
   
-  let result = [];
   let modules = fs.readdirSync("./node_modules/j5e/lib");
 
   modules = modules.filter(module => module !== ".DS_Store");
 
   let devices = [];
+  let devicePaths = [];
   
   let modulePaths = modules.map(module => {
     
     let moduleDevices = fs.readdirSync(`./node_modules/j5e/lib/${module}`, { withFileTypes: true })
     moduleDevices = moduleDevices.filter(device => device.isDirectory());
+    moduleDevices = moduleDevices.map(device => device.name);
+    devices.push(...moduleDevices);
+
     moduleDevices = moduleDevices.map(device => {
-      device = `./node_modules/j5e/lib/${module}/${device.name}/index.js`;
+      device = `./node_modules/j5e/lib/${module}/${device}/index.js`;
       return device;
     });
-    devices.push(...moduleDevices);
+    devicePaths.push(...moduleDevices);
     
     return `./node_modules/j5e/lib/${module}/index.js`;
   });
 
-  modulePaths.push(...devices);
+  modules.push(...devices);
+  modulePaths.push(...devicePaths);
 
   let jsdocData = jsdoc.explainSync({ files: modulePaths });
+  jsdocData = jsdocData.filter(comment => {
+    return comment.access !== "private";
+  })
+
+  let jsdocModules = jsdocData.filter(doc => doc.kind === "module");
+  
+  // let myKeys = [];
+  // let rosetta = {};
+  // jsdocData.forEach(comment => {
+  //   myKeys.push(...Object.keys(comment));
+  // });
+  // myKeys = myKeys.filter(onlyUnique);
+
+  // myKeys.forEach(key => {
+  //   rosetta[key] = [];
+  // });
+
+//   jsdocData.forEach(comment => {
+//     Object.keys(comment).forEach(key => {
+//       if (key === "comment") return;
+//       if (key === "meta") return;
+//       if (key === "description") return;
+//       if (rosetta[key].indexOf(comment[key]) === -1 ) {
+//         rosetta[key].push(comment[key]);
+//       }
+//     });
+//   });
+
+//   /* 'comment',      'meta',      'description',
+//   'kind',         'name',      'requires',
+//   'longname',     'classdesc', 'augments',
+//   'fires',        'scope',     'memberof',
+//   'undocumented', 'params',    'examples',
+//   'returns',      'access',    'async',
+//   'type',         'readonly',  'see',
+//   'author',       'tags',      'inheritdoc',
+//   'properties',   'overrides', 'files',
+//   'inherits',     'inherited'*/
+//   console.log(rosetta.kind);
+
+//   /* [
+//   'module',
+//   'class',
+//   'member',
+//   'function',
+//   'constant',
+//   'namespace',
+//   'package'
+// ] */
+//   console.log("module", jsdocData.filter(doc => doc.kind === "module").length);
+//   console.log("class", jsdocData.filter(doc => doc.kind === "class").length);
+//   console.log("member", jsdocData.filter(doc => doc.kind === "member").length);
+//   console.log("function", jsdocData.filter(doc => doc.kind === "function").length);
+//   console.log("constant", jsdocData.filter(doc => doc.kind === "constant").length);
+//   console.log("namespace", jsdocData.filter(doc => doc.kind === "namespace").length);
+//   console.log("package", jsdocData.filter(doc => doc.kind === "package").length);
   
   modules = modules.map((module, index) => {
     
-    let main = jsdocData.filter(comment => {
-      return comment.kind === "module" && comment.name === `j5e/${module}`;
+    let main = jsdocModules.filter((comment, i) => {
+      return comment.name === `j5e/${module}`;
     })[0];
-    
+
+    main.wikiLinks = main.tags?.filter(tag => {
+      return tag.value.indexOf("https://en.wikipedia.org/wiki/") !== -1;
+    });
+
     // function, member, constant, package
     main.classes = jsdocData.filter(comment => {
-      return comment.kind === "class" && comment.memberof === main.longname  && !comment.undocumented;
+      return comment.kind === "class" 
+        && comment.memberof === main.longname
+        //&& comment.longname.indexOf(".") === -1  
+        && !comment.undocumented;
+    });
+
+    main.devices = jsdocData.filter(comment => {
+      if (!comment.augments) return false;
+      
+      let augmentsMain = comment.augments.find(base => {
+        return base.indexOf(`j5e/${module}`) !== -1;
+      });
+      
+      return augmentsMain
+        && comment.longname.indexOf(".") !== -1
+        && !comment.undocumented
+        && comment.kind === "class";
+    });
+
+    if (main.devices.length === 0) {
+      delete main.devices;
+    }
+
+    main.classes.forEach(classComment => {
+      classComment.functions = jsdocData.filter(comment => {
+        return comment.kind === "function"
+          && comment.memberof === classComment.longname
+          && !comment.undocumented;
+      });
+    });
+
+    // function, member, constant, package
+    main.members = jsdocData.filter(comment => {
+      return comment.kind === "member" 
+        //&& comment.memberof === main.longname  
+        && !comment.undocumented;
     });
 
     main.classes.forEach(thisClass => {
-      
-      thisClass.isDevice = thisClass.longname.indexOf(".") > -1;
       
       thisClass.methods = jsdocData.filter(comment => {
         return comment.kind === "function" && comment.memberof === thisClass.longname  && !comment.undocumented;
@@ -54,65 +152,45 @@ module.exports = function(eleventyConfig) {
     });
 
     main = linkify(main);
-
-/*
-
-    classes = classes.map(thisClass => {
-      
-      if (thisClass.params) {
-        thisClass.params = thisClass.params.map(param => {
-          param.description = linkable(param.description);
-          return param;
-        });
-        thisClass.primaryParams = thisClass.params.filter(param => {
-          return param.name.indexOf(".") === -1;
-        });
-      }
-
-      thisClass.methods = methods.filter(method => {
-        return method.memberof === `module:${main[0].name}~${thisClass.name}`;
-      });
-
-      thisClass.methods = thisClass.methods.map(method => {
-        if (method.params) {
-          method.params = method.params.map(param => {
-            param.description = linkable(param.description);
-            return param;
-          });
-          method.primaryParams = method.params.filter(param => {
-            return param.name.indexOf(".") === -1;
-          });
-        }
-        return method;
-      });
-
-      thisClass.properties = properties.filter(property => {
-        return property.memberof === `module:${main[0].name}~${thisClass.name}`;
-      });
-
-      return thisClass;
-    });
-
-    let result = {
-      name: module,
-      description: main[0].description,
-      title: main[0].name,
-      private: main[0].ignore,
-      see: main[0].see,
-      examples: main[0].examples,
-      requires: main[0].requires,
-      classes: classes
-    };
-    
-    // examples
-    */
     
     return main; 
+  });
+
+  await asyncForEach(modules, async module => {
+    if (module.wikiLinks?.length > 0) {
+      await asyncForEach(module.wikiLinks, async wikiLink => {
+        let apiURL = wikiLink.value.replace("https://en.wikipedia.org/wiki/", "https://en.wikipedia.org/api/rest_v1/page/summary/");
+        apiURL = apiURL.replace("{@link ", "").replace("}", "");
+        let apiResponse = await fetch(apiURL);
+        
+        if(!apiResponse.fromCache) {
+          await pause(1000);
+        };
+        let json = await apiResponse.json();
+        module.description = module.description + json.extract_html.replace('</p>', '<span class="-mt-4 text-right text-xs pl-2"><a href="'+ wikiLink.value + '">Read more on Wikipedia</a></span></p>');
+      });
+    }
   });
   
   return modules;
 
 }
+
+async function pause(duration) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve();
+    }, duration);
+  });
+}
+  
+  
+  
+  async function asyncForEach(array, callback) {
+  for (let index = 0; index < array.length; index++) {
+    await callback(array[index], index, array);
+  }
+};
 
 function linkify(node) {
   
@@ -147,3 +225,6 @@ function linkable(text) {
   return text;
 }
  
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}

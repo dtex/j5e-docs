@@ -16,8 +16,8 @@
     <div class="max-w-screen-2xl grid grid-cols-12 mx-auto bg-white shadow-2xl">
       <header class="py-2 bg-gradient-to-r from-xiketic to-seaweed col-span-12">
   <div class="relative mx-auto px-4 sm:px-6 lg:px-8 text-right">
-    <a class="whitespace-nowrap inline-flex rounded-md bg-white py-2 px-3 text-xs font-semibold uppercase text-xiketic hover:bg-opacity-90 no-underline" href="/docs/whats-new">What&rsquo;s New? →</a>
-    <a class="whitespace-nowrap inline-flex rounded-md bg-white py-2 px-3 ml-8 text-xs font-semibold uppercase text-xiketic hover:bg-opacity-90 no-underline" href="https://github.com/dtex/j5e">Github</a>
+    <!--<a class="whitespace-nowrap inline-flex rounded-md bg-white py-2 px-3 text-xs font-semibold uppercase text-xiketic hover:bg-opacity-90 no-underline" href="/docs/whats-new">What&rsquo;s New? →</a>-->
+    <a class="inline-flex py-2 px-3 hover:opacity-80" href="https://github.com/dtex/j5e"><img src="/images/GitHub-Mark-Light-64px.png" height="32" width="32" /></a>
   </div>
   
 </header>
@@ -67,22 +67,22 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
   <ul class="text-xl">
     <li class="text-xiketic text-2xl p-4 lg:pb-0 lg:my-6">
       <a href="/"><img class="h-8" src="/images/j5e.svg" /></a></li>
-    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mx-2 bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Getting Started</li>
+    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mr-2 ml-4 bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Getting Started</li>
     <li>
-      <ul class="bg-white text-xiketic text-2xl xl:text-xl lg:text-base p-2 pl-6">
+      <ul class="bg-white text-xiketic text-2xl xl:text-xl lg:text-base p-2 pl-8">
         <li class="pb-3"><a href="/getting-started/installation/">Installing J5e</a></li>
       </ul>
     </li>
-    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mx-2 bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Core Concepts</li>
+    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mr-2 ml-4  bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Core Concepts</li>
     <li>
-      <ul class="bg-white text-xiketic text-2xl lg:text-base xl:text-xl p-2 pl-6">
+      <ul class="bg-white text-xiketic text-2xl lg:text-base xl:text-xl p-2 pl-8">
         <li class="pb-3"><a href="/core-concepts/animation/">Animation</a></li>
         <li class="pb-3"><a href="/core-concepts/instantiation/">Device Instantiation</a></li>
       </ul>
     </li>
-    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mx-2 bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Modules</li>
+    <li class="mb-2 text-2xl lg:text-base xl:text-xl p-2 pl-4 mr-2 ml-4  bg-gradient-to-r from-xiketic to-seaweed text-white rounded-full">Modules</li>
     <li>
-      <ul class="bg-white text-xiketic text-2xl lg:text-base xl:text-xl p-2 pl-6">
+      <ul class="bg-white text-xiketic text-2xl lg:text-base xl:text-xl p-2 pl-8">
         
           <li class="pb-3"><a href="/modules/animation">animation</a></li>
         
@@ -129,17 +129,20 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
           </header>
           <h2>Description</h2>
           <p>
-            For working with generic sensor devices
+            A module for working with generic sensor devices. It will emit events when the state of a sensor changes. The sensor module is generic in that it can be used to read any sensor type that uses an ADC input.<p>In electronics, an <b>analog-to-digital converter</b> is a system that converts an analog signal, such as a sound picked up by a microphone or light entering a digital camera, into a digital signal. An ADC may also provide an isolated measurement such as an electronic device that converts an analog input voltage or current to a digital number representing the magnitude of the voltage or current. Typically the digital output is a two's complement binary number that is proportional to the input, but there are other possibilities.<span class="-mt-4 text-right text-xs pl-2"><a href="https://en.wikipedia.org/wiki/Analog-to-digital_converter">Read more on Wikipedia</a></span></p>
           </p>
           
             <h2>Requires</h2>
             <ul>
               
-                <li><a href="/modules/withinable" xclass="underline">module:j5e/withinable</a></li>
+                <li><a href="/modules/withinable">module:j5e/withinable</a></li>
               
-                <li><a href="/modules/fn" xclass="underline">module:j5e/fn</a></li>
+                <li><a href="/modules/fn">module:j5e/fn</a></li>
               
             </ul>
+          
+
+          
           
           
           
@@ -640,48 +643,6 @@ const sensor = await new Sensor(12);
 let myValue = sensor.read();</code></pre>
 
     
-      <h3 id="Sensor.sample">sample</h3>
-<p>Sample a sensor</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">sensor.sample()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
-</div>
-
-
-    
-      <h3 id="Sensor.emitEvents">emitEvents</h3>
-<p>Internal method for emitting events</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">sensor.emitEvents()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
-</div>
-
-
-    
-      <h3 id="Sensor.eventProcessing">eventProcessing</h3>
-<p>Internal method for processing reads</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">sensor.eventProcessing()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
-</div>
-
-
-    
       <h3 id="Sensor.scale">scale</h3>
 <p>scale/scaleTo Set a value scaling range</p>
 <pre class="mb-4"><code class="language-javascript"><span class="font-normal">sensor.scale()</code></pre>
@@ -1151,83 +1112,75 @@ sensor.fscaleTo([0, 1]);</code></pre>
       <nav class="hidden lg:block lg:relative h-screen z-40 inset-0 flex-none  col-span-2 sticky overflow-y-scroll scrolling-touch ">
   <ul class="sticky pt-12 text-xl">
     
-      
-        <li class="font-bold text-xiketic mb-2 text-xl">
-          <a href="#Sensor.class">Sensor class</a>
-          <ul class="text-base">
-            <li class="my-4 text-lg"><a href="#Sensor.constructor">Constructor</a></li>
+      <li class="font-bold text-xiketic mb-2 text-xl">
+        <a href="#Sensor.class">Sensor class</a>
+        <ul class="text-base">
+          <li class="my-4 text-lg"><a href="#Sensor.constructor">Constructor</a></li>
+          
+            <li class="text-lg"><a href="#Sensor.properties">Properties</a></li>
             
-              <li class="text-lg"><a href="#Sensor.properties">Properties</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#Sensor.limit">limit</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#Sensor.threshold">threshold</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#Sensor.interval">interval</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#Sensor.smoothing">smoothing</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#Sensor.aref">aref</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#Sensor.samples">samples</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#Sensor.range">range</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#Sensor.raw">raw</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#Sensor.median">median</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#Sensor.resolution">resolution</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#Sensor.scaled">scaled</a></li>
-              
-                <li class="pl-4 font-normal text-base"><a href="#Sensor.value">value</a></li>
-              
+              <li class="pl-4 font-normal text-base"><a href="#Sensor.limit">limit</a></li>
             
+              <li class="pl-4 font-normal text-base"><a href="#Sensor.threshold">threshold</a></li>
             
+              <li class="pl-4 font-normal text-base"><a href="#Sensor.interval">interval</a></li>
             
-              <li class="mt-4 text-lg"><a href="#Sensor.methods">Methods</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#Sensor.configure">configure</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#Sensor.enable">enable</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#Sensor.disable">disable</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#Sensor.read">read</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#Sensor.sample">sample</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#Sensor.emitEvents">emitEvents</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#Sensor.eventProcessing">eventProcessing</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#Sensor.scale">scale</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#Sensor.scaleTo">scaleTo</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#Sensor.fscaleTo">fscaleTo</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#Sensor.within">within</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#Sensor.on">on</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#Sensor.removeListener">removeListener</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#Sensor.emit">emit</a></li>
-              
-                <li class="pl-4 pt-1 font-normal"><a href="#Sensor.once">once</a></li>
-              
+              <li class="pl-4 font-normal text-base"><a href="#Sensor.smoothing">smoothing</a></li>
             
-          </ul>
-        </li>
-      
+              <li class="pl-4 font-normal text-base"><a href="#Sensor.aref">aref</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#Sensor.samples">samples</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#Sensor.range">range</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#Sensor.raw">raw</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#Sensor.median">median</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#Sensor.resolution">resolution</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#Sensor.scaled">scaled</a></li>
+            
+              <li class="pl-4 font-normal text-base"><a href="#Sensor.value">value</a></li>
+            
+          
+          
+          
+            <li class="mt-4 text-lg"><a href="#Sensor.methods">Methods</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Sensor.configure">configure</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Sensor.enable">enable</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Sensor.disable">disable</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Sensor.read">read</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Sensor.scale">scale</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Sensor.scaleTo">scaleTo</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Sensor.fscaleTo">fscaleTo</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Sensor.within">within</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Sensor.on">on</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Sensor.removeListener">removeListener</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Sensor.emit">emit</a></li>
+            
+              <li class="pl-4 pt-1 font-normal"><a href="#Sensor.once">once</a></li>
+            
+          
+        </ul>
+      </li>
     
   </ul>
 </nav>
-      <!--<footer xclass="m-4 max-w-screen-xl m-auto">
-  Footer
-</footer>-->
+      <footer class="bg-gradient-to-r from-xiketic to-seaweed col-span-12 text-white text-center p-4">
+  <p><a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a> excerpts re-published under the Creative Commons Attribution-ShareAlike 3.0 license<br/>All other content &copy; 2021, 2022 The J5e Contributors Licensed under the MIT license</p>
+</footer>
       </div>
   </body>
 </html>
