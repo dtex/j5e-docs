@@ -122,7 +122,7 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
 </nav>
       <main class="align-top grid grid-cols-12 col-span-12 lg:col-span-8 h-screen overflow-y-scroll">
         
-        <section class="col-span-full p-8 py-4" xclass="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 p-8 py-4">
+        <section class="col-span-full p-8 py-4 pb-24" xclass="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 p-8 py-4">
           
           <header>
             <h1 id="j5e/button.module">Module: <span class="font-normal">j5e/button</span></h1>
@@ -148,64 +148,45 @@ Terms for the "pushing" of a button include <b>pressing</b>, <b>depressing</b>, 
           
           
           
-  <hr class="my-8"/>
-  <h2 id="Button.class">Class: <span class="font-normal">Button</span></h2>
+  <hr/>
+  <h2 class="h1" id="Button.class">Class: <span class="font-normal">Button</span></h2>
   <p>The Button class allows for control of digital buttons</p>
-  <h3 id="Button.constructor">Constructor</h3>
-  <pre class="my-8"><code class="language-javascript">new <span class="font-normal">Button()</code></pre>
+  <h2 id="Button.constructor">Constructor</h2>
+  <pre><code class="language-javascript">new <span class="font-normal">Button(io)</code></pre>
+  
   <h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-  
-    <div class="params-cell">
-      io
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-      number, 
-      
-      string, 
-      
-       or object
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Pin identifier or IO Options (See {@tutorial C-INSTANTIATING})
-      
-    </div>
-  
-    <div class="params-cell">
-      io.mode
-      
-      
-    </div>
-    <div class="params-cell">
-      
-      number, 
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Device configuration options. If a number, a valid value based on the Provider's constants. If a string, one of "Input", "InputPullUp", or "InputPullDown"
-      
-        <br/><span class="text-red pt-4">Default: Input</span>
-      
-    </div>
-   
-</div>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        io
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        number, 
+        
+        string, 
+        
+         or object
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Pin identifier or IO Options (See <a href="https://j5e.dev/core-concepts/instantiation/">instantiation</a>)
+        
+      </div>
+     
+  </div>
 
   
-    <h2>Example</h2>
+    <h3>Example</h3>
     
-      <pre><code class="language-javascript"><caption>Use a button to control an LED</caption>
+      <pre><code class="language-javascript">// Use a button to control an LED
 import Button from "j5e/button";
 import LED from "j5e/led";
 
@@ -311,7 +292,8 @@ button.on("close", function() {
   
 
   
-    <h2 id="Button.events">Events</h2>
+  <hr/>
+  <h2 id="Button.events">Events</h2>
     <ul>
       
         <li>Button#event:open</li>
@@ -321,96 +303,100 @@ button.on("close", function() {
     </ul>
   
   
+    <hr/>
     <h2 id="Button.methods">Methods</h2>
     
-      <h3 id="Button.configure">configure</h3>
-<p>Configure a button</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">button.configure()</code></pre>
-
-  <p><strong>Returns:</strong> The instance on which the method was called</p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Button.configure">Button.configure</h3>
   
-    <div class="params-cell">
-      options
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or object
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Device configuration options
-      
-    </div>
+  <p>Configure a button</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">button.configure(options);</code></pre>
   
-    <div class="params-cell">
-      options.holdtime
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The amount of time a button must be held down before emitting an hold event
-      
-        <br/><span class="text-red pt-4">Default: 500</span>
-      
-    </div>
+    <p><strong>Returns:</strong> The instance on which the method was called</p>
   
-    <div class="params-cell">
-      options.debounce
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The amount of time in milliseconds to delay button events firing. Cleans up "noisy" state changes
-      
-        <br/><span class="text-red pt-4">Default: 7</span>
-      
-    </div>
   
-    <div class="params-cell">
-      options.type
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The type of button, "NO" for normally open, "NC" for normally closed
-      
-        <br/><span class="text-red pt-4">Default: "NO"</span>
-      
-    </div>
-   
-</div>
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        options
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        object
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Device configuration options
+        
+      </div>
+    
+      <div class="params-cell">
+        options.holdtime
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The amount of time a button must be held down before emitting an hold event
+        
+          <br/><span class="text-red pt-4">Default: 500</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        options.debounce
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The amount of time in milliseconds to delay button events firing. Cleans up "noisy" state changes
+        
+          <br/><span class="text-red pt-4">Default: 7</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        options.type
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        string
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The type of button, "NO" for normally open, "NC" for normally closed
+        
+          <br/><span class="text-red pt-4">Default: "NO"</span>
+        
+      </div>
+     
+  </div>
 
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript">import Button from "j5e/button";
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">import Button from "j5e/button";
 import LED from "j5e/led";
 
 const button = await new Button(14);
@@ -425,182 +411,214 @@ button.on("open", function() {
 button.on("close", function() {
  led.on();
 });</code></pre>
-
-    
-      <h3 id="Button.on">on</h3>
-<p>Create an event listener</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">button.on()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      event
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The name of the event to listen for
-      
-    </div>
-  
-    <div class="params-cell">
-      listener
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      A callback to run when the event is fired.
-      
-    </div>
-   
 </div>
-
-
+      
+        <hr/>
+      
     
-      <h3 id="Button.removeListener">removeListener</h3>
-<p>Remove an event listener</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">button.removeListener()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Button.on">Button.on</h3>
   
-    <div class="params-cell">
-      event
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The name of the event that we are removing a listener from
-      
-    </div>
+  <p>Create an event listener</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">button.on(event, listener);</code></pre>
   
-    <div class="params-cell">
-      listener
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The callback that we are removing
-      
-    </div>
-   
-</div>
-
-
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
     
-      <h3 id="Button.emit">emit</h3>
-<p>Emit an event</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">button.emit()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-  
-    <div class="params-cell">
-      event
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The name of the event to emit
-      
-    </div>
-   
-</div>
-
-
+      <div class="params-cell">
+        event
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        string
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The name of the event to listen for
+        
+      </div>
     
-      <h3 id="Button.once">once</h3>
-<p>Create an event listener that will only fire one time.</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">button.once()</code></pre>
+      <div class="params-cell">
+        listener
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        A callback to run when the event is fired.
+        
+      </div>
+     
+  </div>
 
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      event
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The name of the event to listen for
-      
-    </div>
-  
-    <div class="params-cell">
-      listener
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      A callback to run when the event is fired.
-      
-    </div>
-   
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Button.removeListener">Button.removeListener</h3>
+  
+  <p>Remove an event listener</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">button.removeListener(event, listener);</code></pre>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        event
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        string
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The name of the event that we are removing a listener from
+        
+      </div>
+    
+      <div class="params-cell">
+        listener
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The callback that we are removing
+        
+      </div>
+     
+  </div>
 
+  
+</div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Button.emit">Button.emit</h3>
+  
+    <p class="bg-orange p-2 px-4 mt-4 mb-6"><span class="font-bold">Note:</span> This method is not part of the public API, and is subject to change.</span></p>
+  
+  <p>Emit an event</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">button.emit(event);</code></pre>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        event
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        string
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The name of the event to emit
+        
+      </div>
+     
+  </div>
 
+  
+</div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Button.once">Button.once</h3>
+  
+  <p>Create an event listener that will only fire one time.</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">button.once(event, listener);</code></pre>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        event
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        string
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The name of the event to listen for
+        
+      </div>
+    
+      <div class="params-cell">
+        listener
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        A callback to run when the event is fired.
+        
+      </div>
+     
+  </div>
+
+  
+</div>
+      
     
   
   

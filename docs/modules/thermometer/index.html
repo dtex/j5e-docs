@@ -122,7 +122,7 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
 </nav>
       <main class="align-top grid grid-cols-12 col-span-12 lg:col-span-8 h-screen overflow-y-scroll">
         
-        <section class="col-span-full p-8 py-4" xclass="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 p-8 py-4">
+        <section class="col-span-full p-8 py-4 pb-24" xclass="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 p-8 py-4">
           
           <header>
             <h1 id="j5e/thermometer.module">Module: <span class="font-normal">j5e/thermometer</span></h1>
@@ -160,49 +160,50 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
           
           
           
-  <hr class="my-8"/>
-  <h2 id="Thermometer.class">Class: <span class="font-normal">Thermometer</span></h2>
+  <hr/>
+  <h2 class="h1" id="Thermometer.class">Class: <span class="font-normal">Thermometer</span></h2>
   <p>The Thermometer class allows for control of analog thermistors</p>
-  <h3 id="Thermometer.constructor">Constructor</h3>
-  <pre class="my-8"><code class="language-javascript">new <span class="font-normal">Thermometer()</code></pre>
-  <h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
+  <h2 id="Thermometer.constructor">Constructor</h2>
+  <pre><code class="language-javascript">new <span class="font-normal">Thermometer(io)</code></pre>
   
-    <div class="params-cell">
-      io
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-      number, 
-      
-      string, 
-      
-       or object
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Pin identifier or IO Options (See {@tutorial C-INSTANTIATING})
-      
-    </div>
-   
-</div>
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        io
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        number, 
+        
+        string, 
+        
+         or object
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Pin identifier or IO Options (See <a href="https://j5e.dev/core-concepts/instantiation/">instantiation</a>)
+        
+      </div>
+     
+  </div>
 
   
-    <h2>Examples</h2>
+    <h3>Examples</h3>
     
-      <pre><code class="language-javascript"><caption>Use a thermometer</caption>
+      <pre><code class="language-javascript">// Use a thermometer
 import Thermometer from "j5e/thermometer";
 
 const myThermometer = await new Thermometer(12);</code></pre>
     
-      <pre><code class="language-javascript"><caption>Pass in a custom toCelsius function</caption>
+      <pre><code class="language-javascript">// Pass in a custom toCelsius function
 import Thermometer from "j5e/thermometer";
 
 const myThermometer = await new Thermometer({
@@ -498,7 +499,8 @@ const myThermometer = await new Thermometer({
   
 
   
-    <h2 id="Thermometer.events">Events</h2>
+  <hr/>
+  <h2 id="Thermometer.events">Events</h2>
     <ul>
       
         <li>event:data</li>
@@ -508,182 +510,186 @@ const myThermometer = await new Thermometer({
     </ul>
   
   
+    <hr/>
     <h2 id="Thermometer.methods">Methods</h2>
     
-      <h3 id="Thermometer.configure">configure</h3>
-<p>Configure a Thermometer</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">thermometer.configure()</code></pre>
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Thermometer.configure">Thermometer.configure</h3>
+  
+  <p>Configure a Thermometer</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">thermometer.configure(options);</code></pre>
+  
+    <p><strong>Returns:</strong> The instance on which the method was called</p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        options
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        object
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Device configuration options
+        
+      </div>
+    
+      <div class="params-cell">
+        options.aref
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Analog reference voltage
+        
+          <br/><span class="text-red pt-4">Default: 3.3</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        options.enabled
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        boolean
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Wether the device is currently performing reads every <interval>ms
+        
+          <br/><span class="text-red pt-4">Default: true</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        options.interval
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Interval between readings in millseconds
+        
+          <br/><span class="text-red pt-4">Default: 100</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        options.limit
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        Array.&lt;number&gt;
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Limit the output range
+        
+      </div>
+    
+      <div class="params-cell">
+        options.range
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        Array.&lt;number&gt;
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The input range of the sensor
+        
+          <br/><span class="text-red pt-4">Default: [0, N]</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        options.scale
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        Array.&lt;number&gt;
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The output range for the sensor's value
+        
+          <br/><span class="text-red pt-4">Default: [0, N]</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        options.threshold
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The minimum amount of change required to emit a "change" event
+        
+          <br/><span class="text-red pt-4">Default: 1</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        options.toCelsius
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        callback
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Function that converts raw value to Celsius
+        
+      </div>
+     
+  </div>
 
-  <p><strong>Returns:</strong> The instance on which the method was called</p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      options
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or object
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Device configuration options
-      
-    </div>
-  
-    <div class="params-cell">
-      options.aref
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Analog reference voltage
-      
-        <br/><span class="text-red pt-4">Default: 3.3</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      options.enabled
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or boolean
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Wether the device is currently performing reads every <interval>ms
-      
-        <br/><span class="text-red pt-4">Default: true</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      options.interval
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Interval between readings in millseconds
-      
-        <br/><span class="text-red pt-4">Default: 100</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      options.limit
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Array.&lt;number&gt;
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Limit the output range
-      
-    </div>
-  
-    <div class="params-cell">
-      options.range
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Array.&lt;number&gt;
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The input range of the sensor
-      
-        <br/><span class="text-red pt-4">Default: [0, N]</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      options.scale
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Array.&lt;number&gt;
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The output range for the sensor's value
-      
-        <br/><span class="text-red pt-4">Default: [0, N]</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      options.threshold
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The minimum amount of change required to emit a "change" event
-      
-        <br/><span class="text-red pt-4">Default: 1</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      options.toCelsius
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or callback
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Function that converts raw value to Celsius
-      
-    </div>
-   
-</div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Passing in Cofiguration Options</caption>
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Passing in Cofiguration Options
    import Thermometer from "j5e/thermometer";
 
 const thermometer = await new Thermometer({
@@ -699,25 +705,24 @@ myThermometer.configure({
 thermometer.on("change", data => {
  trace(thermometer.celsius);
 });</code></pre>
-
-    
-      <h3 id="Thermometer.enable">enable</h3>
-<p>Enable a disabled sensor.</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">thermometer.enable()</code></pre>
-
-  <p><strong>Returns:</strong> instance</p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
+  
 </div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Thermometer.enable">Thermometer.enable</h3>
+  
+  <p>Enable a disabled sensor.</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">thermometer.enable();</code></pre>
+  
+    <p><strong>Returns:</strong> instance</p>
+  
+  
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
 const sensor = await new Sensor(12);
 
 sensor.disable();
@@ -726,515 +731,573 @@ sensor.disable();
 timer.setTimeout(function() {
  sensor.enable();
 });</code></pre>
-
-    
-      <h3 id="Thermometer.disable">disable</h3>
-<p>Disable an enabled sensor.</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">thermometer.disable()</code></pre>
-
-  <p><strong>Returns:</strong> instance</p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
+  
 </div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Thermometer.disable">Thermometer.disable</h3>
+  
+  <p>Disable an enabled sensor.</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">thermometer.disable();</code></pre>
+  
+    <p><strong>Returns:</strong> instance</p>
+  
+  
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
 const sensor = await new Sensor(12);
 
 // Take reading for 5 seconds and then stop
 timer.setTimeout(function() {
  sensor.disable();
 });</code></pre>
-
-    
-      <h3 id="Thermometer.read">read</h3>
-<p>Synchronous read of a sensor.</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">thermometer.read()</code></pre>
-
-  <p><strong>Returns:</strong> sensor value</p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
+  
 </div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Thermometer.read">Thermometer.read</h3>
+  
+  <p>Synchronous read of a sensor.</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">thermometer.read();</code></pre>
+  
+    <p><strong>Returns:</strong> sensor value</p>
+  
+  
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
 const sensor = await new Sensor(12);
 
 let myValue = sensor.read();</code></pre>
-
-    
-      <h3 id="Thermometer.scale">scale</h3>
-<p>scale/scaleTo Set a value scaling range</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">thermometer.scale()</code></pre>
-
-  <p><strong>Returns:</strong> instance</p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      low
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Lowerbound
-      
-    </div>
-  
-    <div class="params-cell">
-      high
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Upperbound
-      
-    </div>
-  
-    <div class="params-cell">
-      low, high
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Array
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Lowerbound
-      
-    </div>
-   
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Thermometer.scale">Thermometer.scale</h3>
+  
+  <p>scale/scaleTo Set a value scaling range</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">thermometer.scale(low, high, low, high);</code></pre>
+  
+    <p><strong>Returns:</strong> instance</p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        low
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        Number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Lowerbound
+        
+      </div>
+    
+      <div class="params-cell">
+        high
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        Number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Upperbound
+        
+      </div>
+    
+      <div class="params-cell">
+        low, high
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        Array
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Lowerbound
+        
+      </div>
+     
+  </div>
 
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
 const sensor = await new Sensor(12);
 
 // Scale all future values to 8-bit range
 sensor.scale([0, 255]);</code></pre>
-
-    
-      <h3 id="Thermometer.scaleTo">scaleTo</h3>
-<p>scaleTo Scales value to integer representation</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">thermometer.scaleTo()</code></pre>
-
-  <p><strong>Returns:</strong> The scaled value</p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      low
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      An array containing a lower and upper bound
-      
-    </div>
-  
-    <div class="params-cell">
-      low
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      A number to use as a lower bound
-      
-    </div>
-  
-    <div class="params-cell">
-      high
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      A number to use as an upper bound
-      
-    </div>
-   
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Thermometer.scaleTo">Thermometer.scaleTo</h3>
+  
+  <p>scaleTo Scales value to integer representation</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">thermometer.scaleTo(low, low, high);</code></pre>
+  
+    <p><strong>Returns:</strong> The scaled value</p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        low
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        Number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        An array containing a lower and upper bound
+        
+      </div>
+    
+      <div class="params-cell">
+        low
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        Number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        A number to use as a lower bound
+        
+      </div>
+    
+      <div class="params-cell">
+        high
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        Number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        A number to use as an upper bound
+        
+      </div>
+     
+  </div>
 
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
 const sensor = await new Sensor(12);
 
 // Scale the returned value to 8-bit range
 sensor.scaleTo([0, 255]);</code></pre>
-
-    
-      <h3 id="Thermometer.fscaleTo">fscaleTo</h3>
-<p>fscaleTo Scales value to single precision float representation</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">thermometer.fscaleTo()</code></pre>
-
-  <p><strong>Returns:</strong> The scaled value</p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      low
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      An array containing a lower and upper bound
-      
-    </div>
-  
-    <div class="params-cell">
-      low
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      A number to use as a lower bound
-      
-    </div>
-  
-    <div class="params-cell">
-      high
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      A number to use as an upper bound
-      
-    </div>
-   
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Thermometer.fscaleTo">Thermometer.fscaleTo</h3>
+  
+  <p>fscaleTo Scales value to single precision float representation</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">thermometer.fscaleTo(low, low, high);</code></pre>
+  
+    <p><strong>Returns:</strong> The scaled value</p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        low
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        Number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        An array containing a lower and upper bound
+        
+      </div>
+    
+      <div class="params-cell">
+        low
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        Number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        A number to use as a lower bound
+        
+      </div>
+    
+      <div class="params-cell">
+        high
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        Number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        A number to use as an upper bound
+        
+      </div>
+     
+  </div>
 
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
 const sensor = await new Sensor(12);
 
 // Scale the returned value to float between 0 and 1
 sensor.fscaleTo([0, 1]);</code></pre>
-
-    
-      <h3 id="Thermometer.within">within</h3>
-<p>Fire a callback when the value is within a certain range</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">thermometer.within()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      range
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or Array.&lt;number&gt;
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The upper and lower ends of the range to watch
-      
-    </div>
-  
-    <div class="params-cell">
-      unit
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The property to test
-      
-    </div>
-  
-    <div class="params-cell">
-      callback
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      A callback to run when the event is fired.
-      
-    </div>
-   
 </div>
-
-
+      
+        <hr/>
+      
     
-      <h3 id="Thermometer.on">on</h3>
-<p>Create an event listener</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">thermometer.on()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Thermometer.within">Thermometer.within</h3>
   
-    <div class="params-cell">
-      event
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The name of the event to listen for
-      
-    </div>
+  <p>Fire a callback when the value is within a certain range</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">thermometer.within(range, unit, callback);</code></pre>
   
-    <div class="params-cell">
-      listener
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      A callback to run when the event is fired.
-      
-    </div>
-   
-</div>
-
-
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
     
-      <h3 id="Thermometer.removeListener">removeListener</h3>
-<p>Remove an event listener</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">thermometer.removeListener()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-  
-    <div class="params-cell">
-      event
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The name of the event that we are removing a listener from
-      
-    </div>
-  
-    <div class="params-cell">
-      listener
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The callback that we are removing
-      
-    </div>
-   
-</div>
-
-
+      <div class="params-cell">
+        range
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        Array.&lt;number&gt;
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The upper and lower ends of the range to watch
+        
+      </div>
     
-      <h3 id="Thermometer.emit">emit</h3>
-<p>Emit an event</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">thermometer.emit()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-  
-    <div class="params-cell">
-      event
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The name of the event to emit
-      
-    </div>
-   
-</div>
-
-
+      <div class="params-cell">
+        unit
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        string
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The property to test
+        
+      </div>
     
-      <h3 id="Thermometer.once">once</h3>
-<p>Create an event listener that will only fire one time.</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">thermometer.once()</code></pre>
+      <div class="params-cell">
+        callback
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        A callback to run when the event is fired.
+        
+      </div>
+     
+  </div>
 
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      event
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The name of the event to listen for
-      
-    </div>
-  
-    <div class="params-cell">
-      listener
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      A callback to run when the event is fired.
-      
-    </div>
-   
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Thermometer.on">Thermometer.on</h3>
+  
+  <p>Create an event listener</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">thermometer.on(event, listener);</code></pre>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        event
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        string
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The name of the event to listen for
+        
+      </div>
+    
+      <div class="params-cell">
+        listener
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        A callback to run when the event is fired.
+        
+      </div>
+     
+  </div>
 
+  
+</div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Thermometer.removeListener">Thermometer.removeListener</h3>
+  
+  <p>Remove an event listener</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">thermometer.removeListener(event, listener);</code></pre>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        event
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        string
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The name of the event that we are removing a listener from
+        
+      </div>
+    
+      <div class="params-cell">
+        listener
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The callback that we are removing
+        
+      </div>
+     
+  </div>
 
+  
+</div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Thermometer.emit">Thermometer.emit</h3>
+  
+    <p class="bg-orange p-2 px-4 mt-4 mb-6"><span class="font-bold">Note:</span> This method is not part of the public API, and is subject to change.</span></p>
+  
+  <p>Emit an event</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">thermometer.emit(event);</code></pre>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        event
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        string
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The name of the event to emit
+        
+      </div>
+     
+  </div>
+
+  
+</div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Thermometer.once">Thermometer.once</h3>
+  
+  <p>Create an event listener that will only fire one time.</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">thermometer.once(event, listener);</code></pre>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        event
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        string
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The name of the event to listen for
+        
+      </div>
+    
+      <div class="params-cell">
+        listener
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        A callback to run when the event is fired.
+        
+      </div>
+     
+  </div>
+
+  
+</div>
+      
     
   
   

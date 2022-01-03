@@ -122,7 +122,7 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
 </nav>
       <main class="align-top grid grid-cols-12 col-span-12 lg:col-span-8 h-screen overflow-y-scroll">
         
-        <section class="col-span-full p-8 py-4" xclass="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 p-8 py-4">
+        <section class="col-span-full p-8 py-4 pb-24" xclass="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 p-8 py-4">
           
           <header>
             <h1 id="j5e/motor.module">Module: <span class="font-normal">j5e/motor</span></h1>
@@ -147,56 +147,57 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
           
           
           
-  <hr class="my-8"/>
-  <h2 id="Motor.class">Class: <span class="font-normal">Motor</span></h2>
+  <hr/>
+  <h2 class="h1" id="Motor.class">Class: <span class="font-normal">Motor</span></h2>
   <p>The Motor class allows for control of non-directional DC Motors</p>
-  <h3 id="Motor.constructor">Constructor</h3>
-  <pre class="my-8"><code class="language-javascript">new <span class="font-normal">Motor()</code></pre>
-  <h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
+  <h2 id="Motor.constructor">Constructor</h2>
+  <pre><code class="language-javascript">new <span class="font-normal">Motor(io)</code></pre>
   
-    <div class="params-cell">
-      io
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-      number, 
-      
-      string, 
-      
-      Array.&lt;number&gt;, 
-      
-      Array.&lt;string&gt;, 
-      
-      Array.&lt;object&gt;, 
-      
-       or object
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      A pin identifier or motor IO options object (See {@tutorial C-INSTANTIATING})
-      
-    </div>
-   
-</div>
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        io
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        number, 
+        
+        string, 
+        
+        Array.&lt;number&gt;, 
+        
+        Array.&lt;string&gt;, 
+        
+        Array.&lt;object&gt;, 
+        
+         or object
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        A pin identifier or motor IO options object (See <a href="https://j5e.dev/core-concepts/instantiation/">instantiation</a>)
+        
+      </div>
+     
+  </div>
 
   
-    <h2>Examples</h2>
+    <h3>Examples</h3>
     
-      <pre><code class="language-javascript"><caption>Using a pin number</caption>
+      <pre><code class="language-javascript">// Using a pin number
 import Motor from "j5e/motor";
 
 const motor = await new Motor(12);
 motor.fwd();</code></pre>
     
-      <pre><code class="language-javascript"><caption>Using an options object</caption>
+      <pre><code class="language-javascript">// Using an options object
 import Motor from "j5e/motor";
 
 const motor = await new Motor({
@@ -282,119 +283,122 @@ motor.fwd();</code></pre>
 
   
   
+    <hr/>
     <h2 id="Motor.methods">Methods</h2>
     
-      <h3 id="Motor.configure">configure</h3>
-<p>Configure a Motor</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">motor.configure()</code></pre>
-
-  <p><strong>Returns:</strong> The instance on which the method was called</p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Motor.configure">Motor.configure</h3>
   
-    <div class="params-cell">
-      options
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or object
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Device configuration options
-      
-    </div>
+  <p>Configure a Motor</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">motor.configure(options);</code></pre>
   
-    <div class="params-cell">
-      options.enabled
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or boolean
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Sets the enabled state of a motor
-      
-        <br/><span class="text-red pt-4">Default: true</span>
-      
-    </div>
+    <p><strong>Returns:</strong> The instance on which the method was called</p>
   
-    <div class="params-cell">
-      options.threshold
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The minimum speed [0, 1] that will make the motor move
-      
-        <br/><span class="text-red pt-4">Default: 0.11</span>
-      
-    </div>
   
-    <div class="params-cell">
-      options.invertPWM
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or boolean
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      When true, PWM values will be inverted when directional motor is in reverse
-      
-    </div>
-   
-</div>
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        options
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        object
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Device configuration options
+        
+      </div>
+    
+      <div class="params-cell">
+        options.enabled
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        boolean
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Sets the enabled state of a motor
+        
+          <br/><span class="text-red pt-4">Default: true</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        options.threshold
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The minimum speed [0, 1] that will make the motor move
+        
+          <br/><span class="text-red pt-4">Default: 0.11</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        options.invertPWM
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        boolean
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        When true, PWM values will be inverted when directional motor is in reverse
+        
+      </div>
+     
+  </div>
 
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript">import Motor from "j5e/motor";
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">import Motor from "j5e/motor";
 
 const motor = await new Motor(12);
 motor.configure({
   enabled: false
 });
 motor.forward(); // No signal is sent</code></pre>
-
-    
-      <h3 id="Motor.enable">enable</h3>
-<p>Enable a motor. If there is an enable pin, set its value to high</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">motor.enable()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
+  
 </div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Enable a motor</caption>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Motor.enable">Motor.enable</h3>
+  
+  <p>Enable a motor. If there is an enable pin, set its value to high</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">motor.enable();</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Enable a motor
 import Motor from "j5e/motor";
 
 const motor = await new Motor([13, 12]);
@@ -402,243 +406,267 @@ motor.disable();
 window.setTimeout(() => {
   motor.enable();
 }, 5000);</code></pre>
-
-    
-      <h3 id="Motor.disable">disable</h3>
-<p>Disable a motor. If there is an enable pin, set its value to low</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">motor.disable()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
+  
 </div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Disable a motor</caption>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Motor.disable">Motor.disable</h3>
+  
+  <p>Disable a motor. If there is an enable pin, set its value to low</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">motor.disable();</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Disable a motor
 import Motor from "j5e/motor";
 
 const motor = await new Motor([13, 12]);
 motor.disable();</code></pre>
-
-    
-      <h3 id="Motor.start">start</h3>
-<p>Start the motor</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">motor.start()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      speed
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Speed [0, 1]
-      
-    </div>
-   
 </div>
-
-
+      
+        <hr/>
+      
     
-      <h3 id="Motor.stop">stop</h3>
-<p>Stop the motor</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">motor.stop()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
-</div>
-
-
-    
-      <h3 id="Motor.resume">resume</h3>
-<p>Resumes moving the motor after stop, brake or disable at the most recent set speed</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">motor.resume()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
-</div>
-
-
-    
-      <h3 id="Motor.brake">brake</h3>
-<p>Brakes the motor - Note that not all motor controllers support braking. If there is no brake pin, brake() behaves the same as stop() and the motor will coast to a stop</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">motor.brake()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Motor.start">Motor.start</h3>
   
-    <div class="params-cell">
-      duration
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Time in millseconds to hold the brake
-      
-    </div>
-   
-</div>
-
-
-    
-      <h3 id="Motor.release">release</h3>
-<p>Releases the brake and calls resume</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">motor.release()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
-</div>
-
-
-    
-      <h3 id="Motor.fwd">fwd</h3>
-<p>Alias to forward</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">motor.fwd()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
-</div>
-
-
-    
-      <h3 id="Motor.forward">forward</h3>
-<p>Set the motor to spin forward. Note that "forward" is an arbitrary label. What it really means is that if they exist, the dir pin will be set low and cdir will be set high</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">motor.forward()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
+  <p>Start the motor</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">motor.start(speed);</code></pre>
   
-    <div class="params-cell">
-      speed
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The speed expressed as a value from 0 to 1
-      
-        <br/><span class="text-red pt-4">Default: 1</span>
-      
-    </div>
-   
-</div>
-
-
-    
-      <h3 id="Motor.rev">rev</h3>
-<p>Alias to reverse</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">motor.rev()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
-</div>
-
-
-    
-      <h3 id="Motor.reverse">reverse</h3>
-<p>Set the motor to spin in reverse. Note that "reverse" is an arbitrary label. What it really means is that if they exist, the dir pin will be set high and cdir will be set low</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">motor.reverse()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
+    <p><strong>Returns:</strong> </p>
   
-    <div class="params-cell">
-      speed
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The speed expressed as a value from 0 to 1
-      
-        <br/><span class="text-red pt-4">Default: 1</span>
-      
-    </div>
-   
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        speed
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Speed [0, 1]
+        
+      </div>
+     
+  </div>
+
+  
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Motor.stop">Motor.stop</h3>
+  
+  <p>Stop the motor</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">motor.stop();</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  
+</div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Motor.resume">Motor.resume</h3>
+  
+  <p>Resumes moving the motor after stop, brake or disable at the most recent set speed</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">motor.resume();</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  
+</div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Motor.brake">Motor.brake</h3>
+  
+  <p>Brakes the motor - Note that not all motor controllers support braking. If there is no brake pin, brake() behaves the same as stop() and the motor will coast to a stop</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">motor.brake(duration);</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        duration
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Time in millseconds to hold the brake
+        
+      </div>
+     
+  </div>
 
+  
+</div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Motor.release">Motor.release</h3>
+  
+  <p>Releases the brake and calls resume</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">motor.release();</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  
+</div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Motor.fwd">Motor.fwd</h3>
+  
+  <p>Alias to forward</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">motor.fwd();</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  
+</div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Motor.forward">Motor.forward</h3>
+  
+  <p>Set the motor to spin forward. Note that "forward" is an arbitrary label. What it really means is that if they exist, the dir pin will be set low and cdir will be set high</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">motor.forward(speed);</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        speed
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The speed expressed as a value from 0 to 1
+        
+          <br/><span class="text-red pt-4">Default: 1</span>
+        
+      </div>
+     
+  </div>
 
+  
+</div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Motor.rev">Motor.rev</h3>
+  
+  <p>Alias to reverse</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">motor.rev();</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  
+</div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Motor.reverse">Motor.reverse</h3>
+  
+  <p>Set the motor to spin in reverse. Note that "reverse" is an arbitrary label. What it really means is that if they exist, the dir pin will be set high and cdir will be set low</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">motor.reverse(speed);</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        speed
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The speed expressed as a value from 0 to 1
+        
+          <br/><span class="text-red pt-4">Default: 1</span>
+        
+      </div>
+     
+  </div>
+
+  
+</div>
+      
     
   
   

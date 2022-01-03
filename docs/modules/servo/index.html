@@ -122,7 +122,7 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
 </nav>
       <main class="align-top grid grid-cols-12 col-span-12 lg:col-span-8 h-screen overflow-y-scroll">
         
-        <section class="col-span-full p-8 py-4" xclass="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 p-8 py-4">
+        <section class="col-span-full p-8 py-4 pb-24" xclass="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 p-8 py-4">
           
           <header>
             <h1 id="j5e/servo.module">Module: <span class="font-normal">j5e/servo</span></h1>
@@ -151,44 +151,45 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
           
           
           
-  <hr class="my-8"/>
-  <h2 id="Servo.class">Class: <span class="font-normal">Servo</span></h2>
+  <hr/>
+  <h2 class="h1" id="Servo.class">Class: <span class="font-normal">Servo</span></h2>
   <p>The Servo class allows for control of hobby servos</p>
-  <h3 id="Servo.constructor">Constructor</h3>
-  <pre class="my-8"><code class="language-javascript">new <span class="font-normal">Servo()</code></pre>
-  <h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
+  <h2 id="Servo.constructor">Constructor</h2>
+  <pre><code class="language-javascript">new <span class="font-normal">Servo(io)</code></pre>
   
-    <div class="params-cell">
-      io
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-      number, 
-      
-      string, 
-      
-       or object
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Pin identifier or IO Options (See {@tutorial C-INSTANTIATING})
-      
-    </div>
-   
-</div>
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        io
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        number, 
+        
+        string, 
+        
+         or object
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Pin identifier or IO Options (See <a href="https://j5e.dev/core-concepts/instantiation/">instantiation</a>)
+        
+      </div>
+     
+  </div>
 
   
-    <h2>Example</h2>
+    <h3>Example</h3>
     
-      <pre><code class="language-javascript"><caption>Sweep a servo back and forth</caption>
+      <pre><code class="language-javascript">// Sweep a servo back and forth
 import Servo from "j5e/servo";
 
 const servo = await new Servo(12);
@@ -249,7 +250,8 @@ servo.sweep();</code></pre>
   
 
   
-    <h2 id="Servo.events">Events</h2>
+  <hr/>
+  <h2 id="Servo.events">Events</h2>
     <ul>
       
         <li>move:complete - Fires when a servo reaches its requested position</li>
@@ -257,376 +259,397 @@ servo.sweep();</code></pre>
     </ul>
   
   
+    <hr/>
     <h2 id="Servo.methods">Methods</h2>
     
-      <h3 id="Servo.configure">configure</h3>
-<p>Configure a Servo</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.configure()</code></pre>
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Servo.configure">Servo.configure</h3>
+  
+  <p>Configure a Servo</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.configure(options);</code></pre>
+  
+    <p><strong>Returns:</strong> The instance on which the method was called</p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        options
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        object
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Device configuration options
+        
+      </div>
+    
+      <div class="params-cell">
+        options.pin
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        number, 
+        
+         or string
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        If passing an object, a pin number or pin identifier
+        
+      </div>
+    
+      <div class="params-cell">
+        options.io
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        string, 
+        
+         or constructor
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        If passing an object, a string specifying a path to the IO provider or a constructor
+        
+          <br/><span class="text-red pt-4">Default: builtin/pwm</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        options.type
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        string
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Type of servo ("standard" or "continuous")
+        
+          <br/><span class="text-red pt-4">Default: "standard"</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        options.pwmRange
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        Array.&lt;number&gt;
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The pulse width range in microseconds
+        
+          <br/><span class="text-red pt-4">Default: [600, 2400]</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        options.deadband
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        Array.&lt;number&gt;
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The degree range at which a continuos motion servo will not turn
+        
+          <br/><span class="text-red pt-4">Default: [90,90]</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        options.range
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        Array.&lt;number&gt;
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The allowed range of motion in degrees
+        
+          <br/><span class="text-red pt-4">Default: [0, 180]</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        options.deviceRange
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        Array.&lt;number&gt;
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The physical range (throw) of the servo in degrees
+        
+          <br/><span class="text-red pt-4">Default: [0, 180]</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        options.startAt
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The desired start position of the servo
+        
+          <br/><span class="text-red pt-4">Default: "Any value within options.range"</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        options.offset
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Adjust the position of the servo for trimming
+        
+          <br/><span class="text-red pt-4">Default: 0</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        options.invert
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        boolean
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Reverses the direction of rotation
+        
+      </div>
+    
+      <div class="params-cell">
+        options.center
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        boolean
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Center the servo on instantiation
+        
+      </div>
+     
+  </div>
 
-  <p><strong>Returns:</strong> The instance on which the method was called</p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      options
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or object
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Device configuration options
-      
-    </div>
-  
-    <div class="params-cell">
-      options.pin
-      
-      
-    </div>
-    <div class="params-cell">
-      
-      number, 
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      If passing an object, a pin number or pin identifier
-      
-    </div>
-  
-    <div class="params-cell">
-      options.io
-      
-      
-    </div>
-    <div class="params-cell">
-      
-      string, 
-      
-       or constructor
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      If passing an object, a string specifying a path to the IO provider or a constructor
-      
-        <br/><span class="text-red pt-4">Default: builtin/pwm</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      options.type
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Type of servo ("standard" or "continuous")
-      
-        <br/><span class="text-red pt-4">Default: "standard"</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      options.pwmRange
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Array.&lt;number&gt;
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The pulse width range in microseconds
-      
-        <br/><span class="text-red pt-4">Default: [600, 2400]</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      options.deadband
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Array.&lt;number&gt;
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The degree range at which a continuos motion servo will not turn
-      
-        <br/><span class="text-red pt-4">Default: [90,90]</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      options.range
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Array.&lt;number&gt;
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The allowed range of motion in degrees
-      
-        <br/><span class="text-red pt-4">Default: [0, 180]</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      options.deviceRange
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Array.&lt;number&gt;
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The physical range (throw) of the servo in degrees
-      
-        <br/><span class="text-red pt-4">Default: [0, 180]</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      options.startAt
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The desired start position of the servo
-      
-        <br/><span class="text-red pt-4">Default: "Any value within options.range"</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      options.offset
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Adjust the position of the servo for trimming
-      
-        <br/><span class="text-red pt-4">Default: 0</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      options.invert
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or boolean
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Reverses the direction of rotation
-      
-    </div>
-  
-    <div class="params-cell">
-      options.center
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or boolean
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Center the servo on instantiation
-      
-    </div>
-   
-</div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a continuos rotation servo forward</caption>
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Move a continuos rotation servo forward
 import Servo from "j5e/servo";
 
 const servo = await new Servo({ pin: 12 });
 servo.configure({type: "continuous"});
 servo.cw();</code></pre>
-
-    
-      <h3 id="Servo.initialize">initialize</h3>
-<p>The initialization code for a servo</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.initialize()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
+  
 </div>
-
-
+      
+        <hr/>
+      
     
-      <h3 id="Servo.update">update</h3>
-<p>Calls the write param on the IO instance for this servo.</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.update()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Servo.initialize">Servo.initialize</h3>
   
-    <div class="params-cell">
-      pulseWidth
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The target pulseWidth
-      
-    </div>
-   
+    <p class="bg-orange p-2 px-4 mt-4 mb-6"><span class="font-bold">Note:</span> This method is not part of the public API, and is subject to change.</span></p>
+  
+  <p>The initialization code for a servo</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.initialize();</code></pre>
+  
+  
+  
 </div>
-
-
+      
+        <hr/>
+      
     
-      <h3 id="Servo.to">to</h3>
-<p>Set the servo's position to given degree over time.</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.to()</code></pre>
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Servo.update">Servo.update</h3>
+  
+    <p class="bg-orange p-2 px-4 mt-4 mb-6"><span class="font-bold">Note:</span> This method is not part of the public API, and is subject to change.</span></p>
+  
+  <p>Calls the write param on the IO instance for this servo.</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.update(pulseWidth);</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        pulseWidth
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The target pulseWidth
+        
+      </div>
+     
+  </div>
 
-  <p><strong>Returns:</strong> instance</p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      degrees
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-      Number, 
-      
-       or Object
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Degrees to move servo to or an animation object (See {@tutorial D-ANIMATING})
-      
-    </div>
-  
-    <div class="params-cell">
-      time
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Time to spend in motion. If degrees is a number and this value is ommitted, the servo will move to the requested degrees as quickly as possible.
-      
-    </div>
-  
-    <div class="params-cell">
-      rate
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The target frame rate of the motion transiton
-      
-        <br/><span class="text-red pt-4">Default: 20</span>
-      
-    </div>
-   
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Servo.to">Servo.to</h3>
+  
+  <p>Set the servo's position to given degree over time.</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.to(degrees, time, rate);</code></pre>
+  
+    <p><strong>Returns:</strong> instance</p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        degrees
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        Number, 
+        
+         or Object
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Degrees to move servo to or an animation object (See <a href="https://j5e.dev/core-concepts/animation/">animation</a>)
+        
+      </div>
+    
+      <div class="params-cell">
+        time
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        Number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Time to spend in motion. If degrees is a number and this value is ommitted, the servo will move to the requested degrees as quickly as possible.
+        
+      </div>
+    
+      <div class="params-cell">
+        rate
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        Number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The target frame rate of the motion transiton
+        
+          <br/><span class="text-red pt-4">Default: 20</span>
+        
+      </div>
+     
+  </div>
 
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 180° as quickly as possible</caption>
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Move a servo to 180° as quickly as possible
 import Servo from "j5e/servo";
 
 const servo = await new Servo(12);
 servo.to(180);</code></pre>
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 180° over one second</caption>
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Move a servo to 180° over one second
 import Servo from "j5e/servo";
 
 const servo = await new Servo(12);
 servo.to(180, 1000);</code></pre>
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 180° using an animation segment object</caption>
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Move a servo to 180° using an animation segment object
 import Servo from "j5e/servo";
 import { inOutQuad } from "j5e/easing";
 
@@ -637,198 +660,226 @@ servo.to({
   keyFrames: [ null, 180 ],
   easing: inOutQuad
 });</code></pre>
-
-    
-      <h3 id="Servo.step">step</h3>
-<p>Update the servo position by specified degrees (over time)</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.step()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      degrees
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Degrees to turn servo to.
-      
-    </div>
-  
-    <div class="params-cell">
-      time
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Time to spend in motion.
-      
-    </div>
-   
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Servo.step">Servo.step</h3>
+  
+  <p>Update the servo position by specified degrees (over time)</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.step(degrees, time);</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        degrees
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        Number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Degrees to turn servo to.
+        
+      </div>
+    
+      <div class="params-cell">
+        time
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        Number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Time to spend in motion.
+        
+      </div>
+     
+  </div>
 
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 120° as quickly as possible</caption>
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Move a servo to 120° as quickly as possible
 import Servo from "j5e/servo";
 
 const servo = await new Servo(12);
 // The servo's default position is 90 degrees
 servo.step(30);</code></pre>
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 120° over one second</caption>
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Move a servo to 120° over one second
 import Servo from "j5e/servo";
 
 const servo = await new Servo(12);
 // The servo's default position is 90 degrees
 servo.step(30, 1000);</code></pre>
-
-    
-      <h3 id="Servo.min">min</h3>
-<p>min Set Servo to minimum degrees, defaults to 0deg</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.min()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      time
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Time to spend in motion.
-      
-    </div>
-   
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Servo.min">Servo.min</h3>
+  
+  <p>min Set Servo to minimum degrees, defaults to 0deg</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.min(time);</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        time
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        Number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Time to spend in motion.
+        
+      </div>
+     
+  </div>
 
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 0° as quickly as possible</caption>
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Move a servo to 0° as quickly as possible
 import Servo from "j5e/servo";
 
 const servo = await new Servo(12);
 servo.min();</code></pre>
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 0° over one second</caption>
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Move a servo to 0° over one second
 import Servo from "j5e/servo";
 
 const servo = await new Servo(12);
 servo.min(1000);</code></pre>
-
-    
-      <h3 id="Servo.max">max</h3>
-<p>Set Servo to maximum degrees, defaults to 180deg</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.max()</code></pre>
-
-  <p><strong>Returns:</strong> instance</p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      time
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Time to spend in motion.
-      
-    </div>
-   
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Servo.max">Servo.max</h3>
+  
+  <p>Set Servo to maximum degrees, defaults to 180deg</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.max(time);</code></pre>
+  
+    <p><strong>Returns:</strong> instance</p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        time
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        Number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Time to spend in motion.
+        
+      </div>
+     
+  </div>
 
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a standard servo to 180° as quickly as possible</caption>
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Move a standard servo to 180° as quickly as possible
 import Servo from "j5e/servo";
 
 const servo = await new Servo(12);
 servo.max();</code></pre>
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a standard servo to 180° over one second</caption>
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Move a standard servo to 180° over one second
 import Servo from "j5e/servo";
 
 const servo = await new Servo(12);
 servo.max(1000);</code></pre>
-
-    
-      <h3 id="Servo.center">center</h3>
-<p>Set Servo to centerpoint, defaults to 90deg</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.center()</code></pre>
-
-  <p><strong>Returns:</strong> instance</p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      time
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Time to spend in motion.
-      
-    </div>
-   
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Servo.center">Servo.center</h3>
+  
+  <p>Set Servo to centerpoint, defaults to 90deg</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.center(time);</code></pre>
+  
+    <p><strong>Returns:</strong> instance</p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        time
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        Number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Time to spend in motion.
+        
+      </div>
+     
+  </div>
 
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 180° and then back to 90° as quickly as possible</caption>
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Move a servo to 180° and then back to 90° as quickly as possible
 import Servo from "j5e/servo";
 import { timer } from "j5e/fn";
 
@@ -838,9 +889,9 @@ servo.to(180);
 timer.setTimeout(function() {
   servo.center();
 }, 1000);</code></pre>
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 180° and then back to 90° over one second</caption>
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Move a servo to 180° and then back to 90° over one second
 import Servo from "j5e/servo";
 import { timer } from "j5e/fn";
 
@@ -850,25 +901,24 @@ servo.to(180);
 timer.setTimeout(function() {
   servo.center(1000);
 }, 1000);</code></pre>
-
-    
-      <h3 id="Servo.home">home</h3>
-<p>Return Servo to its startAt position</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.home()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
+  
 </div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a servo to 180° and then back to 90° as quickly as possible</caption>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Servo.home">Servo.home</h3>
+  
+  <p>Return Servo to its startAt position</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.home();</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Move a servo to 180° and then back to 90° as quickly as possible
 import Servo from "j5e/servo";
 import { timer } from "j5e/fn";
 
@@ -878,51 +928,58 @@ servo.to(180);
 timer.setTimeout(function() {
   servo.home();
 }, 1000);</code></pre>
-
-    
-      <h3 id="Servo.sweep">sweep</h3>
-<p>Sweep the servo between min and max or provided range</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.sweep()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      opts
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-      Array, 
-      
-       or Object
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      An array describing the range of the sweep in degrees or an animation segment options object
-      
-    </div>
-   
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Servo.sweep">Servo.sweep</h3>
+  
+  <p>Sweep the servo between min and max or provided range</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.sweep(opts);</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        opts
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        Array, 
+        
+         or Object
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        An array describing the range of the sweep in degrees or an animation segment options object
+        
+      </div>
+     
+  </div>
 
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Sweep a servo back and forth between 10° to 170°</caption>
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Sweep a servo back and forth between 10° to 170°
 import Servo from "j5e/servo";
 
 const servo = await new Servo(12);
 servo.sweep([10, 170]));
 
 example
-<caption>Sweep a servo back and forth between 10° to 170° with inOutCirc easing</caption>
+// Sweep a servo back and forth between 10° to 170° with inOutCirc easing
 import Servo from "j5e/servo";
 import {inOutCirc} from "j5e/easing";
 
@@ -932,24 +989,23 @@ servo.sweep({
   cuePoints: [0, 1],
   easing: inOutCirc
 });</code></pre>
-
-    
-      <h3 id="Servo.stop">stop</h3>
-<p>Stop a moving servo
-return {Servo}</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.stop()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
+  
 </div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Sweep a servo back and forth for two seconds then stop</caption>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Servo.stop">Servo.stop</h3>
+  
+  <p>Stop a moving servo
+return {Servo}</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.stop();</code></pre>
+  
+  
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Sweep a servo back and forth for two seconds then stop
 import Servo from "j5e/servo";
 
 const servo = await new Servo(12);
@@ -958,322 +1014,378 @@ servo.sweep([10, 170]));
 timer.setTimeout(function() {
   servo.stop();
 }, 2000);</code></pre>
-
-    
-      <h3 id="Servo.cw">cw</h3>
-<p>Move a continuous rotation servo clockwise</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.cw()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      speed
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Speed between 0 and 1.
-      
-        <br/><span class="text-red pt-4">Default: 1</span>
-      
-    </div>
-   
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Servo.cw">Servo.cw</h3>
+  
+  <p>Move a continuous rotation servo clockwise</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.cw(speed);</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        speed
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Speed between 0 and 1.
+        
+          <br/><span class="text-red pt-4">Default: 1</span>
+        
+      </div>
+     
+  </div>
 
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a continuos rotation servo clockwise</caption>
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Move a continuos rotation servo clockwise
 import Servo from "j5e/servo";
 
 const servo = await new Servo({ pin: 12, type: "continuous"});
 servo.cw();</code></pre>
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a continuos rotation servo clockwise at half speed</caption>
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Move a continuos rotation servo clockwise at half speed
 import Servo from "j5e/servo";
 
 const servo = await new Servo({ pin: 12, type: "continuous"});
 servo.cw(0.5);</code></pre>
-
-    
-      <h3 id="Servo.ccw">ccw</h3>
-<p>Move a continuous rotation servo counter-clockwise</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.ccw()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      speed
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Speed between 0 and 1.
-      
-        <br/><span class="text-red pt-4">Default: 1</span>
-      
-    </div>
-   
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Servo.ccw">Servo.ccw</h3>
+  
+  <p>Move a continuous rotation servo counter-clockwise</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.ccw(speed);</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        speed
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Speed between 0 and 1.
+        
+          <br/><span class="text-red pt-4">Default: 1</span>
+        
+      </div>
+     
+  </div>
 
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a continuos rotation servo counter-clockwise</caption>
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Move a continuos rotation servo counter-clockwise
 import Servo from "j5e/servo";
 
 const servo = await new Servo({ pin: 12, type: "continuous"});
 servo.ccw();</code></pre>
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Move a continuos rotation servo counter-clockwise at half speed</caption>
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Move a continuos rotation servo counter-clockwise at half speed
 import Servo from "j5e/servo";
 
 const servo = await new Servo({ pin: 12, type: "continuous"});
 servo.ccw(0.5);</code></pre>
-
-    
-      <h3 id="Servo.normalize">normalize</h3>
-<p></p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.normalize()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      number || object
-      
-      
-    </div>
-    <div class="params-cell">
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      keyFrames An array of step values or a keyFrame objects
-      
-    </div>
-   
 </div>
-
-
+      
+        <hr/>
+      
     
-      <h3 id="Servo.render">render</h3>
-<p>render</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.render()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
-</div>
-
-
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Servo.normalize">Servo.normalize</h3>
+  
+    <p class="bg-orange p-2 px-4 mt-4 mb-6"><span class="font-bold">Note:</span> This method is not part of the public API, and is subject to change.</span></p>
+  
+  <p></p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.normalize(number || object);</code></pre>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
     
-      <h3 id="Servo.on">on</h3>
-<p>Create an event listener</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.on()</code></pre>
+      <div class="params-cell">
+        number || object
+        
+        
+      </div>
+      <div class="params-cell">
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        keyFrames An array of step values or a keyFrame objects
+        
+      </div>
+     
+  </div>
 
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      event
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The name of the event to listen for
-      
-    </div>
-  
-    <div class="params-cell">
-      listener
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      A callback to run when the event is fired.
-      
-    </div>
-   
 </div>
-
-
+      
+        <hr/>
+      
     
-      <h3 id="Servo.removeListener">removeListener</h3>
-<p>Remove an event listener</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.removeListener()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Servo.render">Servo.render</h3>
   
-    <div class="params-cell">
-      event
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The name of the event that we are removing a listener from
-      
-    </div>
+    <p class="bg-orange p-2 px-4 mt-4 mb-6"><span class="font-bold">Note:</span> This method is not part of the public API, and is subject to change.</span></p>
   
-    <div class="params-cell">
-      listener
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The callback that we are removing
-      
-    </div>
-   
+  <p>render</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.render();</code></pre>
+  
+  
+  
 </div>
-
-
+      
+        <hr/>
+      
     
-      <h3 id="Servo.emit">emit</h3>
-<p>Emit an event</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.emit()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Servo.on">Servo.on</h3>
   
-    <div class="params-cell">
-      event
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The name of the event to emit
-      
-    </div>
-   
-</div>
-
-
+  <p>Create an event listener</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.on(event, listener);</code></pre>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
     
-      <h3 id="Servo.once">once</h3>
-<p>Create an event listener that will only fire one time.</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.once()</code></pre>
+      <div class="params-cell">
+        event
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        string
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The name of the event to listen for
+        
+      </div>
+    
+      <div class="params-cell">
+        listener
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        A callback to run when the event is fired.
+        
+      </div>
+     
+  </div>
 
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      event
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The name of the event to listen for
-      
-    </div>
-  
-    <div class="params-cell">
-      listener
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      A callback to run when the event is fired.
-      
-    </div>
-   
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Servo.removeListener">Servo.removeListener</h3>
+  
+  <p>Remove an event listener</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.removeListener(event, listener);</code></pre>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        event
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        string
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The name of the event that we are removing a listener from
+        
+      </div>
+    
+      <div class="params-cell">
+        listener
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The callback that we are removing
+        
+      </div>
+     
+  </div>
 
+  
+</div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Servo.emit">Servo.emit</h3>
+  
+    <p class="bg-orange p-2 px-4 mt-4 mb-6"><span class="font-bold">Note:</span> This method is not part of the public API, and is subject to change.</span></p>
+  
+  <p>Emit an event</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.emit(event);</code></pre>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        event
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        string
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The name of the event to emit
+        
+      </div>
+     
+  </div>
 
+  
+</div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Servo.once">Servo.once</h3>
+  
+  <p>Create an event listener that will only fire one time.</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">servo.once(event, listener);</code></pre>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        event
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        string
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The name of the event to listen for
+        
+      </div>
+    
+      <div class="params-cell">
+        listener
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        A callback to run when the event is fired.
+        
+      </div>
+     
+  </div>
+
+  
+</div>
+      
     
   
   

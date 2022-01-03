@@ -122,14 +122,14 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
 </nav>
       <main class="align-top grid grid-cols-12 col-span-12 lg:col-span-8 h-screen overflow-y-scroll">
         
-        <section class="col-span-full p-8 py-4" xclass="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 p-8 py-4">
+        <section class="col-span-full p-8 py-4 pb-24" xclass="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 p-8 py-4">
           
           <header>
             <h1 id="j5e/animation.module">Module: <span class="font-normal">j5e/animation</span></h1>
           </header>
           <h2>Description</h2>
           <p>
-            The j5e Animation module handles tweening between a series of key frames. Works with with the LED, RGB, and Servo classes, and can be used to create complex scripted animations like those found in theme park animatronics. In addition to simple, single value animations, you can also use the `j5e/animation` module to create complex animations using tuples to represent coordinates in a 3d space. For positioning joints in that space you will need an inverse kinmatics solver such as <a href="https://github.com/dtex/tharp">tharp</a>.<p><b>Inbetweening</b>, also commonly known as <b>tweening</b>, is a process in animation that involves generating intermediate frames, called <b>inbetweens</b>, between two keyframes. The intended result is to create the illusion of movement by smoothly transitioning one image into another.<span class="-mt-4 text-right text-xs pl-2"><a href="https://en.wikipedia.org/wiki/Tweening">Read more on Wikipedia</a></span></p><p>A <b>key frame</b> in animation and filmmaking is a drawing or shot that defines the starting and ending points of any smooth transition. These are called <i>frames</i> because their position in time is measured in frames on a strip of film or on a digital video editing timeline. A sequence of key frames defines which movement the viewer will see, whereas the position of the key frames on the film, video, or animation defines the timing of the movement. Because only two or three key frames over the span of a second do not create the illusion of movement, the remaining frames are filled with "inbetweens".<span class="-mt-4 text-right text-xs pl-2"><a href="https://en.wikipedia.org/wiki/Keyframe">Read more on Wikipedia</a></span></p><p><b>Animatronics</b> refers to mechatronic puppets. They are a modern variant of the automaton and are often used for the portrayal of characters in films and in theme park attractions.<span class="-mt-4 text-right text-xs pl-2"><a href="https://en.wikipedia.org/wiki/Animatronics">Read more on Wikipedia</a></span></p><p>In geometry, a <b>coordinate system</b> is a system that uses one or more numbers, or <b>coordinates</b>, to uniquely determine the position of the points or other geometric elements on a manifold such as Euclidean space. The order of the coordinates is significant, and they are sometimes identified by their position in an ordered tuple and sometimes by a letter, as in "the <i>x</i>-coordinate". The coordinates are taken to be real numbers in elementary mathematics, but may be complex numbers or elements of a more abstract system such as a commutative ring. The use of a coordinate system allows problems in geometry to be translated into problems about numbers and <i>vice versa</i>; this is the basis of analytic geometry.<span class="-mt-4 text-right text-xs pl-2"><a href="https://en.wikipedia.org/wiki/Coordinate_system">Read more on Wikipedia</a></span></p><p>In computer animation and robotics, <b>inverse kinematics</b> is the mathematical process of calculating the variable joint parameters needed to place the end of a kinematic chain, such as a robot manipulator or animation character's skeleton, in a given position and orientation relative to the start of the chain. Given joint parameters, the position and orientation of the chain's end, e.g. the hand of the character or robot, can typically be calculated directly using multiple applications of trigonometric formulas, a process known as forward kinematics. However, the reverse operation is, in general, much more challenging.<span class="-mt-4 text-right text-xs pl-2"><a href="https://en.wikipedia.org/wiki/Inverse_kinematics">Read more on Wikipedia</a></span></p>
+            The j5e Animation module handles tweening between a series of key frames. It works with with the LED, RGB, and Servo classes, and can be used to create complex scripted animations like those found in theme park animatronics. In addition to simple, single value animations, you can also use the `j5e/animation` module to create complex animations using tuples to represent coordinates in a 3d space. For positioning joints in that space you will need an inverse kinematics solver such as <a href="https://github.com/dtex/tharp">tharp</a>.<p><b>Inbetweening</b>, also commonly known as <b>tweening</b>, is a process in animation that involves generating intermediate frames, called <b>inbetweens</b>, between two keyframes. The intended result is to create the illusion of movement by smoothly transitioning one image into another.<span class="-mt-4 text-right text-xs pl-2"><a href="https://en.wikipedia.org/wiki/Tweening">Read more on Wikipedia</a></span></p><p>A <b>key frame</b> in animation and filmmaking is a drawing or shot that defines the starting and ending points of any smooth transition. These are called <i>frames</i> because their position in time is measured in frames on a strip of film or on a digital video editing timeline. A sequence of key frames defines which movement the viewer will see, whereas the position of the key frames on the film, video, or animation defines the timing of the movement. Because only two or three key frames over the span of a second do not create the illusion of movement, the remaining frames are filled with "inbetweens".<span class="-mt-4 text-right text-xs pl-2"><a href="https://en.wikipedia.org/wiki/Keyframe">Read more on Wikipedia</a></span></p><p><b>Animatronics</b> refers to mechatronic puppets. They are a modern variant of the automaton and are often used for the portrayal of characters in films and in theme park attractions.<span class="-mt-4 text-right text-xs pl-2"><a href="https://en.wikipedia.org/wiki/Animatronics">Read more on Wikipedia</a></span></p><p>In geometry, a <b>coordinate system</b> is a system that uses one or more numbers, or <b>coordinates</b>, to uniquely determine the position of the points or other geometric elements on a manifold such as Euclidean space. The order of the coordinates is significant, and they are sometimes identified by their position in an ordered tuple and sometimes by a letter, as in "the <i>x</i>-coordinate". The coordinates are taken to be real numbers in elementary mathematics, but may be complex numbers or elements of a more abstract system such as a commutative ring. The use of a coordinate system allows problems in geometry to be translated into problems about numbers and <i>vice versa</i>; this is the basis of analytic geometry.<span class="-mt-4 text-right text-xs pl-2"><a href="https://en.wikipedia.org/wiki/Coordinate_system">Read more on Wikipedia</a></span></p><p>In computer animation and robotics, <b>inverse kinematics</b> is the mathematical process of calculating the variable joint parameters needed to place the end of a kinematic chain, such as a robot manipulator or animation character's skeleton, in a given position and orientation relative to the start of the chain. Given joint parameters, the position and orientation of the chain's end, e.g. the hand of the character or robot, can typically be calculated directly using multiple applications of trigonometric formulas, a process known as forward kinematics. However, the reverse operation is, in general, much more challenging.<span class="-mt-4 text-right text-xs pl-2"><a href="https://en.wikipedia.org/wiki/Inverse_kinematics">Read more on Wikipedia</a></span></p>
           </p>
           
             <h2>Requires</h2>
@@ -147,40 +147,41 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
           
           
           
-  <hr class="my-8"/>
-  <h2 id="Animation.class">Class: <span class="font-normal">Animation</span></h2>
+  <hr/>
+  <h2 class="h1" id="Animation.class">Class: <span class="font-normal">Animation</span></h2>
   <p>Allows for scripted control of LEDs, RGBs, and Servos</p>
-  <h3 id="Animation.constructor">Constructor</h3>
-  <pre class="my-8"><code class="language-javascript">new <span class="font-normal">Animation()</code></pre>
-  <h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
+  <h2 id="Animation.constructor">Constructor</h2>
+  <pre><code class="language-javascript">new <span class="font-normal">Animation(target)</code></pre>
   
-    <div class="params-cell">
-      target
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-      Object, 
-      
-       or Array.&lt;Object&gt;
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Device (LED, RGB, or Servo) or an array of devices to be animated (See <a href="/core-concepts/instantiation/">instantiation</a> for more information)
-      
-    </div>
-   
-</div>
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        target
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        Object, 
+        
+         or Array.&lt;Object&gt;
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Device (LED, RGB, or Servo) or an array of devices to be animated (See <a href="https://j5e.dev/core-concepts/instantiation/">instantiation</a> for more information)
+        
+      </div>
+     
+  </div>
 
   
-    <h2>Example</h2>
+    <h3>Example</h3>
     
       <pre><code class="language-javascript">// Make a servo "wave"
 import Servo from "j5e/servo";
@@ -204,7 +205,8 @@ ani.enqueue(wave);</code></pre>
   
 
   
-    <h2 id="Animation.events">Events</h2>
+  <hr/>
+  <h2 id="Animation.events">Events</h2>
     <ul>
       
         <li>animation:pause - Emmited when the animation is paused by the pause() method</li>
@@ -214,327 +216,331 @@ ani.enqueue(wave);</code></pre>
     </ul>
   
   
+    <hr/>
     <h2 id="Animation.methods">Methods</h2>
     
-      <h3 id="Animation.enqueue">enqueue</h3>
-<p>Add an animation segment to the animation queue (See {@tutorial D-ANIMATING} for more information)</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">animation.enqueue()</code></pre>
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Animation.enqueue">Animation.enqueue</h3>
+  
+  <p>Add an animation segment to the animation queue (See <a href="https://j5e.dev/core-concepts/animation/">animation</a> for more information)</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">animation.enqueue(options);</code></pre>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        options
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        object
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Animation segment options
+        
+      </div>
+    
+      <div class="params-cell">
+        options.keyFrames
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        Array.&lt;object&gt;
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Values for each cuepoint
+        
+      </div>
+    
+      <div class="params-cell">
+        options.cuePoints
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        Array.&lt;number&gt;
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Segment cuepoints from 0-1
+        
+          <br/><span class="text-red pt-4">Default: [0, 1]</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        options.duration
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Duration of segment in ms
+        
+          <br/><span class="text-red pt-4">Default: 1000</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        options.easing
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        fuction
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Easing function to use for segment
+        
+          <br/><span class="text-red pt-4">Default: linear()</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        options.loop
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        boolean
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        If true the segment will loop back
+        
+      </div>
+    
+      <div class="params-cell">
+        options.loopback
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The time to loop back to [0-1]
+        
+          <br/><span class="text-red pt-4">Default: 0</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        options.metronomic
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        boolean
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Instead of looping back to the beginning it will reverse direction at the end of the segment
+        
+      </div>
+    
+      <div class="params-cell">
+        options.currentSpeed
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The playback speed [0-1]
+        
+          <br/><span class="text-red pt-4">Default: 1</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        options.progress
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The current progress
+        
+      </div>
+    
+      <div class="params-cell">
+        options.fps
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Frames per second
+        
+          <br/><span class="text-red pt-4">Default: 50</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        options.rate
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        ms between frames
+        
+          <br/><span class="text-red pt-4">Default: 20</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        options.paused
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        boolean
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Wether the animation is in a paused state
+        
+      </div>
+    
+      <div class="params-cell">
+        options.onstart
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Function to call when the segment starts
+        
+      </div>
+    
+      <div class="params-cell">
+        options.onpause
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Function to call when the segment is paused
+        
+      </div>
+    
+      <div class="params-cell">
+        options.onstop
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Function to call when the segment is stopped
+        
+      </div>
+    
+      <div class="params-cell">
+        options.oncomplete
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Function to call when the segment is complete
+        
+      </div>
+    
+      <div class="params-cell">
+        options.onloop
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Function to call when the segment loops
+        
+      </div>
+     
+  </div>
 
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      options
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or object
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Animation segment options
-      
-    </div>
-  
-    <div class="params-cell">
-      options.keyFrames
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or Array.&lt;object&gt;
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Values for each cuepoint
-      
-    </div>
-  
-    <div class="params-cell">
-      options.cuePoints
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Array.&lt;number&gt;
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Segment cuepoints from 0-1
-      
-        <br/><span class="text-red pt-4">Default: [0, 1]</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      options.duration
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Duration of segment in ms
-      
-        <br/><span class="text-red pt-4">Default: 1000</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      options.easing
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or fuction
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Easing function to use for segment
-      
-        <br/><span class="text-red pt-4">Default: linear()</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      options.loop
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or boolean
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      If true the segment will loop back
-      
-    </div>
-  
-    <div class="params-cell">
-      options.loopback
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The time to loop back to [0-1]
-      
-        <br/><span class="text-red pt-4">Default: 0</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      options.metronomic
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or boolean
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Instead of looping back to the beginning it will reverse direction at the end of the segment
-      
-    </div>
-  
-    <div class="params-cell">
-      options.currentSpeed
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The playback speed [0-1]
-      
-        <br/><span class="text-red pt-4">Default: 1</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      options.progress
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The current progress
-      
-    </div>
-  
-    <div class="params-cell">
-      options.fps
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Frames per second
-      
-        <br/><span class="text-red pt-4">Default: 50</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      options.rate
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      ms between frames
-      
-        <br/><span class="text-red pt-4">Default: 20</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      options.paused
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or boolean
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Wether the animation is in a paused state
-      
-    </div>
-  
-    <div class="params-cell">
-      options.onstart
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Function to call when the segment starts
-      
-    </div>
-  
-    <div class="params-cell">
-      options.onpause
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Function to call when the segment is paused
-      
-    </div>
-  
-    <div class="params-cell">
-      options.onstop
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Function to call when the segment is stopped
-      
-    </div>
-  
-    <div class="params-cell">
-      options.oncomplete
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Function to call when the segment is complete
-      
-    </div>
-  
-    <div class="params-cell">
-      options.onloop
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Function to call when the segment loops
-      
-    </div>
-   
-</div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Make a servo "wave"</caption>
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">//Make a servo "wave"
 import Servo from "j5e/servo";
 import Animation from "j5e/animation";
 
@@ -550,25 +556,24 @@ const wave = {
 };
 
 ani.enqueue(wave);</code></pre>
-
-    
-      <h3 id="Animation.play">play</h3>
-<p>Resume play on an animation after it has been paused or stopped.</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">animation.play()</code></pre>
-
-  <p><strong>Returns:</strong> Animation</p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
+  
 </div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Make a servo "wave" for five seconds, pause for one second and then resume waving</caption>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Animation.play">Animation.play</h3>
+  
+  <p>Resume play on an animation after it has been paused or stopped.</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">animation.play();</code></pre>
+  
+    <p><strong>Returns:</strong> Animation</p>
+  
+  
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Make a servo "wave" for five seconds, pause for one second and then resume waving
 import Servo from "j5e/servo";
 import Animation from "j5e/animation";
 import {timer} from "j5e/fn";
@@ -593,25 +598,24 @@ timer.setTimeout(function() {
 timer.setTimeout(function() {
   ani.play();
 }, 6000);</code></pre>
-
-    
-      <h3 id="Animation.pause">pause</h3>
-<p>Pause animation while maintaining progress, speed and segment queue</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">animation.pause()</code></pre>
-
-  <p><strong>Returns:</strong> Animation</p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
+  
 </div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Make a servo "wave" for five seconds, pause for one second and then resume waving</caption>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Animation.pause">Animation.pause</h3>
+  
+  <p>Pause animation while maintaining progress, speed and segment queue</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">animation.pause();</code></pre>
+  
+    <p><strong>Returns:</strong> Animation</p>
+  
+  
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Make a servo "wave" for five seconds, pause for one second and then resume waving
 import Servo from "j5e/servo";
 import Animation from "j5e/animation";
 import {timer} from "j5e/fn";
@@ -636,25 +640,24 @@ timer.setTimeout(function() {
 timer.setTimeout(function() {
   ani.play();
 }, 6000);</code></pre>
-
-    
-      <h3 id="Animation.stop">stop</h3>
-<p>Stop the animation, flushing the segment queue</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">animation.stop()</code></pre>
-
-  <p><strong>Returns:</strong> Animation</p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
+  
 </div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Make a servo "wave" for five seconds and then stop, flushing the queue</caption>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Animation.stop">Animation.stop</h3>
+  
+  <p>Stop the animation, flushing the segment queue</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">animation.stop();</code></pre>
+  
+    <p><strong>Returns:</strong> Animation</p>
+  
+  
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Make a servo "wave" for five seconds and then stop, flushing the queue
 import Servo from "j5e/servo";
 import Animation from "j5e/animation";
 import {timer} from "j5e/fn";
@@ -675,41 +678,48 @@ ani.enqueue(wave);
 timer.setTimeout(function() {
   ani.stop();
 }, 5000);</code></pre>
-
-    
-      <h3 id="Animation.speed">speed</h3>
-<p>Get or set the current playback speed</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">animation.speed()</code></pre>
-
-  <p><strong>Returns:</strong> Animation</p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      speed
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The desired playback speed (1 = normal)
-      
-    </div>
-   
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Animation.speed">Animation.speed</h3>
+  
+  <p>Get or set the current playback speed</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">animation.speed(speed);</code></pre>
+  
+    <p><strong>Returns:</strong> Animation</p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        speed
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        Number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The desired playback speed (1 = normal)
+        
+      </div>
+     
+  </div>
 
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Make a servo "wave" for one second, increase the speed, wait another second and decrease the speed for one second and then stop.</caption>
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Make a servo "wave" for one second, increase the speed, wait another second and decrease the speed for one second and then stop.
 import Servo from "j5e/servo";
 import Animation from "j5e/animation";
 import {timer} from "j5e/fn";
@@ -738,182 +748,214 @@ timer.setTimeout(function() {
 timer.setTimeout(function() {
   ani.stop(); // Note, animation speed is still 0.5
 }, 3000);</code></pre>
-
-    
-      <h3 id="Animation.on">on</h3>
-<p>Create an event listener</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">animation.on()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      event
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The name of the event to listen for
-      
-    </div>
-  
-    <div class="params-cell">
-      listener
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      A callback to run when the event is fired.
-      
-    </div>
-   
 </div>
-
-
+      
+        <hr/>
+      
     
-      <h3 id="Animation.removeListener">removeListener</h3>
-<p>Remove an event listener</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">animation.removeListener()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Animation.on">Animation.on</h3>
   
-    <div class="params-cell">
-      event
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The name of the event that we are removing a listener from
-      
-    </div>
+  <p>Create an event listener</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">animation.on(event, listener);</code></pre>
   
-    <div class="params-cell">
-      listener
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The callback that we are removing
-      
-    </div>
-   
-</div>
-
-
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
     
-      <h3 id="Animation.emit">emit</h3>
-<p>Emit an event</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">animation.emit()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-  
-    <div class="params-cell">
-      event
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The name of the event to emit
-      
-    </div>
-   
-</div>
-
-
+      <div class="params-cell">
+        event
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        string
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The name of the event to listen for
+        
+      </div>
     
-      <h3 id="Animation.once">once</h3>
-<p>Create an event listener that will only fire one time.</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">animation.once()</code></pre>
+      <div class="params-cell">
+        listener
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        A callback to run when the event is fired.
+        
+      </div>
+     
+  </div>
 
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      event
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The name of the event to listen for
-      
-    </div>
-  
-    <div class="params-cell">
-      listener
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      A callback to run when the event is fired.
-      
-    </div>
-   
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Animation.removeListener">Animation.removeListener</h3>
+  
+  <p>Remove an event listener</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">animation.removeListener(event, listener);</code></pre>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        event
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        string
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The name of the event that we are removing a listener from
+        
+      </div>
+    
+      <div class="params-cell">
+        listener
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The callback that we are removing
+        
+      </div>
+     
+  </div>
 
+  
+</div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Animation.emit">Animation.emit</h3>
+  
+    <p class="bg-orange p-2 px-4 mt-4 mb-6"><span class="font-bold">Note:</span> This method is not part of the public API, and is subject to change.</span></p>
+  
+  <p>Emit an event</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">animation.emit(event);</code></pre>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        event
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        string
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The name of the event to emit
+        
+      </div>
+     
+  </div>
 
+  
+</div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Animation.once">Animation.once</h3>
+  
+  <p>Create an event listener that will only fire one time.</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">animation.once(event, listener);</code></pre>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        event
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        string
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The name of the event to listen for
+        
+      </div>
+    
+      <div class="params-cell">
+        listener
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        A callback to run when the event is fired.
+        
+      </div>
+     
+  </div>
+
+  
+</div>
+      
     
   
   
