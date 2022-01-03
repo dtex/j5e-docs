@@ -2,7 +2,7 @@
 layout: default.liquid
 title: J5e - Robotics and IoT JavaScript framework for Embedded Devices
 ---
-# <img class="h-12 my-4 lg:hidden" src="/images/J5e.svg" />
+# <img class="h-12 my-4 lg:hidden" src="/images/j5e.svg" />
 <h1 class="h2">Robotics and IoT JavaScript Framework for Embedded Systems</h1>
 <img width="40%" align="right" alt="A robot poking its head out from inside washing machine" style="margin:0 0 35px 35px;" src="/images/J5-embedded-666x666.png" class="hidden sm:block" />
 
