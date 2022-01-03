@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities; 
 
-h1 {
-  @apply font-bold text-4xl text-xiketic mb-0 mt-4;
+h1, .h1 {
+  @apply font-bold text-4xl text-xiketic mb-0 mt-5;
 	scroll-margin-top: 4em;
 }
 
@@ -23,7 +23,7 @@ h4 {
 }
 
 hr {
-  @apply my-8;
+  @apply my-16;
 }
 
 pre {

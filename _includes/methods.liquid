@@ -1,11 +1,16 @@
-<h3 id="{{ class.name }}.{{ method.name }}">{{ method.name }}</h3>
-<p>{{ method.description }}</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">{{ class.name | downcase }}.{{ method.name }}({% for param in method.primaryParams %}{{ param.name }}{% if forloop.last == false %}, {% endif %}{% endfor %})</code></pre>
-{% if method.returns %}
-  <p><strong>Returns:</strong> {{ method.returns[0].description }}</p>
-{% endif %}
-{% include params, myParams: method.params %}
-{% for example in method.examples %}
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript">{{ example }}</code></pre>
-{% endfor %}
+<div class="mb-24">
+  <h3 class="h2 pb-4" id="{{ class.name }}.{{ method.name }}">{{ class.name }}.{{ method.name }}</h3>
+  {% if method.ignore  %}
+    <p class="bg-orange p-2 px-4 mt-4 mb-6"><span class="font-bold">Note:</span> This method is not part of the public API, and is subject to change.</span></p>
+  {% endif %}
+  <p>{{ method.description }}</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">{{ class.name | downcase }}.{{ method.name }}({% for param in method.primaryParams %}{{ param.name }}{% if forloop.last == false %}, {% endif %}{% endfor %});</code></pre>
+  {% if method.returns %}
+    <p><strong>Returns:</strong> {{ method.returns[0].description }}</p>
+  {% endif %}
+  {% include params, myParams: method.params %}
+  {% for example in method.examples %}
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">{{ example }}</code></pre>
+  {% endfor %}
+</div>

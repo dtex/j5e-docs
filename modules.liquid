@@ -15,9 +15,9 @@ permalink: "modules/{{ module.name | replace: 'j5e', '' | slug }}/"
       {% include left-nav %}
       <main class="align-top grid grid-cols-12 col-span-12 lg:col-span-8 h-screen overflow-y-scroll">
         
-        <section class="col-span-full p-8 py-4" xclass="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 p-8 py-4">
+        <section class="col-span-full p-8 py-4 pb-24" xclass="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 p-8 py-4">
           {% if module.ignore  %}
-            <p class="bg-orange p-2 mb-4"><span class="font-bold">Note:</span> This module is not part of the public API.</span></p>
+            <p class="bg-orange p-2 px-4 mt-4 mb-6"><span class="font-bold">Note:</span> This module is not part of the public API, and is subject to change.</span></p>
           {% endif %}
           <header>
             <h1 id="{{module.name}}.module">Module: <span class="font-normal">{{ module.name }}</span></h1>

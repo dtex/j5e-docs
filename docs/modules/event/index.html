@@ -122,9 +122,9 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
 </nav>
       <main class="align-top grid grid-cols-12 col-span-12 lg:col-span-8 h-screen overflow-y-scroll">
         
-        <section class="col-span-full p-8 py-4" xclass="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 p-8 py-4">
+        <section class="col-span-full p-8 py-4 pb-24" xclass="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 p-8 py-4">
           
-            <p class="bg-orange p-2 mb-4"><span class="font-bold">Note:</span> This module is not part of the public API.</span></p>
+            <p class="bg-orange p-2 px-4 mt-4 mb-6"><span class="font-bold">Note:</span> This module is not part of the public API, and is subject to change.</span></p>
           
           <header>
             <h1 id="j5e/event.module">Module: <span class="font-normal">j5e/event</span></h1>
@@ -140,201 +140,223 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
           
           
           
-  <hr class="my-8"/>
-  <h2 id="Emitter.class">Class: <span class="font-normal">Emitter</span></h2>
+  <hr/>
+  <h2 class="h1" id="Emitter.class">Class: <span class="font-normal">Emitter</span></h2>
   <p>Provides an event base class for devices. It is not meant to be used directly.</p>
-  <h3 id="Emitter.constructor">Constructor</h3>
-  <pre class="my-8"><code class="language-javascript">new <span class="font-normal">Emitter()</code></pre>
-  <h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
-</div>
-
+  <h2 id="Emitter.constructor">Constructor</h2>
+  <pre><code class="language-javascript">new <span class="font-normal">Emitter()</code></pre>
+  
   
   
   
 
   
   
+    <hr/>
     <h2 id="Emitter.methods">Methods</h2>
     
-      <h3 id="Emitter.on">on</h3>
-<p>Create an event listener</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">emitter.on()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Emitter.on">Emitter.on</h3>
   
-    <div class="params-cell">
-      event
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The name of the event to listen for
-      
-    </div>
+  <p>Create an event listener</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">emitter.on(event, listener);</code></pre>
   
-    <div class="params-cell">
-      listener
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      A callback to run when the event is fired.
-      
-    </div>
-   
-</div>
-
-
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
     
-      <h3 id="Emitter.removeListener">removeListener</h3>
-<p>Remove an event listener</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">emitter.removeListener()</code></pre>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-  
-    <div class="params-cell">
-      event
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The name of the event that we are removing a listener from
-      
-    </div>
-  
-    <div class="params-cell">
-      listener
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The callback that we are removing
-      
-    </div>
-   
-</div>
-
-
+      <div class="params-cell">
+        event
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        string
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The name of the event to listen for
+        
+      </div>
     
-      <h3 id="Emitter.emit">emit</h3>
-<p>Emit an event</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">emitter.emit()</code></pre>
+      <div class="params-cell">
+        listener
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        A callback to run when the event is fired.
+        
+      </div>
+     
+  </div>
 
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      event
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The name of the event to emit
-      
-    </div>
-   
 </div>
-
-
+      
+        <hr/>
+      
     
-      <h3 id="Emitter.once">once</h3>
-<p>Create an event listener that will only fire one time.</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">emitter.once()</code></pre>
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Emitter.removeListener">Emitter.removeListener</h3>
+  
+  <p>Remove an event listener</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">emitter.removeListener(event, listener);</code></pre>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        event
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        string
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The name of the event that we are removing a listener from
+        
+      </div>
+    
+      <div class="params-cell">
+        listener
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The callback that we are removing
+        
+      </div>
+     
+  </div>
 
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      event
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or string
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      The name of the event to listen for
-      
-    </div>
-  
-    <div class="params-cell">
-      listener
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      A callback to run when the event is fired.
-      
-    </div>
-   
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Emitter.emit">Emitter.emit</h3>
+  
+    <p class="bg-orange p-2 px-4 mt-4 mb-6"><span class="font-bold">Note:</span> This method is not part of the public API, and is subject to change.</span></p>
+  
+  <p>Emit an event</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">emitter.emit(event);</code></pre>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        event
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        string
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The name of the event to emit
+        
+      </div>
+     
+  </div>
 
+  
+</div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="Emitter.once">Emitter.once</h3>
+  
+  <p>Create an event listener that will only fire one time.</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">emitter.once(event, listener);</code></pre>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        event
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        string
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        The name of the event to listen for
+        
+      </div>
+    
+      <div class="params-cell">
+        listener
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        A callback to run when the event is fired.
+        
+      </div>
+     
+  </div>
 
+  
+</div>
+      
     
   
   

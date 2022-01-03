@@ -34,7 +34,7 @@ module.exports = async function(eleventyConfig) {
   let jsdocData = jsdoc.explainSync({ files: modulePaths });
   jsdocData = jsdocData.filter(comment => {
     return comment.access !== "private";
-  })
+  });
 
   let jsdocModules = jsdocData.filter(doc => doc.kind === "module");
   
@@ -124,25 +124,17 @@ module.exports = async function(eleventyConfig) {
       delete main.devices;
     }
 
-    main.classes.forEach(classComment => {
-      classComment.functions = jsdocData.filter(comment => {
-        return comment.kind === "function"
-          && comment.memberof === classComment.longname
-          && !comment.undocumented;
-      });
-    });
-
-    // function, member, constant, package
-    main.members = jsdocData.filter(comment => {
-      return comment.kind === "member" 
-        //&& comment.memberof === main.longname  
-        && !comment.undocumented;
-    });
-
     main.classes.forEach(thisClass => {
       
       thisClass.methods = jsdocData.filter(comment => {
         return comment.kind === "function" && comment.memberof === thisClass.longname  && !comment.undocumented;
+      });
+
+      thisClass.methods = thisClass.methods.map(method => {
+        method.primaryParams = method.params?.filter(param => {
+          return param.name.indexOf(".") === -1;
+        });
+        return method;
       });
 
       thisClass.properties = jsdocData.filter(comment => {
@@ -164,6 +156,7 @@ module.exports = async function(eleventyConfig) {
         let apiResponse = await fetch(apiURL);
         
         if(!apiResponse.fromCache) {
+          console.log(`Retrieved ${wikiLink.text} from Wikipedia`);
           await pause(1000);
         };
         let json = await apiResponse.json();

@@ -1,19 +1,20 @@
 {% for class in module.classes %}
-  <hr class="my-8"/>
-  <h2 id="{{class.name}}.class">Class: <span class="font-normal">{{ class.name }}</span></h2>
+  <hr/>
+  <h2 class="h1" id="{{class.name}}.class">Class: <span class="font-normal">{{ class.name }}</span></h2>
   <p>{{ class.classdesc }}</p>
-  <h3 id="{{ class.name }}.constructor">Constructor</h3>
-  <pre class="my-8"><code class="language-javascript">new <span class="font-normal">{{ class.name }}({% for param in class.primaryParams %}{{ param.name }}{% if forloop.last == false %}, {% endif %}{% endfor %})</code></pre>
+  <h2 id="{{ class.name }}.constructor">Constructor</h2>
+  <pre><code class="language-javascript">new <span class="font-normal">{{ class.name }}({% for param in class.params %}{{ param.name }}{% if forloop.last == false %}, {% endif %}{% endfor %})</code></pre>
   {% include params, myParams: class.params %}
   {% if class.examples %}
-    <h2>Example{% if class.examples.length > 1 %}s{% endif %}</h2>
+    <h3>Example{% if class.examples.length > 1 %}s{% endif %}</h3>
     {% for example in class.examples %}
       <pre><code class="language-javascript">{{ example }}</code></pre>
     {% endfor %}
   {% endif %}
   {% include properties %}
   {% if class.fires %}
-    <h2 id="{{ class.name }}.events">Events</h2>
+  <hr/>
+  <h2 id="{{ class.name }}.events">Events</h2>
     <ul>
       {% for event in class.fires %}
         <li>{{ event }}</li>
@@ -21,9 +22,13 @@
     </ul>
   {% endif %}
   {% if class.methods %}
+    <hr/>
     <h2 id="{{ class.name }}.methods">Methods</h2>
     {% for method in class.methods %}
       {% include methods %}
+      {% if forloop.last == false %}
+        <hr/>
+      {% endif %}
     {% endfor %}
   {% endif %}
   

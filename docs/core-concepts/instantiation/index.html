@@ -137,7 +137,7 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
 <p>The <code>ioOptions</code> object describes the configuration for an IO instance. This configuration could include which board to use, which pins, what data rate, etc. The details depend on your situation, provider, and desired IO type.</p>
 <p>The options argument is always required and can take a few different forms:</p>
 <p><strong>Pin Identifier</strong></p>
-<p>This is the simplest scenario and would be a single number or string. J5e will assume the provider is available in the device.io global. The particular type of IO you need will vary by device type. For example, servo would default to <code>device.io.PWM</code>. Button or switch would default to <code>device.io.Digital</code>.</p>
+<p>This is the simplest scenario and would be a single number or string. Note that passing a pin identifier is not described by ECMA-419. J5e will assume the provider is available in the device.io global. The particular type of IO you need will vary by device type. For example, servo would default to <code>device.io.PWM</code>. Button or switch would default to <code>device.io.Digital</code>.</p>
 <pre><code class="language-js">import LED from &quot;j5e/led&quot;;
 
 // Instantiate an LED connected to 

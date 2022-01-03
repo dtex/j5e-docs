@@ -122,7 +122,7 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
 </nav>
       <main class="align-top grid grid-cols-12 col-span-12 lg:col-span-8 h-screen overflow-y-scroll">
         
-        <section class="col-span-full p-8 py-4" xclass="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 p-8 py-4">
+        <section class="col-span-full p-8 py-4 pb-24" xclass="col-span-full md:col-span-10 lg:col-span-10 xl:col-span-8 p-8 py-4">
           
           <header>
             <h1 id="j5e/led.module">Module: <span class="font-normal">j5e/led</span></h1>
@@ -149,56 +149,57 @@ c0,37.2-26.9,53.3-53.3,53.3c-26.2,0-52.8-16.6-52.8-53.3V115.7z"/>
           
           
           
-  <hr class="my-8"/>
-  <h2 id="LED.class">Class: <span class="font-normal">LED</span></h2>
+  <hr/>
+  <h2 class="h1" id="LED.class">Class: <span class="font-normal">LED</span></h2>
   <p>The LED class allows for control of Light Emitting Diodes</p>
-  <h3 id="LED.constructor">Constructor</h3>
-  <pre class="my-8"><code class="language-javascript">new <span class="font-normal">LED()</code></pre>
-  <h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
+  <h2 id="LED.constructor">Constructor</h2>
+  <pre><code class="language-javascript">new <span class="font-normal">LED(io)</code></pre>
   
-    <div class="params-cell">
-      io
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-      number, 
-      
-      string, 
-      
-       or object
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Pin identifier or IO Options (See {@tutorial C-INSTANTIATING})
-      
-    </div>
-   
-</div>
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        io
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        number, 
+        
+        string, 
+        
+         or object
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Pin identifier or IO Options (See <a href="https://j5e.dev/core-concepts/instantiation/">instantiation</a>)
+        
+      </div>
+     
+  </div>
 
   
-    <h2>Examples</h2>
+    <h3>Examples</h3>
     
-      <pre><code class="language-javascript"><caption>Using a pin number</caption>
+      <pre><code class="language-javascript">// Using a pin number
 import LED from "j5e/led";
 
 const led = await new LED(12);
 led.on();</code></pre>
     
-      <pre><code class="language-javascript"><caption>Using a pin identifier string</caption>
+      <pre><code class="language-javascript">// Using a pin identifier string
 import LED from "j5e/led";
 
 const led = await new LED("A1");
 led.on();</code></pre>
     
-      <pre><code class="language-javascript"><caption>Using device options</caption>
+      <pre><code class="language-javascript">// Using device options
 import LED from "j5e/led";
 
 const led = await new LED(12);
@@ -269,58 +270,62 @@ led.on();</code></pre>
 
   
   
+    <hr/>
     <h2 id="LED.methods">Methods</h2>
     
-      <h3 id="LED.configure">configure</h3>
-<p>Configure an LED</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.configure()</code></pre>
-
-  <p><strong>Returns:</strong> The instance on which the method was called</p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="LED.configure">LED.configure</h3>
   
-    <div class="params-cell">
-      options
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or object
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Device configuration options
-      
-    </div>
+  <p>Configure an LED</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.configure(options);</code></pre>
   
-    <div class="params-cell">
-      options.sink
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      True if an element is wired for sink drive
-      
-    </div>
-   
-</div>
+    <p><strong>Returns:</strong> The instance on which the method was called</p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        options
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        object
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Device configuration options
+        
+      </div>
+    
+      <div class="params-cell">
+        options.sink
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        True if an element is wired for sink drive
+        
+      </div>
+     
+  </div>
 
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript">import LED from "j5e/led";
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">import LED from "j5e/led";
 
 const led = await new LED(14);
 led.configure({
@@ -329,47 +334,45 @@ led.configure({
 
 // With sink: true, led.on() sets pin 14 low
 led.on();</code></pre>
-
-    
-      <h3 id="LED.on">on</h3>
-<p>Turn an led on</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.on()</code></pre>
-
-  <p><strong>Returns:</strong> The instance on which the method was called</p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
+  
 </div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript">import LED from "j5e/led";
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="LED.on">LED.on</h3>
+  
+  <p>Turn an led on</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.on();</code></pre>
+  
+    <p><strong>Returns:</strong> The instance on which the method was called</p>
+  
+  
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">import LED from "j5e/led";
 
 const led = await new LED(12);
 led.on();</code></pre>
-
-    
-      <h3 id="LED.off">off</h3>
-<p>Turn an led off</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.off()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
+  
 </div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript">import LED from "j5e/led";
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="LED.off">LED.off</h3>
+  
+  <p>Turn an led off</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.off();</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">import LED from "j5e/led";
 import {timer} from "j5e/fn";
 
 const led = await new LED(12);
@@ -379,25 +382,24 @@ led.on();
 timer.setTimeout(function() {
   led.off();
 }, 1000);</code></pre>
-
-    
-      <h3 id="LED.toggle">toggle</h3>
-<p>Toggle the on/off state of an led</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.toggle()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
+  
 </div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript">import LED from "j5e/led";
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="LED.toggle">LED.toggle</h3>
+  
+  <p>Toggle the on/off state of an led</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.toggle();</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">import LED from "j5e/led";
 import {timer} from "j5e/fn";
 
 const led = await new LED(12);
@@ -407,333 +409,375 @@ led.toggle(); // It's on!
 timer.setTimeout(function() {
   led.toggle(); // It's off!
 }, 1000)</code></pre>
-
-    
-      <h3 id="LED.blink">blink</h3>
-<p>Blink the LED on a fixed interval</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.blink()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      duration
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Time in ms on, time in ms off
-      
-        <br/><span class="text-red pt-4">Default: 100</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      callback
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Method to call on blink
-      
-    </div>
-   
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="LED.blink">LED.blink</h3>
+  
+  <p>Blink the LED on a fixed interval</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.blink(duration, callback);</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        duration
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        Number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Time in ms on, time in ms off
+        
+          <br/><span class="text-red pt-4">Default: 100</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        callback
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Method to call on blink
+        
+      </div>
+     
+  </div>
 
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript">import LED from "j5e/led";
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">import LED from "j5e/led";
 
 const led = await new LED(12);
 led.blink(1000);</code></pre>
-
-    
-      <h3 id="LED.brightness">brightness</h3>
-<p>Set the brightness of an led</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.brightness()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      value
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Brightness value [0, 1]
-      
-    </div>
-   
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="LED.brightness">LED.brightness</h3>
+  
+  <p>Set the brightness of an led</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.brightness(value);</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        value
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        Number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Brightness value [0, 1]
+        
+      </div>
+     
+  </div>
 
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript">import LED from "j5e/led";
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">import LED from "j5e/led";
 
 const led = await new LED(12, {
   pwm: true
 });
 led.brightness(0.5);</code></pre>
-
-    
-      <h3 id="LED.intensity">intensity</h3>
-<p>Set the brightness of an led 0-100</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.intensity()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      value
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or Integer
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Brightness value [0, 100]
-      
-    </div>
-   
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="LED.intensity">LED.intensity</h3>
+  
+  <p>Set the brightness of an led 0-100</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.intensity(value);</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        value
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        Integer
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Brightness value [0, 100]
+        
+      </div>
+     
+  </div>
 
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript">import LED from "j5e/led";
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">import LED from "j5e/led";
 
 const led = await new LED(12, {
   pwm: true
 });
 led.intensity(50);</code></pre>
-
-    
-      <h3 id="LED.fade">fade</h3>
-<p>Fade an led from its current value to a new value (Requires ```pwm: true```)</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.fade()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      val
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Target brightness value
-      
-    </div>
-  
-    <div class="params-cell">
-      time
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Time in ms that a fade will take
-      
-        <br/><span class="text-red pt-4">Default: 1000</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      callback
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      A function to run when the fade is complete
-      
-    </div>
-   
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="LED.fade">LED.fade</h3>
+  
+  <p>Fade an led from its current value to a new value (Requires ```pwm: true```)</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.fade(val, time, callback);</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        val
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        Number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Target brightness value
+        
+      </div>
+    
+      <div class="params-cell">
+        time
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        Number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Time in ms that a fade will take
+        
+          <br/><span class="text-red pt-4">Default: 1000</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        callback
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        A function to run when the fade is complete
+        
+      </div>
+     
+  </div>
 
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript">import LED from "j5e/led";
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">import LED from "j5e/led";
 
 const led = await new LED(12, {
   pwm: true
 });
 led.fade(512);</code></pre>
-
-    
-      <h3 id="LED.fadeIn">fadeIn</h3>
-<p>fadeIn Fade an led in to full brightness (Requires ```pwm: true```)</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.fadeIn()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      time
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Time in ms that a fade will take
-      
-        <br/><span class="text-red pt-4">Default: 1000</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      callback
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      A function to run when the fade is complete
-      
-    </div>
-   
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="LED.fadeIn">LED.fadeIn</h3>
+  
+  <p>fadeIn Fade an led in to full brightness (Requires ```pwm: true```)</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.fadeIn(time, callback);</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        time
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        Number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Time in ms that a fade will take
+        
+          <br/><span class="text-red pt-4">Default: 1000</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        callback
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        A function to run when the fade is complete
+        
+      </div>
+     
+  </div>
 
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Fade an LED to full brightness over half a second</caption>
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Fade an LED to full brightness over half a second
 import LED from "j5e/led";
 
 const led = await new LED(12, {
   pwm: true
 });
 led.fadeIn(500);</code></pre>
-
-    
-      <h3 id="LED.fadeOut">fadeOut</h3>
-<p>fadeOut Fade an led out until it is off (Requires ```pwm: true```)</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.fadeOut()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      time
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or Number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Time in ms that a fade will take
-      
-        <br/><span class="text-red pt-4">Default: 1000</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      callback
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      A function to run when the fade is complete
-      
-    </div>
-   
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="LED.fadeOut">LED.fadeOut</h3>
+  
+  <p>fadeOut Fade an led out until it is off (Requires ```pwm: true```)</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.fadeOut(time, callback);</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        time
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        Number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Time in ms that a fade will take
+        
+          <br/><span class="text-red pt-4">Default: 1000</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        callback
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        A function to run when the fade is complete
+        
+      </div>
+     
+  </div>
 
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Fade an LED out over half a second</caption>
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Fade an LED out over half a second
 import LED from "j5e/led";
 
 const led = await new LED(12, {
@@ -741,101 +785,115 @@ const led = await new LED(12, {
 });
 led.on();
 led.fadeOut(500);</code></pre>
-
-    
-      <h3 id="LED.pulse">pulse</h3>
-<p>Pulse the LED in and out in a loop with specified time using ```inOutSine``` easing (Requires ```pwm: true```)</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.pulse()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      time
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or number
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      Time in ms that a fade in/out will elapse
-      
-        <br/><span class="text-red pt-4">Default: 1000</span>
-      
-    </div>
-  
-    <div class="params-cell">
-      callback
-      
-      
-    </div>
-    <div class="params-cell">
-      
-       or function
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      A function to run each time the direction of pulse changes
-      
-    </div>
-   
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="LED.pulse">LED.pulse</h3>
+  
+  <p>Pulse the LED in and out in a loop with specified time using ```inOutSine``` easing (Requires ```pwm: true```)</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.pulse(time, callback);</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        time
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        number
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        Time in ms that a fade in/out will elapse
+        
+          <br/><span class="text-red pt-4">Default: 1000</span>
+        
+      </div>
+    
+      <div class="params-cell">
+        callback
+        
+        
+      </div>
+      <div class="params-cell">
+        
+        function
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        A function to run each time the direction of pulse changes
+        
+      </div>
+     
+  </div>
 
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Pulse an LED on a half second interval</caption>
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Pulse an LED on a half second interval
 import LED from "j5e/led";
 
 const led = await new LED(12, {
   pwm: true
 });
 led.pulse(500);</code></pre>
-
-    
-      <h3 id="LED.animate">animate</h3>
-<p>Animate the LED by passing in a segment options object</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.animate()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
   
-    <div class="params-cell">
-      options
-      
-        <br/><span class="font-normal text-red"> (required)</span>
-      
-    </div>
-    <div class="params-cell">
-      
-       or Object
-      
-    </div>
-    <div class="params-cell">
-      <p><span class="font-bold sm:hidden">Description:<br/></span>
-      (See {@tutorial D-ANIMATING})
-      
-    </div>
-   
 </div>
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="LED.animate">LED.animate</h3>
+  
+  <p>Animate the LED by passing in a segment options object</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.animate(options);</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  <h4>Parameters</h4>
+  <div class="params-table">
+    <div class="params-table-header">Name</div>
+    <div class="params-table-header">Type</div>
+    <div class="params-table-header">Description</div>
+    
+      <div class="params-cell">
+        options
+        
+          <br/><span class="font-normal text-red"> (required)</span>
+        
+      </div>
+      <div class="params-cell">
+        
+        Object
+        
+      </div>
+      <div class="params-cell">
+        <p><span class="font-bold sm:hidden">Description:<br/></span>
+        (See <a href="https://j5e.dev/core-concepts/animation/">animation</a>)
+        
+      </div>
+     
+  </div>
 
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript"><caption>Animate an LED using an animation segment options object</caption>
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">// Animate an LED using an animation segment options object
 import LED from "j5e/led";
 
 const led = await new LED(12, {
@@ -848,25 +906,24 @@ led.animate({
   loop: true,
   metronomic: true
 });</code></pre>
-
-    
-      <h3 id="LED.stop">stop</h3>
-<p>stop Stop the led from blinking, pulsing, fading, or animating</p>
-<pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.stop()</code></pre>
-
-  <p><strong>Returns:</strong> </p>
-
-<h4>Parameters</h4>
-<div class="params-table">
-  <div class="params-table-header">Name</div>
-  <div class="params-table-header">Type</div>
-  <div class="params-table-header">Description</div>
-   
+  
 </div>
-
-
-  <h4>Example</h4>
-  <pre class="mb-4"><code class="language-javascript">Pulse an LED and then stop after five seconds
+      
+        <hr/>
+      
+    
+      <div class="mb-24">
+  <h3 class="h2 pb-4" id="LED.stop">LED.stop</h3>
+  
+  <p>stop Stop the led from blinking, pulsing, fading, or animating</p>
+  <pre class="mb-4"><code class="language-javascript"><span class="font-normal">led.stop();</code></pre>
+  
+    <p><strong>Returns:</strong> </p>
+  
+  
+  
+    <h4>Example</h4>
+    <pre class="mb-4"><code class="language-javascript">Pulse an LED and then stop after five seconds
 import {timer} from "j5e/fn";
 import LED from "j5e/led";
 
@@ -879,7 +936,9 @@ led.pulse(500);
 timer.setTimeout(function() {
   led.stop();
 }, 5000);</code></pre>
-
+  
+</div>
+      
     
   
   

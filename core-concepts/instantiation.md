@@ -24,7 +24,7 @@ The options argument is always required and can take a few different forms:
 
 **Pin Identifier**
 
-This is the simplest scenario and would be a single number or string. J5e will assume the provider is available in the device.io global. The particular type of IO you need will vary by device type. For example, servo would default to ```device.io.PWM```. Button or switch would default to ```device.io.Digital```.
+This is the simplest scenario and would be a single number or string. Note that passing a pin identifier is not described by ECMA-419. J5e will assume the provider is available in the device.io global. The particular type of IO you need will vary by device type. For example, servo would default to ```device.io.PWM```. Button or switch would default to ```device.io.Digital```.
 ````js
 import LED from "j5e/led";
 

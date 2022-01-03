@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/dtex/j5e-docs#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.12.1",
     "autoprefixer": "^10.3.6",
     "cssnano": "^5.0.8",
     "postcss": "^8.3.8",
@@ -28,6 +27,7 @@
     "tailwindcss": "^2.2.16"
   },
   "dependencies": {
+    "@11ty/eleventy": "^0.12.1",
     "doctrine": "^3.0.0",
     "esbuild": "^0.13.4",
     "fs-extra": "^10.0.0",
