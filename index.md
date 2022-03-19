@@ -2,6 +2,39 @@
 layout: default.liquid
 title: J5e - Robotics and IoT JavaScript framework for Embedded Devices
 ---
+# IMPORTANT NOTICE!!!
+For the time being the Moddable SDK is blocking top-level await on modules loaded synchronously. It looks like this will change soon, so I'm not updating all the documentation and examples. I'm just adding this note here.
+
+To make the examples work, you can simply wrap them in an asynchronous immediately invoked function expression. 
+
+For example:
+
+````js
+// Load a module
+import LED from "j5e/led";
+
+// Create a device instance on pin 14
+const led = await new LED(14);
+
+// Tell it to blink
+led.blink();
+````
+
+becomes
+
+````js
+// Load a module
+import LED from "j5e/led";
+
+(async () => {
+  // Create a device instance on pin 14
+  const led = await new LED(14);
+
+  // Tell it to blink
+  led.blink();
+})();
+````
+
 # <img class="h-12 my-4 lg:hidden" src="/images/j5e.svg" />
 <h1 class="h2">Robotics and IoT JavaScript Framework for Embedded Systems</h1>
 <img width="40%" align="right" alt="A robot poking its head out from inside washing machine" style="margin:0 0 35px 35px;" src="/images/J5-embedded-666x666.png" class="hidden sm:block" />
