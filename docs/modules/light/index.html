@@ -192,7 +192,7 @@ const light = await new Light(12);
 
 light.on("change", data => {
   trace(light.level);
-})</code></pre>
+});</code></pre>
     
   
   
@@ -605,18 +605,18 @@ light.configure({
   
     <h4>Example</h4>
     <pre class="mb-4"><code class="language-javascript">// Passing in Cofiguration Options
-   import Sensor from "j5e/sensor";
+import Sensor from "j5e/sensor";
 
 const sensor = await new Sensor({
- pin: 12
+  pin: 12
 });
 
 sensor.configure({
- interval: 500
+  interval: 500
 });
 
 sensor.on("change", data => {
- trace(data);
+  trace(data);
 });</code></pre>
   
 </div>
@@ -636,13 +636,14 @@ sensor.on("change", data => {
   
     <h4>Example</h4>
     <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+
 const sensor = await new Sensor(12);
 
 sensor.disable();
 
 // Wait 5 seconds and then take readings
 timer.setTimeout(function() {
- sensor.enable();
+  sensor.enable();
 });</code></pre>
   
 </div>
@@ -662,11 +663,12 @@ timer.setTimeout(function() {
   
     <h4>Example</h4>
     <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+
 const sensor = await new Sensor(12);
 
 // Take reading for 5 seconds and then stop
 timer.setTimeout(function() {
- sensor.disable();
+  sensor.disable();
 });</code></pre>
   
 </div>
@@ -686,6 +688,7 @@ timer.setTimeout(function() {
   
     <h4>Example</h4>
     <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+
 const sensor = await new Sensor(12);
 
 let myValue = sensor.read();</code></pre>
@@ -765,6 +768,7 @@ let myValue = sensor.read();</code></pre>
   
     <h4>Example</h4>
     <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+
 const sensor = await new Sensor(12);
 
 // Scale all future values to 8-bit range
@@ -846,6 +850,7 @@ sensor.scale([0, 255]);</code></pre>
   
     <h4>Example</h4>
     <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+
 const sensor = await new Sensor(12);
 
 // Scale the returned value to 8-bit range
@@ -927,6 +932,7 @@ sensor.scaleTo([0, 255]);</code></pre>
   
     <h4>Example</h4>
     <pre class="mb-4"><code class="language-javascript">import Sensor from "j5e/sensor";
+
 const sensor = await new Sensor(12);
 
 // Scale the returned value to float between 0 and 1
@@ -1375,18 +1381,18 @@ sensor.fscaleTo([0, 1]);</code></pre>
   
     <h4>Example</h4>
     <pre class="mb-4"><code class="language-javascript">// Passing in Cofiguration Options
-   import Sensor from "j5e/sensor";
+import Sensor from "j5e/sensor";
 
 const sensor = await new Sensor({
- pin: 12
+  pin: 12
 });
 
 sensor.configure({
- interval: 500
+  interval: 500
 });
 
 sensor.on("change", data => {
- trace(data);
+  trace(data);
 });</code></pre>
   
 </div>

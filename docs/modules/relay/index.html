@@ -424,6 +424,7 @@ system.setTimeout(function() {
   
     <h4>Example</h4>
     <pre class="mb-4"><code class="language-javascript">import Relay from "j5e/relay"
+import {timer} from "j5e/fn";
 
 const relay = await new Relay(12);
 
@@ -431,7 +432,7 @@ const relay = await new Relay(12);
 relay.toggle();
 
 // Wait 5 seeconds and turn it off
-system.setTimeout(function() {
+timer.setTimeout(function() {
   relay.toggle();
 }, 5000);</code></pre>
   

@@ -225,7 +225,7 @@ motor.fwd();</code></pre>
         
       </div>
       <div class="params-cell">
-        Whether current is flowing. This does not necessarily mean the motor is turning.
+        This does not necessarily mean the motor is turning.
       </div>
     
     
@@ -400,10 +400,11 @@ motor.forward(); // No signal is sent</code></pre>
     <h4>Example</h4>
     <pre class="mb-4"><code class="language-javascript">// Enable a motor
 import Motor from "j5e/motor";
+import {timer} from "j5e/fn";
 
 const motor = await new Motor([13, 12]);
 motor.disable();
-window.setTimeout(() => {
+timer.setTimeout(() => {
   motor.enable();
 }, 5000);</code></pre>
   

@@ -24,37 +24,4 @@ const led = await new LED(14);
 led.blink();
 ````
 
-### IMPORTANT NOTE!!!
-For the time being the Moddable SDK is blocking top-level await on modules loaded synchronously. It looks like this will change soon, so I'm not updating all the documentation and examples. I'm just adding this note here.
-
-To make the examples work, you can simply wrap them in an asynchronous immediately invoked function expression. 
-
-For example:
-
-````js
-// Load a module
-import LED from "j5e/led";
-
-// Create a device instance on pin 14
-const led = await new LED(14);
-
-// Tell it to blink
-led.blink();
-````
-
-becomes
-
-````js
-// Load a module
-import LED from "j5e/led";
-
-(async () => {
-  // Create a device instance on pin 14
-  const led = await new LED(14);
-
-  // Tell it to blink
-  led.blink();
-})();
-````
-
 ![Node.js CI](https://github.com/dtex/j5e/workflows/Node.js%20CI/badge.svg)
